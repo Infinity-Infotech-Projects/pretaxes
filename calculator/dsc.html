@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DSC Calculator</title>
+<link rel="stylesheet" href="./../calculator/calculator.css">
+<meta charset="UTF-8">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="nav-menu" id="nav-menu">
+
+      <a href="./../index.html">Home</a>
+
+      <!-- ABOUT -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">About Us ▾</button>
+        <div class="dropdown-menu">
+          <a href="./../overview.html">Overview</a>
+          <a href="./../team.html">Our Team</a>
+        </div>
+      </div>
+
+      <!-- SERVICES (MEGA MENU) -->
+      <div class="nav-item dropdown services">
+        <button class="dropdown-toggle">Services ▾</button>
+
+        <div class="services-menu">
+
+          <!-- BUSINESS -->
+          <div class="service-item">
+            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./business/company.html">Company Formation</a>
+              <a href="./business/consulting.html">Consulting & Advisory</a>
+              <a href="./business/accounting.html">Accounting & Bookkeeping</a>
+              <a href="./business/auditing.html">Auditing Services</a>
+              <a href="./business/companylaw.html">Company Law Services</a>
+              <a href="./business/payroll.html">Payroll Management</a>
+              <a href="./business/other.html">Other Services</a>
+            </div>
+          </div>
+
+          <!-- INSURANCE -->
+          <div class="service-item">
+            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./insurance/life.html">Life Insurance</a>
+              <a href="./insurance/health.html">Health Insurance</a>
+              <a href="./insurance/motor.html">Motor Insurance</a>
+              <a href="./insurance/general.html">General Insurance</a>
+              <a href="./insurance/corporate.html">Corporate Insurance</a>
+            </div>
+          </div>
+
+          <!-- LOANS -->
+          <div class="service-item">
+            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./loans/personal.html">Personal Loan</a>
+              <a href="./loans/business.html">Business Loan</a>
+              <a href="./loans/home.html">Home Loan</a>
+              <a href="./loans/startup.html">MSME / Startup Loan</a>
+              <a href="./loans/mutual.html">Mutual Funds</a>
+              <a href="./loans/fixed.html">Fixed Deposits</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">Calculator ▾</button>
+        <div class="dropdown-menu">
+          <a href="./calculator/emi.html">Loan EMI Calculator</a>
+          <a href="./calculator/gst.html">GST Calculator</a>
+          <a href="./calculator/incometax.html">Income Tax Calculator</a>
+        </div>
+      </div>
+
+      <a href="./../tax.html">Tax Calendar</a>
+      <a href="./../contact.html">Contact Us</a>
+
+    </nav>
+  </div>
+</header>
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="card">
+    <h3>DSC Rate Calculator</h3>
+
+    <select id="nationality">
+      <option value="indian">Indian</option>
+      <option value="foreign">Foreign</option>
+    </select>
+
+    <select id="category">
+      <option value="individual">Individual</option>
+      <option value="organization">Organization</option>
+    </select>
+
+    <select id="type">
+      <option value="normal">Signature</option>
+      <option value="combo">Combo</option>
+      <option value="dgft">DGFT</option>
+    </select>
+
+    <select id="year">
+      <option value="1">1 Year</option>
+      <option value="2">2 Years</option>
+      <option value="3">3 Years</option>
+    </select>
+    <select id="usb">
+  <option value="yes">Required</option>
+  <option value="no">Not Required</option>
+</select>
+
+<select id="support">
+  <option value="yes">Required</option>
+  <option value="no">Not Required</option>
+</select>
+
+
+
+   <button type="button" id="calculateBtn">Calculate</button>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="card">
+    <h3>Calculation</h3>
+
+    <div class="row"><span>DSC Cost</span><span id="dsc">₹0</span></div>
+    <div class="row"><span>USB Token</span><span id="usbCost">₹0</span></div>
+    <div class="row"><span>Support</span><span id="supportCost">₹0</span></div>
+
+    <hr>
+
+    <div class="row total"><span>Total</span><span id="total">₹0</span></div>
+
+    <p class="note">*Amounts exclusive of GST</p>
+  </div>
+
+</div>
+<p class="note">
+  DSC certificate charges are exclusive of GST<br>
+  Charge for USB token is Rs.500 + GST
+</p>
+
+<script src="calculator.js"></script>
+</body>
+</html>

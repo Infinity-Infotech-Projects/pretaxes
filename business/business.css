@@ -1,0 +1,1103 @@
+/* ================= HERO ================= */
+.business-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.business-page {
+  padding: 70px 6%;
+}
+
+/* CARD */
+.business-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+}
+
+.business-card.light {
+  background: #f4f9ff;
+}
+
+.business-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.business-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* CTA */
+.business-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+}
+
+.business-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .business-card {
+    padding: 30px;
+  }
+}
+/* ================= ANIMATIONS ================= */
+
+/* Fade + slide up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HERO animation */
+.business-hero {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Cards animation */
+.business-card {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.business-card:nth-child(1) { animation-delay: 0.1s; }
+.business-card:nth-child(2) { animation-delay: 0.2s; }
+.business-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* CTA animation */
+.business-cta {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Button hover animation */
+.cta-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+/* ===== FORCE CTA BUTTON FIX ===== */
+
+.business-cta {
+  text-align: center;
+}
+
+.business-cta .cta-btn {
+  display: inline-block !important;
+  margin-top: 24px;
+  padding: 14px 30px;
+
+  background-color: #ffffff !important;   /* white button */
+  color: #0F2854 !important;               /* dark text */
+
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.business-cta .cta-btn:hover {
+  background-color: #e6f2ff !important;
+  transform: translateY(-3px);
+}
+/* ================= HERO ================= */
+.consulting-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+}
+
+.consulting-hero .hero-content {
+  max-width: 900px;
+}
+
+.consulting-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.consulting-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.consulting-page {
+  padding: 70px 6%;
+}
+
+/* CARD */
+.consulting-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+}
+
+.consulting-card.light {
+  background: #f4f9ff;
+}
+
+.consulting-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.consulting-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* CTA */
+.consulting-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+}
+
+.consulting-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .consulting-hero h1 {
+    font-size: 32px;
+  }
+
+  .consulting-card {
+    padding: 30px;
+  }
+}
+/* ================= CONSULTING PAGE ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HERO ANIMATION */
+.consulting-hero {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* PAGE CONTENT */
+.consulting-page {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* CARDS ANIMATION */
+.consulting-card {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* stagger effect */
+.consulting-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.consulting-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.consulting-card:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+/* CTA ANIMATION */
+.consulting-cta {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* BUTTON HOVER EFFECT */
+.consulting-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consulting-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+/* ================= HERO ================= */
+.accounting-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.accounting-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.accounting-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.accounting-page {
+  padding: 70px 6%;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================= CARD ================= */
+.accounting-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.accounting-card:nth-child(1) { animation-delay: 0.15s; }
+.accounting-card:nth-child(2) { animation-delay: 0.3s; }
+.accounting-card:nth-child(3) { animation-delay: 0.45s; }
+
+.accounting-card.light {
+  background: #f4f9ff;
+}
+
+.accounting-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.accounting-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* ================= CTA ================= */
+.accounting-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.accounting-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+.accounting-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accounting-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .accounting-hero h1 {
+    font-size: 32px;
+  }
+
+  .accounting-card {
+    padding: 30px;
+  }
+}
+/* ================= HERO ================= */
+.auditing-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.auditing-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.auditing-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.auditing-page {
+  padding: 70px 6%;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================= CARD ================= */
+.auditing-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.auditing-card:nth-child(1) { animation-delay: 0.15s; }
+.auditing-card:nth-child(2) { animation-delay: 0.3s; }
+.auditing-card:nth-child(3) { animation-delay: 0.45s; }
+
+.auditing-card.light {
+  background: #f4f9ff;
+}
+
+.auditing-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.auditing-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* ================= CTA ================= */
+.auditing-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.auditing-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+.auditing-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auditing-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .auditing-hero h1 {
+    font-size: 32px;
+  }
+
+  .auditing-card {
+    padding: 30px;
+  }
+}
+/* ================= HERO ================= */
+.companylaw-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.companylaw-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.companylaw-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.companylaw-page {
+  padding: 70px 6%;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================= CARD ================= */
+.companylaw-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.companylaw-card:nth-child(1) { animation-delay: 0.15s; }
+.companylaw-card:nth-child(2) { animation-delay: 0.3s; }
+.companylaw-card:nth-child(3) { animation-delay: 0.45s; }
+
+.companylaw-card.light {
+  background: #f4f9ff;
+}
+
+.companylaw-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.companylaw-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* ================= CTA ================= */
+.companylaw-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.companylaw-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+.companylaw-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.companylaw-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .companylaw-hero h1 {
+    font-size: 32px;
+  }
+
+  .companylaw-card {
+    padding: 30px;
+  }
+}
+/* ================= HERO ================= */
+.payroll-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.payroll-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.payroll-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.payroll-page {
+  padding: 70px 6%;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================= CARD ================= */
+.payroll-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.payroll-card:nth-child(1) { animation-delay: 0.15s; }
+.payroll-card:nth-child(2) { animation-delay: 0.3s; }
+.payroll-card:nth-child(3) { animation-delay: 0.45s; }
+
+.payroll-card.light {
+  background: #f4f9ff;
+}
+
+.payroll-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.payroll-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* ================= CTA ================= */
+.payroll-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.payroll-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+.payroll-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payroll-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .payroll-hero h1 {
+    font-size: 32px;
+  }
+
+  .payroll-card {
+    padding: 30px;
+  }
+}
+/* ================= HERO ================= */
+.others-hero {
+  padding: 90px 6%;
+  background: linear-gradient(135deg, #e9f7fd, #d7f0fb);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.others-hero h1 {
+  font-size: 42px;
+  color: #0F2854;
+  margin-bottom: 14px;
+}
+
+.others-hero p {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================= PAGE ================= */
+.others-page {
+  padding: 70px 6%;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================= CARD ================= */
+.others-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15,40,84,0.1);
+  margin-bottom: 50px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.others-card:nth-child(1) { animation-delay: 0.15s; }
+.others-card:nth-child(2) { animation-delay: 0.3s; }
+.others-card:nth-child(3) { animation-delay: 0.45s; }
+
+.others-card.light {
+  background: #f4f9ff;
+}
+
+.others-card h2 {
+  font-size: 28px;
+  color: #0F2854;
+  margin-bottom: 10px;
+}
+
+.others-card .desc {
+  font-size: 15.5px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-2 h3 {
+  font-size: 18px;
+  color: #1C4D8D;
+  margin-bottom: 10px;
+}
+
+.grid-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-2 ul li {
+  font-size: 14.5px;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.grid-2 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* ================= CTA ================= */
+.others-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #0F2854;
+  border-radius: 18px;
+  color: #ffffff;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.others-cta p {
+  margin: 14px 0 26px;
+  opacity: 0.9;
+}
+
+.others-cta .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.others-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(28,77,141,0.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .others-hero h1 {
+    font-size: 32px;
+  }
+
+  .others-card {
+    padding: 30px;
+  }
+}

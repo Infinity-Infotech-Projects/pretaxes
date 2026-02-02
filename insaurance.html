@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<title>Insurance Solutions</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <img src="img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="nav-menu" id="nav-menu">
+
+      <a href="index.html">Home</a>
+
+      <!-- ABOUT -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">About Us ▾</button>
+        <div class="dropdown-menu">
+          <a href="overview.html">Overview</a>
+          <a href="team.html">Our Team</a>
+        </div>
+      </div>
+
+      <!-- SERVICES (MEGA MENU) -->
+      <div class="nav-item dropdown services">
+        <button class="dropdown-toggle">Services ▾</button>
+
+        <div class="services-menu">
+
+          <!-- BUSINESS -->
+          <div class="service-item">
+            <a href="business.html" class="service-toggle">Business Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./business/company.html">Company Formation</a>
+              <a href="./business/consulting.html">Consulting & Advisory</a>
+              <a href="./business/accounting.html">Accounting & Bookkeeping</a>
+              <a href="./business/auditing.html">Auditing Services</a>
+              <a href="./business/companylaw.html">Company Law Services</a>
+              <a href="./business/payroll.html">Payroll Management</a>
+              <a href="./business/other.html">Other Services</a>
+            </div>
+          </div>
+
+          <!-- INSURANCE -->
+          <div class="service-item">
+            <a href="insaurance.html" class="service-toggle">Insaurance Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./insurance/life.html">Life Insurance</a>
+              <a href="./insurance/health.html">Health Insurance</a>
+              <a href="./insurance/motor.html">Motor Insurance</a>
+              <a href="./insurance/general.html">General Insurance</a>
+              <a href="./insurance/corporate.html">Corporate Insurance</a>
+            </div>
+          </div>
+
+          <!-- LOANS -->
+          <div class="service-item">
+            <a href="loans.html" class="service-toggle">Loans Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./loans/personal.html">Personal Loan</a>
+              <a href="./loans/business.html">Business Loan</a>
+              <a href="./loans/home.html">Home Loan</a>
+              <a href="./loans/startup.html">MSME / Startup Loan</a>
+              <a href="./loans/mutual.html">Mutual Funds</a>
+              <a href="./loans/fixed.html">Fixed Deposits</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">Calculator ▾</button>
+        <div class="dropdown-menu">
+          <a href="./calculator/emi.html">Loan EMI Calculator</a>
+          <a href="./calculator/gst.html">GST Calculator</a>
+          <a href="./calculator/incometax.html">Income Tax Calculator</a>
+        </div>
+      </div>
+
+      <a href="tax.html">Tax Calendar</a>
+      <a href="contact.html">Contact Us</a>
+
+    </nav>
+  </div>
+</header>
+<!-- ================= HERO ================= -->
+<section class="ins-hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <h1>Let’s find you the<br><span>Best Insurance</span></h1>
+
+      <div class="hero-points">
+        <div>✔ Expert-guided advice</div>
+        <div>✔ Transparent & reliable policies</div>
+        <div>✔ Support beyond purchase</div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="https://source.unsplash.com/600x400/?insurance,finance" alt="">
+    </div>
+  </div>
+
+  <!-- Insurance Categories -->
+  <div class="hero-categories">
+    <div class="cat-card" data-scroll="life">
+      <img src="img/life.jpg">
+      <h4>Life Insurance</h4>
+    </div>
+    <div class="cat-card" data-scroll="health">
+      <img src="img/health.jpg">
+      <h4>Health Insurance</h4>
+    </div>
+    <div class="cat-card" data-scroll="motor">
+      <img src="img/car.jpg">
+      <h4>Motor Insurance</h4>
+    </div>
+    <div class="cat-card" data-scroll="general">
+      <img src="img/general.jpg">
+      <h4>General Insurance</h4>
+    </div>
+    <div class="cat-card" data-scroll="corporate">
+      <img src="img/corporateinsaurance.jpg">
+      <h4>Corporate Insurance</h4>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="why-us reveal">
+  <h2>Why Clients Trust Us</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <img src="img/expert.jpg">
+      <h4>Expert Advice</h4>
+      <p>Insurance solutions designed around your real needs.</p>
+    </div>
+
+    <div class="why-card">
+      <img src="img/transparent.jpg">
+      <h4>Transparent Policies</h4>
+      <p>No hidden terms. Clear and honest comparisons.</p>
+    </div>
+
+    <div class="why-card">
+      <img src="img/claim.jpg">
+      <h4>Claims Assistance</h4>
+      <p>Support when it matters the most.</p>
+    </div>
+
+    <div class="why-card">
+      <img src="img/longterm.jpg">
+      <h4>Long-Term Support</h4>
+      <p>We stay with you even after policy purchase.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSURANCE SECTIONS ================= -->
+
+<section id="life" class="ins-section reveal">
+  <div class="ins-inner">
+    <img src="img/general01.jpg">
+
+    <div class="ins-content">
+      <h3>Life Insurance</h3>
+      <p>
+        Life insurance secures your family’s financial future by ensuring income
+        continuity and long-term stability.
+      </p>
+
+      <div class="feature-grid">
+        <div>Income Protection</div>
+        <div>Family Security</div>
+        <div>Long-Term Planning</div>
+      </div>
+
+      <a class="cta-btn  open-enquiry">Talk to a Life Insurance Expert</a>
+    </div>
+  </div>
+</section>
+
+<section id="health" class="ins-section alt reveal">
+  <div class="ins-inner reverse">
+    <img src="img/health01.jpg">
+
+    <div class="ins-content">
+      <h3>Health Insurance</h3>
+      <p>
+        Health insurance protects you against rising medical costs and ensures
+        access to quality healthcare.
+      </p>
+
+      <div class="feature-grid">
+        <div>Hospitalization Cover</div>
+        <div>Medical Inflation Shield</div>
+        <div>Family Plans</div>
+      </div>
+
+      <a class="cta-btn  open-enquiry">Get Health Insurance Guidance</a>
+    </div>
+  </div>
+</section>
+
+<section id="motor" class="ins-section reveal">
+  <div class="ins-inner">
+    <img src="img/motar01.jpg">
+
+    <div class="ins-content">
+      <h3>Motor Insurance</h3>
+      <p>
+        Motor insurance protects you against financial loss while ensuring legal
+        compliance on the road.
+      </p>
+
+      <div class="feature-grid">
+        <div>Own Damage Cover</div>
+        <div>Third-Party Protection</div>
+        <div>Easy Claims</div>
+      </div>
+
+      <a class="cta-btn  open-enquiry">Insure Your Vehicle</a>
+    </div>
+  </div>
+</section>
+
+<section id="general" class="ins-section alt reveal">
+  <div class="ins-inner reverse">
+    <img src="img/general01.jpg">
+
+    <div class="ins-content">
+      <h3>General Insurance</h3>
+      <p>
+        Protect your home, travel plans, and personal assets against unexpected risks.
+      </p>
+
+      <div class="feature-grid">
+        <div>Home Insurance</div>
+        <div>Travel Cover</div>
+        <div>Personal Accident</div>
+      </div>
+
+      <a class="cta-btn  open-enquiry">Explore General Insurance</a>
+    </div>
+  </div>
+</section>
+
+<section id="corporate" class="ins-section reveal">
+  <div class="ins-inner">
+    <img src="img/corporateinsaurance01.jpg">
+
+    <div class="ins-content">
+      <h3>Corporate Insurance</h3>
+      <p>
+        Corporate insurance solutions designed to protect businesses and employees.
+      </p>
+
+      <div class="feature-grid">
+        <div>Group Health Cover</div>
+        <div>Employee Benefits</div>
+        <div>Risk Management</div>
+      </div>
+
+      <a class="cta-btn  open-enquiry">Discuss Corporate Insurance</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POPUP OVERLAY ================= -->
+<div class="popup-overlay" id="globalPopup">
+  <div class="popup-box">
+
+    <button class="popup-close">&times;</button>
+
+    <h2>Quick Enquiry</h2>
+    <p>Fill the form and our expert will contact you shortly.</p>
+
+    <form class="popup-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Submit Enquiry</button>
+    </form>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>About Pre-Taxes Solutions</h4>
+      <p>
+        Pre-Taxes Solutions helps individuals, startups and businesses
+        manage taxation, compliance, insurance and financial services
+        with accuracy, transparency and expert guidance.
+      </p>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="overview.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="insaurance.html">Insurance</a></li>
+        <li><a href="tax-calendar.html">Tax Calendar</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- BUSINESS SERVICES -->
+    <div class="footer-col">
+      <h4>Business Services</h4>
+      <ul>
+        <li><a href="/business/company.html">Company Formation</a></li>
+        <li><a href="/business/consulting.html">Consulting & Advisory</a></li>
+        <li><a href="/business/accounting.html">Accounting & Bookkeeping</a></li>
+        <li><a href="/business/auditioning.html">Auditing Services</a></li>
+        <li><a href="/business/companylaw.html">Company Law Services</a></li>
+        <li><a href="/business/payroll.html">Payroll Management</a></li>
+        <li><a href="/business/other.html">Other Services</a></li>
+      </ul>
+    </div>
+
+    <!-- INSURANCE SERVICES -->
+    <div class="footer-col">
+      <h4>Insurance Services</h4>
+      <ul>
+        <li><a href="/insaurance/life.html">Life Insurance</a></li>
+        <li><a href="/insaurance/health.html">Health Insurance</a></li>
+        <li><a href="/insaurance/motar.html">Motor Insurance</a></li>
+        <li><a href="/insaurance/general.html">General Insurance</a></li>
+        <li><a href="/insaurance/corporate.html">Corporate Insurance</a></li>
+      </ul>
+    </div>
+
+    <!-- LOANS & INVESTMENT -->
+    <div class="footer-col">
+      <h4>Loans & Investment</h4>
+      <ul>
+        <li><a href="/loans/personal.html">Personal Loan</a></li>
+        <li><a href="/loans/business.html">Business Loan</a></li>
+        <li><a href="/loans/home.html">Home Loan</a></li>
+        <li><a href="/loans/startup.html">MSME / Startup Loan</a></li>
+        <li><a href="/loans/mutual.html">Mutual Funds</a></li>
+        <li><a href="/loans/fixed.html">Fixed Deposits</a></li>
+      </ul>
+    </div>
+
+    <!-- CALCULATORS -->
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="/calculator/emi.html">Loan EMI Calculator</a></li>
+        <li><a href="/calculator/gst.html">GST Calculator</a></li>
+        <li><a href="/calculator/incometax.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul class="footer-contact">
+        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
+        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+<script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+
+  const popup = document.getElementById("globalPopup");
+  const closeBtn = popup.querySelector(".popup-close");
+
+  // OPEN popup (ANY button anywhere)
+  document.addEventListener("click", e => {
+    const trigger = e.target.closest("[data-popup]");
+    if (trigger) {
+      e.preventDefault();
+      popup.classList.add("active");
+    }
+  });
+
+  // CLOSE popup
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("active");
+  });
+
+  // CLOSE on outside click
+  popup.addEventListener("click", e => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const popup = document.getElementById("globalPopup");
+
+  // OPEN POPUP
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".open-enquiry");
+    if (!trigger) return;
+
+    e.preventDefault(); // only stops link navigation
+    popup.classList.add("active");
+    document.body.classList.add("popup-open");
+  });
+
+  // CLOSE POPUP
+  popup.querySelector(".popup-close").addEventListener("click", () => {
+    popup.classList.remove("active");
+    document.body.classList.remove("popup-open");
+  });
+
+  // CLOSE ON OVERLAY CLICK
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+      document.body.classList.remove("popup-open");
+    }
+  });
+
+});
+
+</script>
+
+<script src="insaurance.js"></script>
+</body>
+</html>

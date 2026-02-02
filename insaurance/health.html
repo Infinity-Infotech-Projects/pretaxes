@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Insurance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Font -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <link rel="stylesheet" href="./../insaurance/insaurance01.css">
+  <link rel="stylesheet" href="./../style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="nav-menu" id="nav-menu">
+
+      <a href="./../index.html">Home</a>
+
+      <!-- ABOUT -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">About Us ▾</button>
+        <div class="dropdown-menu">
+          <a href="./../overview.html">Overview</a>
+          <a href="./../team.html">Our Team</a>
+        </div>
+      </div>
+
+      <!-- SERVICES (MEGA MENU) -->
+      <div class="nav-item dropdown services">
+        <button class="dropdown-toggle">Services ▾</button>
+
+        <div class="services-menu">
+
+          <!-- BUSINESS -->
+          <div class="service-item">
+            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./business/company.html">Company Formation</a>
+              <a href="./business/consulting.html">Consulting & Advisory</a>
+              <a href="./business/accounting.html">Accounting & Bookkeeping</a>
+              <a href="./business/auditing.html">Auditing Services</a>
+              <a href="./business/companylaw.html">Company Law Services</a>
+              <a href="./business/payroll.html">Payroll Management</a>
+              <a href="./business/other.html">Other Services</a>
+            </div>
+          </div>
+
+          <!-- INSURANCE -->
+          <div class="service-item">
+            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./insurance/life.html">Life Insurance</a>
+              <a href="./insurance/health.html">Health Insurance</a>
+              <a href="./insurance/motor.html">Motor Insurance</a>
+              <a href="./insurance/general.html">General Insurance</a>
+              <a href="./insurance/corporate.html">Corporate Insurance</a>
+            </div>
+          </div>
+
+          <!-- LOANS -->
+          <div class="service-item">
+            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
+
+            <div class="sub-menu">
+              <a href="./loans/personal.html">Personal Loan</a>
+              <a href="./loans/business.html">Business Loan</a>
+              <a href="./loans/home.html">Home Loan</a>
+              <a href="./loans/startup.html">MSME / Startup Loan</a>
+              <a href="./loans/mutual.html">Mutual Funds</a>
+              <a href="./loans/fixed.html">Fixed Deposits</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="nav-item dropdown">
+        <button class="dropdown-toggle">Calculator ▾</button>
+        <div class="dropdown-menu">
+          <a href="./calculator/emi.html">Loan EMI Calculator</a>
+          <a href="./calculator/gst.html">GST Calculator</a>
+          <a href="./calculator/incometax.html">Income Tax Calculator</a>
+        </div>
+      </div>
+
+      <a href="./../tax.html">Tax Calendar</a>
+      <a href="./../contact.html">Contact Us</a>
+
+    </nav>
+  </div>
+</header>
+<!-- ================= HERO ================= -->
+<section class="hi-hero reveal">
+  <div class="hi-hero-inner">
+    <div class="hi-hero-text">
+      <span class="hi-badge">Health Insurance Advisory</span>
+      <h1>
+        Protect Your Health,<br>
+        Without Financial Stress
+      </h1>
+      <p>
+        Health insurance helps you access quality healthcare while protecting
+        your savings from unexpected medical expenses.
+      </p>
+      <a class="btn-primary">Consult a Health Insurance Advisor</a>
+    </div>
+
+    <div class="hi-hero-image">
+      <img src="/img/health.jpg" alt="Health Insurance">
+    </div>
+  </div>
+</section>
+<!-- ================= OVERVIEW ================= -->
+<section class="hi-overview reveal">
+  <div class="hi-overview-inner">
+
+    <div class="hi-overview-text">
+      <h2>Understanding Health Insurance</h2>
+
+      <p>
+        Health insurance is a financial safety net that covers medical expenses
+        such as hospitalisation, doctor consultations, surgeries, medicines,
+        and diagnostic tests arising due to illness or injury.
+      </p>
+
+      <p>
+        In today’s fast-paced lifestyle, medical emergencies can occur without
+        warning and often come with high treatment costs. A comprehensive health
+        insurance plan ensures access to quality healthcare while protecting
+        your savings from unexpected financial strain.
+      </p>
+
+      <p>
+        Choosing the right health insurance not only helps manage healthcare
+        expenses but also offers peace of mind for you and your family by
+        providing timely support during critical medical situations.
+      </p>
+    </div>
+
+    <div class="hi-overview-image">
+      <img src="/img/health01.jpg" alt="Healthcare Coverage">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= COVERAGE ================= -->
+<section class="hi-coverage reveal">
+  <h2>Key Coverage Areas</h2>
+
+  <div class="hi-coverage-list">
+    <div>
+      <h4>Hospitalisation</h4>
+      <p>Covers expenses related to inpatient treatment and surgeries.</p>
+    </div>
+
+    <div>
+      <h4>Medical Treatments</h4>
+      <p>Includes diagnostic tests, procedures, and prescribed care.</p>
+    </div>
+
+    <div>
+      <h4>Critical Illness Support</h4>
+      <p>Provides financial assistance during serious medical conditions.</p>
+    </div>
+
+    <div>
+      <h4>Preventive Care</h4>
+      <p>Supports regular health check-ups and early detection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TYPES ================= -->
+<section class="hi-types reveal">
+  <div class="hi-types-inner">
+    <div class="hi-types-text">
+      <h2>Types of Health Insurance Plans</h2>
+      <ul>
+        <li><strong>Individual Health Insurance</strong> – Coverage for one person</li>
+        <li><strong>Family Floater Plans</strong> – Shared coverage for family members</li>
+        <li><strong>Senior Citizen Plans</strong> – Designed for elderly healthcare needs</li>
+        <li><strong>Critical Illness Plans</strong> – Lump sum support for major illnesses</li>
+        <li><strong>Group Health Insurance</strong> – Employee and corporate coverage</li>
+      </ul>
+    </div>
+
+    <div class="hi-types-image">
+      <img src="/img/health02.jpg" alt="Types of Health Insurance">
+    </div>
+  </div>
+</section>
+<!-- ================= ADVISORY APPROACH ================= -->
+<section class="hi-approach reveal">
+  <h2>Our Advisory Approach</h2>
+
+  <div class="hi-steps">
+    
+    <div class="hi-step-card">
+      <span class="step-no">01</span>
+      <h4>Understanding Your Needs</h4>
+      <p>We analyse your healthcare requirements, family size, and medical history.</p>
+    </div>
+
+    <div class="hi-step-card">
+      <span class="step-no">02</span>
+      <h4>Coverage Evaluation</h4>
+      <p>We identify plans that offer optimal coverage based on your needs and budget.</p>
+    </div>
+
+    <div class="hi-step-card">
+      <span class="step-no">03</span>
+      <h4>Policy Comparison</h4>
+      <p>We compare benefits, limits, exclusions, and premiums to find the best fit.</p>
+    </div>
+
+    <div class="hi-step-card">
+      <span class="step-no">04</span>
+      <h4>Policy Selection</h4>
+      <p>We assist you in choosing and completing the policy with complete transparency.</p>
+    </div>
+
+    <div class="hi-step-card">
+      <span class="step-no">05</span>
+      <h4>Ongoing Support</h4>
+      <p>We support you with renewals, claims assistance, and future upgrades.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="hi-faq reveal">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>
+        How much health insurance coverage do I need?
+        <span class="faq-icon">+</span>
+      </summary>
+      <p>
+        Coverage depends on your age, medical history, family size, lifestyle,
+        and expected healthcare expenses. Higher coverage ensures better
+        financial protection.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        Is a family floater plan better than individual plans?
+        <span class="faq-icon">+</span>
+      </summary>
+      <p>
+        Family floater plans are cost-effective when healthcare needs are moderate
+        and shared, while individual plans offer separate coverage limits.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        Does health insurance cover pre-existing diseases?
+        <span class="faq-icon">+</span>
+      </summary>
+      <p>
+        Yes, most policies cover pre-existing conditions after a specified
+        waiting period, which varies by insurer and plan.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- ================= FINAL CTA ================= -->
+<section class="hi-cta reveal">
+  <h2>Plan Your Healthcare With Confidence</h2>
+  <p>Get expert guidance to choose the right health insurance coverage.</p>
+  <a class="btn-primary">Schedule a Consultation</a>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".reveal");
+  const reveal = () => {
+    items.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+        el.classList.add("active");
+      }
+    });
+  };
+  window.addEventListener("scroll", reveal);
+  reveal();
+});
+</script>
+
+<!-- ================= POPUP OVERLAY ================= -->
+<div class="popup-overlay" id="globalPopup">
+  <div class="popup-box">
+
+    <button class="popup-close">&times;</button>
+
+    <h2>Quick Enquiry</h2>
+    <p>Fill the form and our expert will contact you shortly.</p>
+
+   <!-- FORM CONNECTED TO PHP -->
+    <form class="popup-form" method="POST" action="enquiry.php">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Submit Enquiry</button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+
+  const popup = document.getElementById("globalPopup");
+  const closeBtn = popup.querySelector(".popup-close");
+
+  // OPEN popup (ANY button anywhere)
+  document.addEventListener("click", e => {
+    const trigger = e.target.closest("[data-popup]");
+    if (trigger) {
+      e.preventDefault();
+      popup.classList.add("active");
+    }
+  });
+
+  // CLOSE popup
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("active");
+  });
+
+  // CLOSE on outside click
+  popup.addEventListener("click", e => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const popup = document.getElementById("globalPopup");
+
+  // OPEN POPUP
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".open-enquiry");
+    if (!trigger) return;
+
+    e.preventDefault(); // only stops link navigation
+    popup.classList.add("active");
+    document.body.classList.add("popup-open");
+  });
+
+  // CLOSE POPUP
+  popup.querySelector(".popup-close").addEventListener("click", () => {
+    popup.classList.remove("active");
+    document.body.classList.remove("popup-open");
+  });
+
+  // CLOSE ON OVERLAY CLICK
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+      document.body.classList.remove("popup-open");
+    }
+  });
+
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>About Pre-Taxes Solutions</h4>
+      <p>
+        Pre-Taxes Solutions helps individuals, startups and businesses
+        manage taxation, compliance, insurance and financial services
+        with accuracy, transparency and expert guidance.
+      </p>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="overview.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="insaurance.html">Insurance</a></li>
+        <li><a href="tax-calendar.html">Tax Calendar</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- BUSINESS SERVICES -->
+    <div class="footer-col">
+      <h4>Business Services</h4>
+      <ul>
+        <li><a href="/business/company.html">Company Formation</a></li>
+        <li><a href="/business/consulting.html">Consulting & Advisory</a></li>
+        <li><a href="/business/accounting.html">Accounting & Bookkeeping</a></li>
+        <li><a href="/business/auditioning.html">Auditing Services</a></li>
+        <li><a href="/business/companylaw.html">Company Law Services</a></li>
+        <li><a href="/business/payroll.html">Payroll Management</a></li>
+        <li><a href="/business/other.html">Other Services</a></li>
+      </ul>
+    </div>
+
+    <!-- INSURANCE SERVICES -->
+    <div class="footer-col">
+      <h4>Insurance Services</h4>
+      <ul>
+        <li><a href="/insaurance/life.html">Life Insurance</a></li>
+        <li><a href="/insaurance/health.html">Health Insurance</a></li>
+        <li><a href="/insaurance/motar.html">Motor Insurance</a></li>
+        <li><a href="/insaurance/general.html">General Insurance</a></li>
+        <li><a href="/insaurance/corporate.html">Corporate Insurance</a></li>
+      </ul>
+    </div>
+
+    <!-- LOANS & INVESTMENT -->
+    <div class="footer-col">
+      <h4>Loans & Investment</h4>
+      <ul>
+        <li><a href="/loans/personal.html">Personal Loan</a></li>
+        <li><a href="/loans/business.html">Business Loan</a></li>
+        <li><a href="/loans/home.html">Home Loan</a></li>
+        <li><a href="/loans/startup.html">MSME / Startup Loan</a></li>
+        <li><a href="/loans/mutual.html">Mutual Funds</a></li>
+        <li><a href="/loans/fixed.html">Fixed Deposits</a></li>
+      </ul>
+    </div>
+
+    <!-- CALCULATORS -->
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="/calculator/emi.html">Loan EMI Calculator</a></li>
+        <li><a href="/calculator/gst.html">GST Calculator</a></li>
+        <li><a href="/calculator/incometax.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul class="footer-contact">
+        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
+        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
