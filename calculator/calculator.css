@@ -126,9 +126,6 @@ th, td {
   flex: 100%;
 }
 
-.emi-charts {
-  margin-top: 70px;
-}
 
 .chart-box h3 {
   margin-bottom: 20px;
@@ -183,6 +180,89 @@ th, td {
   width: 100% !important;
   height: 280px !important;
 }
+.emi-section {
+  padding-top: 140px;   /* navbar height + gap */
+}
+.emi-wrapper {
+  margin-top: 140px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;          /* 🔥 FORCE HEIGHT */
+  z-index: 9999;
+}
+@media (max-width: 768px) {
+  header {
+    height: 110px;
+  }
+}
+body {
+  padding-top: 90px;
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 110px;
+  }
+}
+.emi-section {
+  position: relative;
+  z-index: 1;
+}
+.emi-section {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  header {
+    height: 110px;
+  }
+}
+button,
+#calculateBtn {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto;
+}
+.gst-section,
+.emi-section {
+  position: relative;
+  z-index: 10;
+}
+/* ================= EMI CLICK FIX ================= */
+
+/* Push EMI below fixed navbar */
+.emi-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 160px; /* navbar height + buffer */
+}
+
+/* Make EMI content clickable */
+.emi-wrapper,
+.emi-box,
+.emi-charts,
+.emi-table {
+  position: relative;
+  z-index: 5;
+}
+
+/* FORCE button to accept clicks */
+.emi-box button {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
+
+/* Navbar should not block below clicks */
+header,
+.navbar,
+nav {
+  pointer-events: auto;
+}
+
 /* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width: 900px) {
@@ -381,6 +461,64 @@ button {
 .faq-item.active .faq-question span {
   transform: rotate(45deg);
 }
+/* ===== HARD FORCE GST LAYOUT ===== */
+.gst-wrapper {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: start !important;
+  gap: 40px !important;
+}
+
+/* Mobile only stack */
+@media (max-width: 768px) {
+  .gst-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+}
+.gst-section {
+  margin-top: 120px !important;
+}
+.gst-wrapper {
+  display: flex !important;
+  gap: 40px;
+}
+
+.gst-box {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .gst-wrapper {
+    flex-direction: column;
+  }
+  .gst-box {
+    width: 100%;
+  }
+}
+.gst-section {
+  margin-top: 140px;   /* 🔥 dropdown safe space */
+}
+header,
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+.gst-box {
+  position: relative;
+  z-index: 1;
+}
+select {
+  position: relative;
+}
+button,
+#calculateBtn {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -393,6 +531,9 @@ button {
   --secondary: #1c4d8d;
   --accent: #4988c4;
   --bg: #bde8f5;
+}
+:root {
+  --navbar-height: 90px;
 }
 
 * {
@@ -715,4 +856,132 @@ button{
 .note{
   font-size:12px;
   color:#666;
+}
+/* ================= FORCE CLICK FIX ================= */
+
+/* Navbar always on top */
+.navbar,
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Push ALL calculator sections below navbar */
+.emi-section,
+.gst-section,
+.dsc-section,
+.container {
+  margin-top: 140px !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Calculator wrappers safe */
+.emi-wrapper,
+.gst-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* FORCE button clickable */
+button,
+.emi-box button,
+.gst-box button,
+.card button {
+  position: relative !important;
+  z-index: 999 !important;
+  pointer-events: auto !important;
+}
+
+/* Kill invisible overlay clicks */
+.navbar::after,
+.navbar::before {
+  pointer-events: none !important;
+}
+
+/* Mobile safety */
+@media (max-width: 900px) {
+  .emi-section,
+  .gst-section,
+  .dsc-section,
+  .container {
+    margin-top: 160px !important;
+  }
+}
+.dsc-table-section {
+  padding: 80px 6%;
+  background: #f8fbff;
+}
+
+.dsc-table-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #0f2854;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.dsc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15,40,84,0.08);
+}
+
+.dsc-table th {
+  background: #0f2854;
+  color: #fff;
+  padding: 16px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.dsc-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.dsc-table tr:hover td {
+  background: #f4fbff;
+}
+
+.dsc-table .group td {
+  background: #eef6fb;
+  font-weight: 700;
+  color: #0f2854;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .dsc-table-section h2 {
+    font-size: 28px;
+  }
+
+  .dsc-table th,
+  .dsc-table td {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+.row.gst {
+  font-weight: 500;
+  color: #475569;
+}
+
+.row.grand-total {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 6px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 10px;
+  color: #0f2854;
 }

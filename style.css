@@ -2713,6 +2713,7 @@ button {
   max-width:1300px;
   margin:auto;
   text-align:center;
+  padding:0 16px;
 }
 
 /* ===============================
@@ -2730,10 +2731,10 @@ button {
 }
 
 /* ===============================
-   HEADING (BIG LIKE IMAGE)
+   HEADING
 ================================ */
 .youtube-container h2{
-  font-size:44px;            /* BIG heading */
+  font-size:44px;
   font-weight:700;
   margin-bottom:60px;
   line-height:1.2;
@@ -2757,67 +2758,94 @@ button {
   display:flex;
   gap:34px;
   animation: ytScroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* PAUSE on interaction (CRITICAL FIX) */
+.yt-slider:hover .yt-track{
+  animation-play-state: paused;
 }
 
 /* ===============================
-   YOUTUBE CARD (BIG PREMIUM BOX)
+   YOUTUBE CARD
 ================================ */
 .yt-card{
-  min-width:420px;           /* BIG WIDTH */
-  height:260px;              /* BIG HEIGHT */
+  min-width:420px;
+  height:260px;
   border-radius:22px;
   overflow:hidden;
   background:#ffffff;
-  box-shadow:
-    0 35px 80px rgba(28,77,141,0.25);
+  box-shadow:0 35px 80px rgba(28,77,141,0.25);
   transition:transform .4s ease;
+  flex-shrink:0;
 }
 
 .yt-card:hover{
-  transform:translateY(-12px);
+  transform:translateY(-10px);
 }
 
-/* iframe */
+/* iframe fix */
 .yt-card iframe{
   width:100%;
   height:100%;
   border:none;
+  pointer-events:auto;
 }
-
 /* ===============================
-   AUTO SCROLL ANIMATION
+   DESKTOP DRAG SCROLL CURSOR
 ================================ */
-@keyframes ytScroll{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
+.yt-slider{
+  cursor: grab;
+}
+
+.yt-slider:active{
+  cursor: grabbing;
+}
+
+/* Allow horizontal scroll */
+.yt-track{
+  cursor: grab;
+}
+
+/* Prevent text selection while dragging */
+.yt-track,
+.yt-card{
+  user-select: none;
 }
 
 /* ===============================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE (IMPORTANT)
 ================================ */
 @media(max-width:768px){
+
   .youtube-section{
-    padding:80px 0;
+    padding:70px 0;
   }
 
   .youtube-container h2{
-    font-size:30px;
-    margin-bottom:40px;
+    font-size:28px;
+    margin-bottom:30px;
+  }
+
+  /* ❌ Disable animation on mobile */
+  .yt-track{
+    animation:none;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+  }
+
+  .yt-track::-webkit-scrollbar{
+    display:none;
   }
 
   .yt-card{
-    min-width:300px;
-    height:180px;
-  }
-
-  .yt-track{
-    animation-duration:55s;
+    min-width:85%;
+    height:190px;
+    scroll-snap-align:center;
   }
 }
+
 .business-pricing__title{
   font-size:42px;
   font-weight:700;
@@ -3222,5 +3250,67 @@ button {
 
   .hero-image img {
     border-radius: 14px;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 40px 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  color: #0f4c75;
+  margin-bottom: 10px;
+}
+
+.updated {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+section {
+  margin-bottom: 26px;
+}
+
+h2 {
+  font-size: 18px;
+  color: #0f4c75;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+a {
+  color: #1b6ca8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 24px 18px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 16px;
   }
 }

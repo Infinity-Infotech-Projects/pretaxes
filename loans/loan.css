@@ -224,9 +224,102 @@ body {
 }
 
 .tabs a {
-  color: #1B262C !important;
+  color: white !important;
   text-decoration: none;
   font-size: 14px;
   padding-bottom: 4px;
 }
 
+/* REMOVE BOX COLORS & ADD SHADOWS */
+
+/* Tabs section background (keep navbar clean) */
+.tabs {
+  background: transparent !important;
+  box-shadow: 0 6px 20px rgba(228, 225, 225, 0.947);
+  border-radius: 14px;
+  margin: 20px;
+}
+
+/* Info boxes (top loan features) */
+.info-box > div {
+  background: #fff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+/* Cards (generic) */
+.card {
+  background: #fff !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border-radius: 16px;
+}
+
+/* Eligibility cards */
+.eligibility-card {
+  background: #fff !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.eligibility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+}
+
+/* FAQ section */
+.faq-section {
+  background: transparent !important;
+}
+
+.faq-box {
+  background: #fff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  border-radius: 16px;
+}
+
+/* CTA box cleanup */
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+/* Section light background removal */
+.section.light {
+  background: transparent !important;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+  .info-box > div,
+  .eligibility-card,
+  .card,
+  .faq-box {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+}
+/* FORCE MAIN HEADINGS TO WHITE (ALL PAGES) */
+
+.hero h1,
+.hero h2,
+.hero h3,
+.page-hero h1,
+.page-hero h2,
+.banner h1,
+.banner h2,
+.main-heading,
+.main-title {
+  color: #ffffff !important;
+}
+h1 {
+  color: #ffffff !important;
+}
+.hero *,
+.hero h1,
+.hero p {
+  color: #ffffff !important;
+}
+.hero h1 {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}

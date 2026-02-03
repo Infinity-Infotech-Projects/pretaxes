@@ -14,13 +14,11 @@
 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <link rel="stylesheet" href="./../calculator/calculator.css">
   <link rel="stylesheet" href="./../style.css">
 </head>
 <body>
+  
 <header class="navbar">
   <div class="nav-container">
 
@@ -61,13 +59,13 @@
             <a href="./../business.html" class="service-toggle">Business Services ▸</a>
 
             <div class="sub-menu">
-              <a href="./business/company.html">Company Formation</a>
-              <a href="./business/consulting.html">Consulting & Advisory</a>
-              <a href="./business/accounting.html">Accounting & Bookkeeping</a>
-              <a href="./business/auditing.html">Auditing Services</a>
-              <a href="./business/companylaw.html">Company Law Services</a>
-              <a href="./business/payroll.html">Payroll Management</a>
-              <a href="./business/other.html">Other Services</a>
+              <a href="./../business/company.html">Company Formation</a>
+              <a href="./../business/consulting.html">Consulting & Advisory</a>
+              <a href="./../business/accounting.html">Accounting & Bookkeeping</a>
+              <a href="./../business/auditing.html">Auditing Services</a>
+              <a href="./../business/companylaw.html">Company Law Services</a>
+              <a href="./../business/payroll.html">Payroll Management</a>
+              <a href="./../business/other.html">Other Services</a>
             </div>
           </div>
 
@@ -76,11 +74,11 @@
             <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
 
             <div class="sub-menu">
-              <a href="./insurance/life.html">Life Insurance</a>
-              <a href="./insurance/health.html">Health Insurance</a>
-              <a href="./insurance/motor.html">Motor Insurance</a>
-              <a href="./insurance/general.html">General Insurance</a>
-              <a href="./insurance/corporate.html">Corporate Insurance</a>
+              <a href="./../insurance/life.html">Life Insurance</a>
+              <a href="./../insurance/health.html">Health Insurance</a>
+              <a href="./../insurance/motor.html">Motor Insurance</a>
+              <a href="./../insurance/general.html">General Insurance</a>
+              <a href="./../insurance/corporate.html">Corporate Insurance</a>
             </div>
           </div>
 
@@ -89,12 +87,12 @@
             <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
 
             <div class="sub-menu">
-              <a href="./loans/personal.html">Personal Loan</a>
-              <a href="./loans/business.html">Business Loan</a>
-              <a href="./loans/home.html">Home Loan</a>
-              <a href="./loans/startup.html">MSME / Startup Loan</a>
-              <a href="./loans/mutual.html">Mutual Funds</a>
-              <a href="./loans/fixed.html">Fixed Deposits</a>
+              <a href="./../loans/personal.html">Personal Loan</a>
+              <a href="./../loans/business.html">Business Loan</a>
+              <a href="./../loans/home.html">Home Loan</a>
+              <a href="./../loans/startup.html">MSME / Startup Loan</a>
+              <a href="./../loans/mutual.html">Mutual Funds</a>
+              <a href="./../loans/fixed.html">Fixed Deposits</a>
             </div>
           </div>
 
@@ -105,9 +103,10 @@
       <div class="nav-item dropdown">
         <button class="dropdown-toggle">Calculator ▾</button>
         <div class="dropdown-menu">
-          <a href="./calculator/emi.html">Loan EMI Calculator</a>
-          <a href="./calculator/gst.html">GST Calculator</a>
-          <a href="./calculator/incometax.html">Income Tax Calculator</a>
+          <a href="./../calculator/emi.html">Loan EMI Calculator</a>
+          <a href="./../calculator/gst.html">GST Calculator</a>
+          <a href="./../calculator/incometax.html">Income Tax Calculator</a>
+                <a href="./../calculator/dsc.html">DSC Calculator</a>
         </div>
       </div>
 
@@ -117,7 +116,6 @@
     </nav>
   </div>
 </header>
-
 <section class="emi-section">
 
   <h1>EMI Calculator</h1>
@@ -143,7 +141,8 @@
       <label>EMI Start Date</label>
       <input type="date" id="startDate">
 
-      <button onclick="calculateEMI()">Calculate</button>
+      <button id="emiCalculateBtn" type="button">Calculate</button>
+
     </div>
 
     <!-- RIGHT -->
@@ -190,6 +189,7 @@
 
 </section>
 
+
 <footer class="site-footer">
   <div class="footer-inner">
 
@@ -214,12 +214,12 @@
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="overview.html">About Us</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="insaurance.html">Insurance</a></li>
-        <li><a href="tax-calendar.html">Tax Calendar</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="./../index.html">Home</a></li>
+        <li><a href="./../overview.html">About Us</a></li>
+        <li><a href="./../team.html">Our Team</a></li>
+        <li><a href="./../insaurance.html">Insurance</a></li>
+        <li><a href="./../taxcal.html">Tax Calendar</a></li>
+        <li><a href="./../contact.html">Contact Us</a></li>
       </ul>
     </div>
 
@@ -227,13 +227,13 @@
     <div class="footer-col">
       <h4>Business Services</h4>
       <ul>
-        <li><a href="/business/company.html">Company Formation</a></li>
-        <li><a href="/business/consulting.html">Consulting & Advisory</a></li>
-        <li><a href="/business/accounting.html">Accounting & Bookkeeping</a></li>
-        <li><a href="/business/auditioning.html">Auditing Services</a></li>
-        <li><a href="/business/companylaw.html">Company Law Services</a></li>
-        <li><a href="/business/payroll.html">Payroll Management</a></li>
-        <li><a href="/business/other.html">Other Services</a></li>
+        <li><a href="./../business/company.html">Company Formation</a></li>
+        <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
+        <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
+        <li><a href="./../business/auditioning.html">Auditing Services</a></li>
+        <li><a href="./../business/companylaw.html">Company Law Services</a></li>
+        <li><a href="./../business/payroll.html">Payroll Management</a></li>
+        <li><a href="./../business/other.html">Other Services</a></li>
       </ul>
     </div>
 
@@ -241,11 +241,11 @@
     <div class="footer-col">
       <h4>Insurance Services</h4>
       <ul>
-        <li><a href="/insaurance/life.html">Life Insurance</a></li>
-        <li><a href="/insaurance/health.html">Health Insurance</a></li>
-        <li><a href="/insaurance/motar.html">Motor Insurance</a></li>
-        <li><a href="/insaurance/general.html">General Insurance</a></li>
-        <li><a href="/insaurance/corporate.html">Corporate Insurance</a></li>
+        <li><a href="./../insaurance/life.html">Life Insurance</a></li>
+        <li><a href="./../insaurance/health.html">Health Insurance</a></li>
+        <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
+        <li><a href="./../insaurance/general.html">General Insurance</a></li>
+        <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
       </ul>
     </div>
 
@@ -253,12 +253,12 @@
     <div class="footer-col">
       <h4>Loans & Investment</h4>
       <ul>
-        <li><a href="/loans/personal.html">Personal Loan</a></li>
-        <li><a href="/loans/business.html">Business Loan</a></li>
-        <li><a href="/loans/home.html">Home Loan</a></li>
-        <li><a href="/loans/startup.html">MSME / Startup Loan</a></li>
-        <li><a href="/loans/mutual.html">Mutual Funds</a></li>
-        <li><a href="/loans/fixed.html">Fixed Deposits</a></li>
+        <li><a href="./../loans/personal.html">Personal Loan</a></li>
+        <li><a href="./../business.html">Business Loan</a></li>
+        <li><a href="./../loans/home.html">Home Loan</a></li>
+        <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
+        <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
+        <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
       </ul>
     </div>
 
@@ -266,9 +266,10 @@
     <div class="footer-col">
       <h4>Calculators</h4>
       <ul>
-        <li><a href="/calculator/emi.html">Loan EMI Calculator</a></li>
-        <li><a href="/calculator/gst.html">GST Calculator</a></li>
-        <li><a href="/calculator/incometax.html">Income Tax Calculator</a></li>
+        <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
+        <li><a href="./../calculator/gst.html">GST Calculator</a></li>
+        <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
+         <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
       </ul>
     </div>
 
@@ -288,13 +289,136 @@
   <div class="footer-bottom">
     <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
     <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
-      <a href="disclaimer.html">Disclaimer</a>
+      <a href="./../policy.html">Privacy Policy</a>
+      <a href="./../disclaimer.html">Disclaimer</a>
     </div>
   </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("emiCalculateBtn");
+  if (btn) {
+    btn.addEventListener("click", calculateEMI);
+  }
+});
+</script>
+<script>
+let pieChartInstance = null;
+let barChartInstance = null;
+
+function calculateEMI() {
+  const P = parseFloat(document.getElementById("loanAmount").value);
+  const annualRate = parseFloat(document.getElementById("interestRate").value);
+  const years = parseFloat(document.getElementById("loanTenure").value);
+  const startDateVal = document.getElementById("startDate").value;
+
+  if (!P || !annualRate || !years || !startDateVal) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const r = annualRate / 12 / 100;
+  const n = years * 12;
+
+  const emi =
+    (P * r * Math.pow(1 + r, n)) /
+    (Math.pow(1 + r, n) - 1);
+
+  let balance = P;
+  let totalInterest = 0;
+
+  const tableBody = document.getElementById("tableBody");
+  tableBody.innerHTML = "";
+
+  let currentDate = new Date(startDateVal);
+
+  for (let i = 1; i <= n; i++) {
+    const interest = balance * r;
+    const principal = emi - interest;
+    balance -= principal;
+    totalInterest += interest;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${i}</td>
+      <td>₹ ${emi.toFixed(2)}</td>
+      <td>₹ ${principal.toFixed(2)}</td>
+      <td>₹ ${interest.toFixed(2)}</td>
+      <td>₹ ${balance > 0 ? balance.toFixed(2) : "0.00"}</td>
+    `;
+    tableBody.appendChild(row);
+
+    currentDate.setMonth(currentDate.getMonth() + 1);
+  }
+
+  const totalPayment = emi * n;
+
+  // UPDATE RIGHT PANEL
+  document.getElementById("rLoan").innerText = `₹ ${P.toFixed(2)}`;
+  document.getElementById("rEmi").innerText = `₹ ${emi.toFixed(2)}`;
+  document.getElementById("rInterest").innerText = `₹ ${totalInterest.toFixed(2)}`;
+  document.getElementById("rTotal").innerText = `₹ ${totalPayment.toFixed(2)}`;
+  document.getElementById("rMonths").innerText = `${n} months`;
+  document.getElementById("rLastDate").innerText =
+    currentDate.toLocaleDateString("en-IN");
+
+  renderCharts(P, totalInterest);
+}
+
+/* ================= CHARTS ================= */
+
+function renderCharts(principal, interest) {
+  const pieCtx = document.getElementById("pieChart").getContext("2d");
+  const barCtx = document.getElementById("barChart").getContext("2d");
+
+  if (pieChartInstance) pieChartInstance.destroy();
+  if (barChartInstance) barChartInstance.destroy();
+
+  pieChartInstance = new Chart(pieCtx, {
+    type: "pie",
+    data: {
+      labels: ["Principal", "Interest"],
+      datasets: [
+        {
+          data: [principal, interest],
+          backgroundColor: ["#1c4d8d", "#f59e0b"],
+        },
+      ],
+    },
+  });
+
+  barChartInstance = new Chart(barCtx, {
+    type: "bar",
+    data: {
+      labels: ["Principal", "Interest"],
+      datasets: [
+        {
+          label: "Amount (₹)",
+          data: [principal, interest],
+          backgroundColor: ["#1c4d8d", "#f59e0b"],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+}
+
+/* ================= CLICK SAFETY ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".emi-box button");
+  if (btn) {
+    btn.addEventListener("click", calculateEMI);
+  }
+});
+</script>
+
 <script src="calculator.js"></script>
+<script src="./../index.js"></script>
 </body>
 </html>
 

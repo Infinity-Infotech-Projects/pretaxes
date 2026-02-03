@@ -359,3 +359,7 @@ document.querySelector("#calculateBtn").addEventListener("click", () => {
     document.getElementById("totalCost").innerText = "₹" + res.total;
   });
 });
+if (!amount || !gstRate || !gstType) {
+  alert("Please fill all fields");
+  return;
+}
