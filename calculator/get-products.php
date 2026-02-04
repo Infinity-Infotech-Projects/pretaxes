@@ -1,8 +1,17 @@
 <?php
 include 'db_dsc.php';
-$q = $conn->query("SELECT DISTINCT product_name FROM dsc_plans");
+
+$result = $conn->query("
+  SELECT DISTINCT 
+    certificate_class, 
+    certificate_type 
+  FROM dsc_certificate_rates
+");
+
 $data = [];
-while($r = $q->fetch_assoc()){
-  $data[] = $r['product_name'];
+
+while($row = $result->fetch_assoc()){
+  $data[] = $row;
 }
+
 echo json_encode($data);

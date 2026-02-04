@@ -116,245 +116,127 @@
     </nav>
   </div>
 </header>
-<div class="container">
+<section class="dsc-calculator">
 
-  <!-- LEFT -->
-  <div class="card">
-    <h3>DSC Rate Calculator</h3>
+  <div class="dsc-container">
 
-    <select id="nationality">
-      <option value="indian">Indian</option>
-      <option value="foreign">Foreign</option>
-    </select>
+    <!-- LEFT : FORM -->
+    <div class="dsc-form">
+      <h2>DSC Rate Calculator</h2>
 
-    <select id="category">
-      <option value="individual">Individual</option>
-      <option value="organization">Organization</option>
-    </select>
+      <div class="field">
+        <label>Nationality</label>
+        <select id="nationality">
+          <option value="indian">Indian</option>
+          <option value="foreign">Foreign</option>
+        </select>
+      </div>
 
-    <select id="type">
-      <option value="normal">Signature</option>
-      <option value="combo">Combo</option>
-      <option value="dgft">DGFT</option>
-    </select>
+      <div class="field">
+        <label>Applicant Type</label>
+        <select id="applicantType">
+          <option value="individual">Individual</option>
+          <option value="organization">Organization</option>
+        </select>
+      </div>
 
-    <select id="year">
-      <option value="1">1 Year</option>
-      <option value="2">2 Years</option>
-      <option value="3">3 Years</option>
-    </select>
-    <select id="usb">
-  <option value="yes">Required</option>
-  <option value="no">Not Required</option>
-</select>
+      <div class="field">
+        <label>Certificate Class</label>
+        <select id="certificateClass">
+          <option value="class3">Class 3</option>
+          <option value="class2">Class 2</option>
+          <option value="dgft">DGFT</option>
+        </select>
+      </div>
 
-<select id="support">
-  <option value="yes">Required</option>
-  <option value="no">Not Required</option>
-</select>
+      <div class="field">
+        <label>Certificate Type</label>
+        <select id="certificateType">
+          <option value="general">General</option>
+          <option value="combo">Combo</option>
+        </select>
+      </div>
 
+      <div class="field">
+        <label>Validity Period</label>
+        <select id="validity">
+          <option value="1">1 Year</option>
+          <option value="2">2 Years</option>
+          <option value="3">3 Years</option>
+        </select>
+      </div>
 
+      <div class="field">
+        <label>USB Token</label>
+        <select id="usbToken">
+          <option value="yes">USB Token Required</option>
+          <option value="no">USB Token Not Required</option>
+        </select>
+      </div>
 
-   <button type="button" id="calculateBtn">Calculate</button>
+      <div class="field">
+        <label>L1 Support Services</label>
+        <select id="supportRequired">
+          <option value="yes">Required</option>
+          <option value="no">Not Required</option>
+        </select>
+      </div>
+<button 
+  type="button" 
+  class="calculate-btn" 
+  id="calculateBtn">
+  Calculate
+</button>
+
+        #
+      </button>
+    </div>
+
+    <!-- RIGHT : CALCULATION -->
+    <div class="dsc-summary">
+      <h3>Calculation</h3>
+
+      <div class="row">
+        <span>DSC Certificate Cost</span>
+        <span id="dscCost">₹0</span>
+      </div>
+
+      <div class="row">
+        <span>USB Token</span>
+        <span id="usbCost">₹0</span>
+      </div>
+
+      <div class="row">
+        <span>L1 Support Services</span>
+        <span id="supportCost">₹0</span>
+      </div>
+
+      <p class="support-note">
+        L1 Support includes installation assistance, usage guidance and basic troubleshooting.
+      </p>
+
+      <div class="row total">
+        <span>Subtotal</span>
+        <span id="subTotal">₹0</span>
+      </div>
+
+      <div class="row">
+        <span>GST (18%)</span>
+        <span id="gstAmount">₹0</span>
+      </div>
+
+      <div class="row grand-total">
+        <span>Final Total</span>
+        <span id="finalTotal">₹0</span>
+      </div>
+
+      <p class="gst-note">*Amounts exclusive of GST</p>
+    </div>
 
   </div>
 
-  <!-- RIGHT -->
-  <div class="card">
-    <h3>Calculation</h3>
-
-    <div class="row"><span>DSC Cost</span><span id="dsc">₹0</span></div>
-    <div class="row"><span>USB Token</span><span id="usbCost">₹0</span></div>
-    <div class="row"><span>Support</span><span id="supportCost">₹0</span></div>
-
-    <hr>
-
-    <div class="row total"><span>Total</span><span id="total">₹0</span></div>
-
-    <p class="note">*Amounts exclusive of GST</p>
-  </div>
-<div class="row gst">
-  <span>GST</span>
-  <span id="gstAmount">₹500</span>
-</div>
-
-<div class="row grand-total">
-  <span>Final Total</span>
-  <span id="grandTotal">₹0</span>
-</div>
-
-</div>
-<p class="note">
-  DSC certificate charges are exclusive of GST<br>
-  Charge for USB token is Rs.500 + GST
-</p>
-<section class="dsc-table-section">
-  <h2>Compare Plans</h2>
-
-  <div class="table-wrapper">
-    <table class="dsc-table">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Individual (₹)</th>
-          <th>Organization (₹)</th>
-          <th>L1 Support (₹)</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <!-- Indian General -->
-        <tr class="group">
-          <td colspan="4">Class 3 – Indian</td>
-        </tr>
-        <tr>
-          <td>Class 3 General – 1 Year</td>
-          <td>750</td>
-          <td>750</td>
-          <td>300</td>
-        </tr>
-        <tr>
-          <td>Class 3 General – 2 Year</td>
-          <td>825</td>
-          <td>825</td>
-          <td>800</td>
-        </tr>
-        <tr>
-          <td>Class 3 General – 3 Year</td>
-          <td>1000</td>
-          <td>1000</td>
-          <td>800</td>
-        </tr>
-
-        <!-- Combo -->
-        <tr>
-          <td>Class 3 General Combo – 1 Year</td>
-          <td>1250</td>
-          <td>1250</td>
-          <td>1500</td>
-        </tr>
-        <tr>
-          <td>Class 3 General Combo – 2 Year</td>
-          <td>1500</td>
-          <td>1500</td>
-          <td>1500</td>
-        </tr>
-        <tr>
-          <td>Class 3 General Combo – 3 Year</td>
-          <td>1800</td>
-          <td>1800</td>
-          <td>1500</td>
-        </tr>
-
-        <!-- Foreign -->
-        <tr class="group">
-          <td colspan="4">Class 3 – Foreign</td>
-        </tr>
-        <tr>
-          <td>Foreign Class 3 General – 1 Year</td>
-          <td>2542</td>
-          <td>2542</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>Foreign Class 3 General – 2 Year</td>
-          <td>3051</td>
-          <td>3051</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>Foreign Class 3 General – 3 Year</td>
-          <td>4237</td>
-          <td>4237</td>
-          <td>500</td>
-        </tr>
-
-        <tr>
-          <td>Foreign Class 3 Combo – 1 Year</td>
-          <td>4237</td>
-          <td>4237</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>Foreign Class 3 Combo – 2 Year</td>
-          <td>5085</td>
-          <td>5085</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>Foreign Class 3 Combo – 3 Year</td>
-          <td>5932</td>
-          <td>5932</td>
-          <td>500</td>
-        </tr>
-
-        <!-- DGFT -->
-        <tr class="group">
-          <td colspan="4">DGFT Certificates</td>
-        </tr>
-        <tr>
-          <td>DGFT – 1 Year</td>
-          <td>-</td>
-          <td>1450</td>
-          <td>1500</td>
-        </tr>
-        <tr>
-          <td>DGFT – 2 Year</td>
-          <td>-</td>
-          <td>1700</td>
-          <td>1500</td>
-        </tr>
-        <tr>
-          <td>DGFT – 3 Year</td>
-          <td>-</td>
-          <td>2500</td>
-          <td>1500</td>
-        </tr>
-
-        <!-- Special -->
-        <tr class="group">
-          <td colspan="4">Special Certificates</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS GEN – 1 Year</td>
-          <td>-</td>
-          <td>7000</td>
-          <td>2500</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS GEN – 2 Year</td>
-          <td>-</td>
-          <td>8000</td>
-          <td>3000</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS GEN – 3 Year</td>
-          <td>-</td>
-          <td>10000</td>
-          <td>4000</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS Combo – 1 Year</td>
-          <td>-</td>
-          <td>10000</td>
-          <td>2500</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS Combo – 2 Year</td>
-          <td>-</td>
-          <td>12000</td>
-          <td>3000</td>
-        </tr>
-        <tr>
-          <td>Class 2 DS Combo – 3 Year</td>
-          <td>-</td>
-          <td>15000</td>
-          <td>4000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </section>
+
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -461,66 +343,123 @@
   </div>
 </footer>
 <script>
-document.getElementById("calculateBtn").addEventListener("click", function () {
+  document.querySelector(".calculate-btn").addEventListener("click", calculateDSC);
 
-  const nationality = document.getElementById("nationality").value;
-  const category    = document.getElementById("category").value;
-  const type        = document.getElementById("type").value;
-  const year        = document.getElementById("year").value;
-  const usb         = document.getElementById("usb").value;
-  const support     = document.getElementById("support").value;
+function calculateDSC() {
+
+  /* ===============================
+     GET FORM VALUES (ORDER BASED)
+  =============================== */
+
+  const selects = document.querySelectorAll(".dsc-form select");
+
+  const applicantType = selects[0].value;   // Individual / Organization
+  const certClass    = selects[1].value;    // Class 2 / Class 3 / DGFT
+  const certType     = selects[2].value;    // General / Combo
+  const validity     = selects[3].value;    // 1 Year / 2 Years / 3 Years
+  const usbOption    = selects[4].value;    // USB Token Required / Already Have
+
+  /* ===============================
+     PRICE LOGIC (TEMP – DB READY)
+     👉 YAHAN DB SE VALUE AAYEGI
+  =============================== */
 
   let dscCost = 0;
-  let usbCost = 0;
   let supportCost = 0;
+  let usbCost = 0;
 
-  /* ===== BASE DSC PRICES (example) ===== */
-  if (type === "normal") dscCost = 1500;
-  if (type === "combo")  dscCost = 2500;
-  if (type === "dgft")   dscCost = 3500;
+  /* 🔹 DSC BASE COST (SAMPLE) */
+  if (certClass === "Class 3" && certType === "General" && validity === "1 Year") {
+    dscCost = (applicantType === "Individual") ? 750 : 750;
+    supportCost = 300;
+  }
 
-  /* ===== YEAR MULTIPLIER ===== */
-  if (year === "2") dscCost *= 1.8;
-  if (year === "3") dscCost *= 2.5;
+  if (certClass === "Class 3" && certType === "Combo" && validity === "1 Year") {
+    dscCost = 1250;
+    supportCost = 1500;
+  }
 
-  /* ===== USB ===== */
-  if (usb === "yes") usbCost = 500;
+  if (certClass === "Class 2" && certType === "Combo" && validity === "1 Year") {
+    dscCost = 7000;
+    supportCost = 2500;
+  }
 
-  /* ===== SUPPORT ===== */
-  if (support === "yes") supportCost = 1000;
+  if (certClass === "DGFT" && validity === "1 Year") {
+    dscCost = 1450;
+    supportCost = 1500;
+  }
 
-  const total = dscCost + usbCost + supportCost;
+  /* 🔹 USB TOKEN */
+  if (usbOption === "USB Token Required") {
+    usbCost = 500;
+  }
 
-  /* ===== UPDATE UI ===== */
-  document.getElementById("dsc").innerText = "₹" + dscCost.toFixed(0);
-  document.getElementById("usbCost").innerText = "₹" + usbCost.toFixed(0);
-  document.getElementById("supportCost").innerText = "₹" + supportCost.toFixed(0);
-  document.getElementById("total").innerText = "₹" + total.toFixed(0);
+  /* ===============================
+     CALCULATION
+  =============================== */
 
-});
+  let subtotal = dscCost + supportCost + usbCost;
+  let gst = subtotal * 0.18;
+  let finalTotal = subtotal + gst;
 
-</script>
+  /* ===============================
+     UPDATE UI
+  =============================== */
+
+  updateValue("DSC Certificate Cost", dscCost);
+  updateValue("USB Token", usbCost);
+  updateValue("L1 Support Services", supportCost);
+  updateValue("Subtotal", subtotal);
+  updateValue("GST (18%)", Math.round(gst));
+  updateValue("Final Total", Math.round(finalTotal));
+}
+
+/* ===============================
+   HELPER FUNCTION
+=============================== */
+
+function updateValue(labelText, value) {
+  const rows = document.querySelectorAll(".row");
+  rows.forEach(row => {
+    if (row.children[0].innerText === labelText) {
+      row.children[1].innerText = "₹" + value;
+    }
+  });
+}
+
+</script>\
 <script>
-document.getElementById("calculateBtn").addEventListener("click", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-  // STEP 1: Get Total value safely
-  let totalText = document.getElementById("total").innerText;
-  let total = parseInt(totalText.replace("₹", "").trim());
+  const btn = document.getElementById("calculateBtn");
 
-  // STEP 2: Fixed GST
-  let gst = 500;
-
-  // STEP 3: Set GST text
-  document.getElementById("gstAmount").innerText = "₹" + gst;
-
-  // STEP 4: Calculate FINAL TOTAL
-  let finalTotal = total + gst;
-
-  // STEP 5: Show Final Total
-  document.getElementById("grandTotal").innerText = "₹" + finalTotal;
+  btn.addEventListener("click", function () {
+    calculateDSC();
+  });
 
 });
+
+function calculateDSC() {
+  alert("CALCULATE CLICK WORKING 🔥");
+
+  // demo values (replace with real logic later)
+  const certCost = 1000;
+  const usbCost = 500;
+  const supportCost = 300;
+
+  const subtotal = certCost + usbCost + supportCost;
+  const gst = subtotal * 0.18;
+  const total = subtotal + gst;
+
+  document.querySelectorAll(".dsc-summary .row span")[1].innerText = "₹" + certCost;
+  document.querySelectorAll(".dsc-summary .row span")[3].innerText = "₹" + usbCost;
+  document.querySelectorAll(".dsc-summary .row span")[5].innerText = "₹" + supportCost;
+  document.querySelector(".row.total span:last-child").innerText = "₹" + subtotal;
+  document.querySelector(".row:nth-last-child(2) span:last-child").innerText = "₹" + gst.toFixed(0);
+  document.querySelector(".grand-total span:last-child").innerText = "₹" + total.toFixed(0);
+}
 </script>
+
 
 <script src="calculator.js"></script>
 <script src="./../index.js"></script>

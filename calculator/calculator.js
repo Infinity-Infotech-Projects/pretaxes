@@ -363,3 +363,20 @@ if (!amount || !gstRate || !gstType) {
   alert("Please fill all fields");
   return;
 }
+
+  const hamburger = document.querySelector(".hamburger");
+  const body = document.body;
+
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      body.classList.toggle("menu-open");
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (e.target.closest(".calculate-btn")) {
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+

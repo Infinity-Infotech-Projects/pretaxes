@@ -6,6 +6,17 @@
   --white: #ffffff;
   --muted: #475569;
 }
+* { pointer-events: auto !important; }
+
+body { padding-top: 90px; }
+.emi-wrapper { margin-top: 140px; }
+.gst-section { margin-top: 140px; }
+.dsc-section { margin-top: 140px; }
+
+button { z-index: 9999 !important; }
+
+header { height: 110px; }   /* duplicate */
+.navbar { pointer-events: auto; }
 
 * {
   margin: 0;
@@ -185,14 +196,6 @@ th, td {
 }
 .emi-wrapper {
   margin-top: 140px;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;          /* 🔥 FORCE HEIGHT */
-  z-index: 9999;
 }
 @media (max-width: 768px) {
   header {
@@ -776,10 +779,6 @@ body {
   display: none !important;
 }
 /* ===== FORCE CLICK FIX ===== */
-* {
-  pointer-events: auto !important;
-}
-
 button,
 a,
 input,
@@ -859,15 +858,6 @@ button{
 }
 /* ================= FORCE CLICK FIX ================= */
 
-/* Navbar always on top */
-.navbar,
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
 /* Push ALL calculator sections below navbar */
 .emi-section,
@@ -985,3 +975,315 @@ button,
   padding-top: 10px;
   color: #0f2854;
 }
+.dsc-calculator {
+  padding: 60px 6%;
+  background: #f6fbff;
+}
+
+.dsc-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* FORM */
+.dsc-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.dsc-form h2 {
+  color: #0F4C75;
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.field small {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.field select {
+  width: 100%;
+  height: 46px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #eef7fd;
+  font-size: 14px;
+}
+
+.calculate-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #0F4C75;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* SUMMARY */
+.dsc-summary {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.dsc-summary h3 {
+  margin-bottom: 20px;
+  color: #0F4C75;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.support-note {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+.total {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.grand-total {
+  border-top: 2px solid #0F4C75;
+  padding-top: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F4C75;
+}
+
+.gst-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+  .dsc-container {
+    grid-template-columns: 1fr;
+  }
+}
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto !important;   /* 👈 force dropdown to open downward */
+}
+:root{
+  --navbar-height: 90px;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  z-index: 9999;
+}
+
+.dsc-calculator{
+  padding-top: calc(var(--navbar-height) + 20px);
+}
+.dsc-form select{
+  position: relative;
+  z-index: 1;
+  background-clip: padding-box;
+}
+.page-content,
+main,
+.container{
+  overflow: visible !important;
+}
+/* ===== FORCE CALCULATE BUTTON CLICK ===== */
+.calculate-btn,
+button,
+button[type="button"],
+button[type="submit"] {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+.btn-calc {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+section::before,
+section::after,
+.main::before,
+.main::after {
+  pointer-events: none !important;
+}
+/* ================= FORCE NAVBAR FIX ================= */
+
+/* mobile only */
+@media (max-width: 768px) {
+
+  /* navbar menu overlay must NOT block page */
+  body:not(.menu-open) header,
+  body:not(.menu-open) .navbar {
+    pointer-events: auto;
+  }
+
+  /* when menu is OPEN, disable page below */
+  body.menu-open .dsc-calculator,
+  body.menu-open .emi-section,
+  body.menu-open .gst-section,
+  body.menu-open .it-wrapper,
+  body.menu-open footer {
+    pointer-events: none !important;
+    filter: blur(1px);
+  }
+
+  /* when menu CLOSED, enable everything */
+  body:not(.menu-open) .dsc-calculator,
+  body:not(.menu-open) .emi-section,
+  body:not(.menu-open) .gst-section,
+  body:not(.menu-open) .it-wrapper,
+  body:not(.menu-open) footer {
+    pointer-events: auto !important;
+    filter: none;
+  }
+}
+
+/* calculator always above page layers */
+.dsc-calculator {
+  position: relative;
+  z-index: 5;
+}
+/* ================= FORCE EMI GAP FIX ================= */
+
+/* REMOVE ALL TOP SPACING */
+body {
+  padding-top: 0 !important;
+}
+
+/* NAVBAR stays fixed */
+header,
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 9999;
+}
+
+/* EMI SECTION EXACTLY BELOW NAVBAR */
+.emi-section {
+  margin-top: 0 !important;
+  padding-top: 110px !important; /* navbar height only */
+}
+
+/* KILL EXTRA WRAPPER GAPS */
+.emi-wrapper,
+.emi-section h1,
+.emi-section h2 {
+  margin-top: 0 !important;
+}
+
+/* MOBILE SAFETY */
+@media (max-width: 768px) {
+  .emi-section {
+    padding-top: 120px !important;
+  }
+}
+/* ================= FORCE CLICK FIX (FINAL) ================= */
+
+/* 1. Navbar click area limit */
+header,
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* 2. Mobile menu overlay ko calculator ke upar aane se roko */
+body.menu-open header {
+  pointer-events: none;
+}
+body.menu-open .navbar * {
+  pointer-events: auto;
+}
+
+/* 3. Calculator area ALWAYS clickable */
+.dsc-calculator,
+.dsc-container,
+.dsc-form,
+.dsc-summary,
+.emi-section,
+.gst-section,
+.it-wrapper {
+  position: relative;
+  z-index: 2000;
+  pointer-events: auto !important;
+}
+
+/* 4. Calculate button HARD FORCE */
+.calculate-btn,
+button,
+button[type="button"],
+button[type="submit"] {
+  position: relative !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+/* 5. Kill any invisible overlay */
+.overlay,
+.backdrop,
+.modal,
+.modal-bg,
+.fullscreen,
+.screen,
+.navbar::before,
+.navbar::after {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* 6. Remove extra top gap (EMI / DSC / GST pages) */
+.emi-section,
+.dsc-calculator,
+.gst-section {
+  margin-top: 0 !important;
+  padding-top: 40px !important;
+}
+
+/* 7. Body padding only once */
+body {
+  padding-top: 90px !important;
+}
+
+/* ================= END FIX ================= */

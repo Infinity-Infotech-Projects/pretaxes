@@ -1201,6 +1201,90 @@
 
 
 </section>
+<section class="tax-info-card">
+  <h2>States with No Professional Tax</h2>
+  <p>
+    Certain Indian states and union territories do not levy Professional Tax on
+    individuals or registered businesses. Businesses operating in these regions
+    are exempt from Professional Tax compliance.
+  </p>
+
+  <ul class="tax-state-list">
+    <li>Arunachal Pradesh</li>
+    <li>Himachal Pradesh</li>
+    <li>Delhi</li>
+    <li>Haryana</li>
+    <li>Uttar Pradesh</li>
+    <li>Uttarakhand</li>
+    <li>Andaman & Nicobar Islands</li>
+    <li>Daman & Diu</li>
+    <li>Dadra & Nagar Haveli</li>
+    <li>Lakshadweep</li>
+    <li>Jammu & Kashmir</li>
+    <li>Punjab</li>
+    <li>Rajasthan</li>
+    <li>Chandigarh</li>
+    <li>Goa</li>
+  </ul>
+</section>
+<section class="gst-layout">
+  
+  <!-- LEFT CONTENT -->
+  <div class="gst-content">
+    <h2>GSTR-3B Filing Due Dates</h2>
+    <p>
+      The GSTR-3B return filing due date depends on your GST filing frequency
+      and annual turnover.
+    </p>
+
+    <div class="gst-box">
+      <h4>Quarterly Filing (QRMP Scheme)</h4>
+      <p>
+        Businesses with turnover up to ₹5 Crore opting for quarterly filing must
+        file GSTR-3B:
+      </p>
+      <ul>
+        <li><strong>22nd</strong> – South India</li>
+        <li><strong>24th</strong> – North India</li>
+      </ul>
+    </div>
+
+    <div class="gst-box">
+      <h4>Monthly Filing</h4>
+      <p>
+        Businesses opting for monthly filing must submit GSTR-3B by the
+        <strong>20th of the following month</strong>.
+      </p>
+    </div>
+
+    <p class="gst-note">
+      Note: Self-assessment tax payment must be completed if sufficient ITC is
+      not available.
+    </p>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="gst-image">
+    <img src="./img/gst returns.jpg" alt="GSTR-3B Due Dates">
+  </div>
+
+</section>
+
+<div class="tax-disclaimer">
+  <p>
+    <strong>Disclaimer:</strong>
+    While we update the tax compliance calendar from time to time, taxpayers are
+    advised to use their own discretion before relying on the information provided.
+  </p>
+
+  <p>
+    <strong>Sources:</strong>
+    Information is compiled from the Government of India
+    <em>Income Tax</em>, <em>GST</em>, and <em>ROC</em> compliance portals,
+    along with other reliable sources.
+  </p>
+</div>
+
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -1319,6 +1403,16 @@
     });
   }
 </script>
+<script>
+function goTo(id) {
+  const el = document.getElementById(id);
+  const yOffset = -100; // navbar height
+  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+</script>
+
 <script src="index.js"></script>
 
 </body>

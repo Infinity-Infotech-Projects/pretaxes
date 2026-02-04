@@ -3524,3 +3524,254 @@ body{
   color:#555;
   line-height:1.4;
 }
+/* ================= FORCE SERVICES DROPDOWN LIKE CALCULATOR ================= */
+@media (min-width: 992px) {
+
+  /* Force parent positioning */
+  .nav-item.dropdown.services {
+    position: relative;
+  }
+
+  /* RESET ALL OLD BEHAVIOUR */
+  .services-menu,
+  .sub-menu {
+    display: none !important;
+  }
+
+  /* FORCE HOVER OPEN (same as calculator) */
+  .nav-item.dropdown.services:hover > .services-menu {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,.2) !important;
+    padding: 8px 0 !important;
+    width: max-content !important;
+    z-index: 9999;
+  }
+
+  /* LINKS STYLE */
+  .services-menu a,
+  .service-toggle {
+    display: block;
+    padding: 10px 18px !important;
+    color: #0F4C75 !important;
+    background: transparent !important;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .services-menu a:hover,
+  .service-toggle:hover {
+    background: #BDE8F5 !important;
+  }
+
+  /* REMOVE SIDE SUBMENU COMPLETELY */
+  .service-item:hover > .sub-menu {
+    display: none !important;
+  }
+}
+/* ================= HARD FORCE MEGA DROPDOWN ================= */
+@media (min-width: 992px) {
+
+  /* Services dropdown must stay open */
+  .nav-item.dropdown:hover > .services-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Service item */
+  .service-item {
+    position: relative !important;
+  }
+
+  /* FORCE submenu positioning */
+  .service-item > .sub-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 100% !important;
+    min-width: 260px;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25) !important;
+    padding: 8px 0 !important;
+    z-index: 10000 !important;
+    pointer-events: auto !important;
+  }
+
+  /* FORCE OPEN ON HOVER */
+  .service-item:hover > .sub-menu {
+    display: block !important;
+  }
+
+  /* KEEP OPEN WHEN MOVING CURSOR */
+  .service-item > .sub-menu:hover {
+    display: block !important;
+  }
+
+  /* CREATE INVISIBLE HOVER BRIDGE */
+  .service-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 100%;
+    background: transparent;
+  }
+
+  /* Styling */
+  .service-toggle {
+    display: block !important;
+    width: 100%;
+    padding: 12px 18px !important;
+    background: transparent !important;
+    color: #0F4C75 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  .service-toggle:hover {
+    background: #BDE8F5 !important;
+  }
+
+  .sub-menu a {
+    display: block;
+    padding: 10px 18px !important;
+    color: #0F4C75 !important;
+    white-space: nowrap;
+  }
+
+  .sub-menu a:hover {
+    background: #BDE8F5 !important;
+  }
+}
+.tax-info-card {
+  background: #ffffff7a;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.tax-info-card h2 {
+  color: #0F4C75;
+  margin-bottom: 12px;
+}
+
+.tax-info-card p {
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.tax-state-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.tax-state-list li {
+  background: #f1f8fc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #0F4C75;
+  font-weight: 500;
+}
+
+.gst-info-box {
+  background: #f6fbff;
+  padding: 18px;
+  border-left: 4px solid #0F4C75;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.gst-info-box h4 {
+  margin-bottom: 8px;
+  color: #0F4C75;
+}
+
+.tax-note {
+  font-size: 14px;
+  color: #666;
+}
+.tax-disclaimer {
+  background: #f6fbff;
+  border-left: 4px solid #0F4C75;
+  padding: 16px 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.tax-disclaimer strong {
+  color: #0F4C75;
+}
+/* ================= GST LAYOUT ================= */
+
+.gst-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.gst-content {
+  padding-right: 0; /* remove right spacing */
+}
+
+.gst-image img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-left: auto;
+}
+
+/* BOXES */
+.gst-box {
+  background: #f6fbff;
+  border-left: 4px solid #0F4C75;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.gst-box h4 {
+  color: #0F4C75;
+  margin-bottom: 8px;
+}
+
+.gst-note {
+  font-size: 14px;
+  color: #666;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+  .gst-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gst-image {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .gst-image img {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+/* ================= FIX SCROLL OFFSET FOR STICKY NAV ================= */
+
+.month-section {
+  scroll-margin-top: 100px; /* navbar height + thoda gap */
+}
