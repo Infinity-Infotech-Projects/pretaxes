@@ -6,32 +6,46 @@
   --white: #ffffff;
   --muted: #475569;
 }
-* { pointer-events: auto !important; }
 
-body { padding-top: 90px; }
-.emi-wrapper { margin-top: 140px; }
-.gst-section { margin-top: 140px; }
-.dsc-section { margin-top: 140px; }
-
-button { z-index: 9999 !important; }
-
-header { height: 110px; }   /* duplicate */
-.navbar { pointer-events: auto; }
-
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  pointer-events: auto !important;
 }
 
 body {
   font-family: Inter, sans-serif;
   background: #f4fbff;
   color: var(--primary);
+  padding-top: 90px;
 }
 
+/* ================= NAVBAR FIX ================= */
+header {
+  height: 110px;
+}
+
+.navbar,
+nav {
+  pointer-events: auto;
+}
+
+/* ================= SECTIONS OFFSET ================= */
+.emi-section,
+.gst-section,
+.dsc-section {
+  position: relative;
+  z-index: 10;
+  margin-top: 140px;
+  padding-top: 160px; /* navbar + buffer */
+}
+
+/* ================= EMI LAYOUT ================= */
 .emi-section {
-  padding: 80px 6%;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
 h1 {
@@ -45,10 +59,12 @@ h1 {
   color: var(--muted);
 }
 
-/* CALCULATOR */
+/* ================= CALCULATOR ================= */
 .emi-wrapper {
   display: flex;
   gap: 40px;
+  position: relative;
+  z-index: 5;
 }
 
 .emi-box {
@@ -57,6 +73,8 @@ h1 {
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 20px 50px rgba(15,40,84,.08);
+  position: relative;
+  z-index: 5;
 }
 
 .emi-box h3 {
@@ -77,7 +95,9 @@ input {
   background: #eef6fb;
 }
 
-button {
+/* ================= BUTTON FIX ================= */
+button,
+#calculateBtn {
   margin-top: 25px;
   padding: 14px;
   width: 100%;
@@ -86,8 +106,12 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
 }
 
+/* ================= RESULT ================= */
 .result {
   display: flex;
   justify-content: space-between;
@@ -95,180 +119,75 @@ button {
   border-bottom: 1px solid #e5e7eb;
 }
 
-/* CHARTS */
-.emi-charts {
-  display: flex;
-  gap: 40px;
-  margin-top: 80px;
-}
-
-.chart-box {
-  flex: 1;
-  background: var(--white);
-  padding: 30px;
-  border-radius: 14px;
-}
-
-/* TABLE */
-.emi-table {
-  margin-top: 80px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--white);
-}
-
-th, td {
-  padding: 12px;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: center;
-}
-
-/* MOBILE */
-@media(max-width:900px) {
-  .emi-wrapper,
-  .emi-charts {
-    flex-direction: column;
-  }
-}
-.full-width {
-  flex: 100%;
-}
-
-
-.chart-box h3 {
-  margin-bottom: 20px;
-  color: var(--primary);
-}
-
-/* TABLE POLISH */
-.emi-table h3 {
-  margin-bottom: 20px;
-}
-
-.emi-table {
-  background: var(--white);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 20px 50px rgba(15,40,84,.08);
-}
-/* ===== CHART FIX ===== */
-.chart-box {
-  position: relative;
-}
-
-.chart-box canvas {
-  width: 100% !important;
-  height: 360px !important;   /* THIS FIXES THE ISSUE */
-}
 /* ================= CHART SECTION ================= */
-
 .emi-charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin-top: 60px;
+  position: relative;
+  z-index: 5;
 }
 
 .chart-box {
-  background: #ffffff;
+  background: var(--white);
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(15, 40, 84, 0.08);
+  box-shadow: 0 12px 30px rgba(15,40,84,.08);
+  position: relative;
   overflow: hidden;
 }
 
 .chart-box h3 {
   font-size: 18px;
   margin-bottom: 16px;
-  color: #0f2854;
+  color: var(--primary);
+  text-align: center;
 }
 
-/* Canvas control */
 .chart-box canvas {
   width: 100% !important;
   height: 280px !important;
 }
-.emi-section {
-  padding-top: 140px;   /* navbar height + gap */
-}
-.emi-wrapper {
-  margin-top: 140px;
-}
-@media (max-width: 768px) {
-  header {
-    height: 110px;
-  }
-}
-body {
-  padding-top: 90px;
-}
-@media (max-width: 768px) {
-  body {
-    padding-top: 110px;
-  }
-}
-.emi-section {
-  position: relative;
-  z-index: 1;
-}
-.emi-section {
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  header {
-    height: 110px;
-  }
-}
-button,
-#calculateBtn {
-  position: relative;
-  z-index: 50;
-  pointer-events: auto;
-}
-.gst-section,
-.emi-section {
-  position: relative;
-  z-index: 10;
-}
-/* ================= EMI CLICK FIX ================= */
 
-/* Push EMI below fixed navbar */
-.emi-section {
-  position: relative;
-  z-index: 1;
-  padding-top: 160px; /* navbar height + buffer */
-}
-
-/* Make EMI content clickable */
-.emi-wrapper,
-.emi-box,
-.emi-charts,
+/* ================= TABLE ================= */
 .emi-table {
+  margin-top: 80px;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(15,40,84,.08);
   position: relative;
   z-index: 5;
 }
 
-/* FORCE button to accept clicks */
-.emi-box button {
-  position: relative;
-  z-index: 10;
-  pointer-events: auto !important;
+.emi-table h3 {
+  margin-bottom: 20px;
 }
 
-/* Navbar should not block below clicks */
-header,
-.navbar,
-nav {
-  pointer-events: auto;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
 
+/* ================= HELPERS ================= */
+.full-width {
+  flex: 100%;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
+
+  .emi-wrapper {
+    flex-direction: column;
+  }
 
   .emi-charts {
     grid-template-columns: 1fr;
@@ -277,36 +196,21 @@ nav {
   .chart-box canvas {
     height: 260px !important;
   }
+}
 
-  .chart-box h3 {
-    text-align: center;
+@media (max-width: 768px) {
+  body {
+    padding-top: 110px;
   }
-
-}
-:root {
-  --primary: #0f2854;
-  --secondary: #1c4d8d;
-  --accent: #4988c4;
-  --bg: #bde8f5;
-  --white: #ffffff;
-  --muted: #475569;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Inter, sans-serif;
-  background: #f4fbff;
-  color: var(--primary);
-  overflow-x: hidden;
-}
+/* ================= GST SECTION ================= */
 
 .gst-section {
   padding: 80px 6%;
+  margin-top: 140px; /* dropdown / navbar safe */
+  position: relative;
+  z-index: 10;
 }
 
 h1 {
@@ -320,41 +224,51 @@ h1 {
   color: var(--muted);
 }
 
-/* LAYOUT */
+/* ================= GST LAYOUT ================= */
+
 .gst-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 40px;
+  align-items: flex-start;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .gst-box {
+  width: 50%;
   background: var(--white);
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 20px 50px rgba(15,40,84,.08);
+  position: relative;
+  z-index: 1;
 }
 
 .gst-box h3 {
   margin-bottom: 20px;
 }
 
-/* FORM */
+/* ================= FORM ================= */
+
 label {
   display: block;
   margin-top: 14px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 12px;
   margin-top: 6px;
   border-radius: 6px;
   border: none;
   background: #eef6fb;
+  position: relative;
+  z-index: 1;
 }
 
-button {
+button,
+#calculateBtn {
   margin-top: 25px;
   padding: 14px;
   width: 100%;
@@ -363,9 +277,13 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
 }
 
-/* RESULTS */
+/* ================= RESULTS ================= */
+
 .result {
   display: flex;
   justify-content: space-between;
@@ -379,17 +297,7 @@ button {
   border-bottom: none;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .gst-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-}
-/* ================= GST FAQ ================= */
+/* ================= FAQ ================= */
 
 .gst-faq {
   padding: 90px 6%;
@@ -413,7 +321,6 @@ button {
   margin: 12px 0 50px;
 }
 
-/* FAQ ITEM */
 .faq-item {
   border-radius: 12px;
   background: #f4fbff;
@@ -422,7 +329,6 @@ button {
   border: 1px solid #e5eff7;
 }
 
-/* QUESTION */
 .faq-question {
   width: 100%;
   padding: 18px 22px;
@@ -444,7 +350,6 @@ button {
   transition: transform 0.3s ease;
 }
 
-/* ANSWER */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -455,7 +360,6 @@ button {
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
-/* ACTIVE STATE */
 .faq-item.active .faq-answer {
   max-height: 200px;
   padding: 0 22px 18px;
@@ -464,43 +368,9 @@ button {
 .faq-item.active .faq-question span {
   transform: rotate(45deg);
 }
-/* ===== HARD FORCE GST LAYOUT ===== */
-.gst-wrapper {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  align-items: start !important;
-  gap: 40px !important;
-}
 
-/* Mobile only stack */
-@media (max-width: 768px) {
-  .gst-wrapper {
-    grid-template-columns: 1fr !important;
-  }
-}
-.gst-section {
-  margin-top: 120px !important;
-}
-.gst-wrapper {
-  display: flex !important;
-  gap: 40px;
-}
+/* ================= NAVBAR SAFETY ================= */
 
-.gst-box {
-  width: 50%;
-}
-
-@media (max-width: 768px) {
-  .gst-wrapper {
-    flex-direction: column;
-  }
-  .gst-box {
-    width: 100%;
-  }
-}
-.gst-section {
-  margin-top: 140px;   /* 🔥 dropdown safe space */
-}
 header,
 .navbar {
   position: fixed;
@@ -509,39 +379,37 @@ header,
   width: 100%;
   z-index: 999;
 }
-.gst-box {
-  position: relative;
-  z-index: 1;
-}
-select {
-  position: relative;
-}
-button,
-#calculateBtn {
-  position: relative;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 34px;
+  }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
+  .gst-wrapper {
+    flex-direction: column;
+  }
+
+  .gst-box {
+    width: 100%;
+  }
+
   .faq-container h2 {
     font-size: 28px;
   }
 }
 :root {
-  --primary: #0f2854;
-  --secondary: #1c4d8d;
-  --accent: #4988c4;
-  --bg: #bde8f5;
-}
-:root {
   --navbar-height: 90px;
 }
 
+/* ================= RESET ================= */
 * {
   box-sizing: border-box;
   font-family: Inter, sans-serif;
+  pointer-events: auto;
 }
 
 body {
@@ -549,6 +417,19 @@ body {
   margin: 0;
 }
 
+/* ================= COMMON OFFSET ================= */
+.emi-section,
+.gst-section,
+.dsc-section,
+.container,
+.it-wrapper,
+.it-result-page {
+  margin-top: 140px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= INCOME TAX WRAPPER ================= */
 .it-wrapper {
   padding: 80px 6%;
 }
@@ -558,13 +439,14 @@ h1 {
   margin-bottom: 40px;
 }
 
+/* ================= GRID ================= */
 .it-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
 }
 
-/* LEFT */
+/* ================= LEFT ================= */
 .it-left {
   background: #fff;
   padding: 30px;
@@ -593,20 +475,17 @@ h1 {
   border-bottom: 3px solid var(--secondary);
 }
 
-.it-step {
-  display: none;
-}
+.it-step { display: none; }
+.it-step.active { display: block; }
 
-.it-step.active {
-  display: block;
-}
-
+/* ================= FORM ================= */
 label {
   display: block;
   margin-top: 15px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 12px;
   margin-top: 6px;
@@ -626,10 +505,12 @@ button {
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
-button.next,
-button.primary {
+button.primary,
+button.next {
   background: var(--secondary);
   color: #fff;
 }
@@ -638,7 +519,7 @@ button.back {
   background: #e5e7eb;
 }
 
-/* RIGHT */
+/* ================= RIGHT ================= */
 .it-right {
   background: #fff;
   padding: 30px;
@@ -646,7 +527,7 @@ button.back {
   box-shadow: 0 20px 50px rgba(15,40,84,.08);
   height: fit-content;
   position: sticky;
-  top: 100px;
+  top: calc(var(--navbar-height) + 10px);
 }
 
 .summary p {
@@ -663,27 +544,22 @@ button.back {
   margin: 20px 0;
 }
 
-.cta {
-  width: 100%;
-  background: var(--accent);
+.cta,
+.cta-btn {
+  background: linear-gradient(135deg,#1c4d8d,#4988c4);
   color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .it-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .it-right {
-    position: static;
-  }
-}
-/* ================= INCOME TAX RESULT PAGE ================= */
-
+/* ================= RESULT PAGE ================= */
 .it-result-page {
-  margin: 60px auto;
   max-width: 1200px;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
@@ -697,17 +573,7 @@ button.back {
   background: #fff;
   border-radius: 18px;
   padding: 28px;
-  box-shadow: 0 15px 35px rgba(15,40,84,0.08);
-}
-
-.it-card h3 {
-  color: #0f2854;
-  margin-bottom: 20px;
-}
-
-.it-card h4 {
-  color: #1c4d8d;
-  margin: 18px 0 10px;
+  box-shadow: 0 15px 35px rgba(15,40,84,.08);
 }
 
 .it-row {
@@ -722,185 +588,48 @@ button.back {
   font-weight: 700;
 }
 
-.it-highlight {
-  margin-top: 20px;
-  background: #ecfdf5;
-  border-left: 5px solid #22c55e;
-  padding: 14px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-  color: #166534;
-}
-
 .it-summary {
   position: sticky;
   top: 30px;
 }
 
-.it-save {
-  background: #e9fbf1;
-  padding: 18px;
-  border-radius: 14px;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.primary-btn {
-  width: 100%;
-  background: linear-gradient(135deg,#1c4d8d,#4988c4);
-  color: #fff;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .it-result-grid {
-    grid-template-columns: 1fr;
-  }
-  .it-summary {
-    position: static;
-  }
-}
-body {
-  pointer-events: auto;
-}
-
-.it-wrapper,
-.it-result-page {
-  pointer-events: auto;
-}
-.overlay,
-.backdrop {
-  display: none !important;
-}
-/* ===== FORCE CLICK FIX ===== */
+/* ================= FORCE CLICK SAFETY ================= */
 button,
 a,
 input,
 select {
   pointer-events: auto !important;
-  z-index: 9999 !important;
-  position: relative;
 }
+
 .overlay,
 .backdrop,
 .modal-bg,
 .modal-overlay,
-.screen,
 .fullscreen {
   display: none !important;
 }
-.it-wrapper {
-  position: relative;
-  z-index: 1;
-  pointer-events: auto;
-}
-.hidden {
-  display: none !important;
-}
-.cta-btn {
-  background: linear-gradient(135deg, #1c4d8d, #4988c4);
-  border: none;
-  color: #fff;
-  padding: 12px 22px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
-  width: fit-content;
-  align-self: center;
-}
 
-.cta-btn:hover {
-  opacity: 0.95;
-}
-body{background:#f4f7fb;font-family:Arial}
-.container{
-  max-width:1100px;
-  margin:40px auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:12px;
-}
-select,button{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-}
-button{
-  background:#1e4fa1;
-  color:#fff;
-  border:none;
-  font-weight:bold;
-}
-.row{
-  display:flex;
-  justify-content:space-between;
-  margin:10px 0;
-}
-.total{
-  font-size:20px;
-  font-weight:bold;
-}
-.note{
-  font-size:12px;
-  color:#666;
-}
-/* ================= FORCE CLICK FIX ================= */
-
-
-/* Push ALL calculator sections below navbar */
-.emi-section,
-.gst-section,
-.dsc-section,
-.container {
-  margin-top: 140px !important;
-  position: relative;
-  z-index: 1;
-}
-
-/* Calculator wrappers safe */
-.emi-wrapper,
-.gst-wrapper {
-  position: relative;
-  z-index: 2;
-}
-
-/* FORCE button clickable */
-button,
-.emi-box button,
-.gst-box button,
-.card button {
-  position: relative !important;
-  z-index: 999 !important;
-  pointer-events: auto !important;
-}
-
-/* Kill invisible overlay clicks */
-.navbar::after,
-.navbar::before {
-  pointer-events: none !important;
-}
-
-/* Mobile safety */
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
+
+  .it-grid,
+  .it-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .it-right,
+  .it-summary {
+    position: static;
+  }
+
   .emi-section,
   .gst-section,
   .dsc-section,
   .container {
-    margin-top: 160px !important;
+    margin-top: 160px;
   }
 }
+
 .dsc-table-section {
   padding: 80px 6%;
   background: #f8fbff;
