@@ -288,6 +288,58 @@ body.menu-open {
 .nav-menu.active {
   pointer-events: auto;
 }
+/* ================= FORCE DROPDOWN WIDTH FIX ================= */
+
+/* MAIN DROPDOWNS */
+.dropdown-menu,
+.services-menu,
+.sub-menu{
+  min-width: unset !important;
+  width: max-content !important;      /* 👈 only as wide as text */
+  padding: 8px 0 !important;
+}
+
+/* ITEM LINKS */
+.dropdown-menu a,
+.services-menu a,
+.sub-menu a{
+  padding: 10px 18px !important;
+  white-space: nowrap;                /* 👈 text break nahi hoga */
+}
+
+/* SERVICE TOGGLE BUTTON */
+.service-toggle{
+  padding: 10px 18px !important;
+  white-space: nowrap;
+}
+
+/* REMOVE EXTRA HORIZONTAL OFFSET */
+.nav-item.dropdown > .dropdown-menu,
+.services > .services-menu{
+  left: 0 !important;
+  right: auto !important;
+}
+@media (min-width: 992px) {
+
+  .service-item {
+    position: relative;
+  }
+
+  .service-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 10px;
+    height: 100%;
+  }
+
+  .service-item:hover > .sub-menu,
+  .sub-menu:hover {
+    display: block;
+  }
+}
+
 /* ================= DESKTOP COLOR FIX ================= */
 @media (min-width: 992px) {
 
@@ -714,6 +766,29 @@ body.menu-open {
   color: #1C4D8D !important;
   background-color: #BDE8F5 !important;
 }
+/* ================= FIX 1: NAVBAR STACKING ================= */
+header,
+.nav,
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* ================= FIX 2: HERO UNDER NAVBAR ================= */
+/* because navbar is fixed/sticky */
+.business-hero {
+  margin-top: 90px;   /* adjust if navbar height differs */
+}
+
+/* ================= FIX 3: DROPDOWN ABOVE HERO ================= */
+.services-menu,
+.services-dropdown,
+.dropdown-menu {
+  position: absolute;
+  z-index: 10000;
+}
+
 /* ================= BUTTONS ================= */
 .btn-primary {
   background: #1C4D8D;
@@ -3313,4 +3388,139 @@ a:hover {
   h2 {
     font-size: 16px;
   }
+}
+/* ================= FOOTER TEXT VISIBILITY FIX ================= */
+
+/* Entire footer text force white */
+footer,
+footer * {
+  color: #ffffff !important;
+}
+
+/* Paragraphs & about text */
+footer p {
+  color: #ffffff !important;
+  opacity: 0.9;
+}
+
+/* Footer links */
+footer a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #dbeafe !important;
+}
+
+/* Contact info icons */
+footer i,
+footer svg {
+  color: #ffffff !important;
+}
+
+/* Copyright line */
+footer .copyright,
+footer .footer-bottom {
+  color: #ffffff !important;
+  opacity: 0.85;
+}
+:root{
+  --dark:#1B262C;
+  --primary:#0F4C75;
+  --accent:#3282B8;
+  --light:#BBE1FA;
+}
+
+body{
+  margin:0;
+  font-family:system-ui, sans-serif;
+  background:#fff;
+  color:var(--dark);
+}
+
+/* NAV */
+.month-nav{
+  display:flex;
+  gap:10px;
+  padding:20px;
+  overflow-x:auto;
+  border-bottom:1px solid #eee;
+}
+.month-nav button{
+  background:#fff;
+  border:1px solid var(--accent);
+  color:var(--primary);
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.month-nav button:hover{
+  background:var(--accent);
+  color:#fff;
+}
+
+/* GRID */
+.calendar-grid{
+  padding:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* CARD */
+.month-card{
+  border:1px solid #e6e6e6;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  transition:.3s;
+}
+.month-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+/* HEADER */
+.month-header{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  padding:16px;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* LIST */
+.month-card ul{
+  list-style:none;
+  margin:0;
+  padding:18px;
+}
+.month-card li{
+  display:flex;
+  gap:14px;
+  padding:10px 0;
+  border-bottom:1px dashed #eee;
+  font-size:14.5px;
+}
+.month-card li:last-child{border:none;}
+.month-card li span{
+  color:var(--accent);
+  font-weight:700;
+  min-width:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .calendar-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  .calendar-grid{grid-template-columns:1fr;}
+}
+.note{
+  margin-top:6px;
+  font-size:13px;
+  color:#555;
+  line-height:1.4;
 }

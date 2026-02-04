@@ -1,24 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Income Tax Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Font -->
-   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Income Tax Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./../calculator/calculator.css">
-  <link rel="stylesheet" href="./../style.css">
-</head>
-<body>
-  
+    <!-- Google Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./../calculator/calculator.css" />
+    <link rel="stylesheet" href="./../style.css" />
+  </head>
+  <body>
+
 <header class="navbar">
   <div class="nav-container">
 
@@ -116,263 +117,299 @@
     </nav>
   </div>
 </header>
-<section class="it-wrapper">
+    <section class="it-wrapper">
+      <h1>Income Tax Calculator</h1>
 
-  <h1>Income Tax Calculator</h1>
+      <!-- ================= MAIN GRID ================= -->
+      <div class="it-grid">
+        <!-- ================= LEFT SIDE ================= -->
+        <div class="it-left">
+          <!-- TABS -->
+          <div class="it-tabs">
+            <button class="tab active" data-step="1">Basic Details</button>
+            <button class="tab" data-step="2">Income Details</button>
+            <button class="tab" data-step="3">Deductions</button>
+          </div>
 
-  <!-- ================= MAIN GRID ================= -->
-  <div class="it-grid">
+          <!-- ================= STEP 1 ================= -->
 
-    <!-- ================= LEFT SIDE ================= -->
-    <div class="it-left">
+          <div class="it-step active" id="step-1">
+            <h3>Basic Details</h3>
 
-      <!-- TABS -->
-      <div class="it-tabs">
-        <button class="tab active" data-step="1">Basic Details</button>
-        <button class="tab" data-step="2">Income Details</button>
-        <button class="tab" data-step="3">Deductions</button>
+            <label>Financial Year</label>
+            <select>
+              <option>FY 2025–2026</option>
+            </select>
+
+            <label>Age Group</label>
+            <select>
+              <option>Below 60</option>
+              <option>60 – 80</option>
+              <option>Above 80</option>
+            </select>
+
+            <div class="nav-btns">
+              <button class="next">Continue</button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 2 ================= -->
+          <div class="it-step" id="step-2">
+            <h3>Income Details</h3>
+
+            <label>Income from Salary</label>
+            <input type="number" id="salary" placeholder="₹" />
+
+            <label>Income from Interest</label>
+            <input type="number" id="interest" placeholder="₹" />
+
+            <label>Rental Income</label>
+            <input type="number" id="rent" placeholder="₹" />
+
+            <label>Other Income</label>
+            <input type="number" id="otherIncome" placeholder="₹" />
+
+            <div class="nav-btns">
+              <button class="back">Back</button>
+              <button class="next">Continue</button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 3 ================= -->
+          <div class="it-step" id="step-3">
+            <h3>Deductions (Old Regime)</h3>
+
+            <label>80C (Investments)</label>
+            <input type="number" id="d80c" placeholder="₹" />
+
+            <label>80D (Medical Insurance)</label>
+            <input type="number" id="d80d" placeholder="₹" />
+
+            <label>Home Loan Interest</label>
+            <input type="number" id="homeLoan" placeholder="₹" />
+
+            <label>Other Deductions</label>
+            <input type="number" id="otherDeduction" placeholder="₹" />
+
+            <div class="nav-btns">
+              <button class="back">Back</button>
+              <button
+                type="button"
+                class="primary-btn"
+                onclick="viewCalculation()"
+              >
+                View Calculation
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= RIGHT SIDE ================= -->
+        <div class="it-right">
+          <h3>Tax Liability Summary</h3>
+
+          <div class="summary">
+            <p>Old Regime <span id="oldTax">₹ 0</span></p>
+            <p>New Regime <span id="newTax">₹ 0</span></p>
+          </div>
+
+          <div class="save-box">
+            You save<br />
+            <strong id="saving">₹ 0</strong>
+          </div>
+
+          <button class="cta">Contact for Filing</button>
+        </div>
       </div>
+    </section>
+    <!-- ================= INCOME TAX RESULT PAGE ================= -->
 
-      <!-- ================= STEP 1 ================= -->
+    <section id="taxResultPage" class="it-result-page">
+      <div class="it-result-grid">
+        <!-- LEFT -->
+        <div class="it-card">
+          <h3>Tax Breakdown</h3>
 
-      <div class="it-step active" id="step-1">
-        <h3>Basic Details</h3>
+          <h4>Old Regime</h4>
+          <div class="it-row">
+            <span>Gross Income</span><span id="oldGross">₹ 0</span>
+          </div>
+          <div class="it-row">
+            <span>Deductions</span><span id="oldDeduction">₹ 0</span>
+          </div>
+          <div class="it-row">
+            <span>Taxable Income</span><span id="oldTaxable">₹ 0</span>
+          </div>
+          <div class="it-row bold">
+            <span>Total Tax</span><span id="oldTotal">₹ 0</span>
+          </div>
 
-        <label>Financial Year</label>
-        <select>
-          <option>FY 2025–2026</option>
-        </select>
+          <h4 style="margin-top: 24px">New Regime</h4>
+          <div class="it-row">
+            <span>Gross Income</span><span id="newGross">₹ 0</span>
+          </div>
+          <div class="it-row">
+            <span>Standard Deduction</span><span id="newStd">₹ 50,000</span>
+          </div>
+          <div class="it-row bold">
+            <span>Total Tax</span><span id="newTotal">₹ 0</span>
+          </div>
 
-        <label>Age Group</label>
-        <select>
-          <option>Below 60</option>
-          <option>60 – 80</option>
-          <option>Above 80</option>
-        </select>
+          <div class="it-highlight" id="bestRegime">—</div>
+        </div>
 
-        <div class="nav-btns">
-          <button class="next">Continue</button>
+        <!-- RIGHT -->
+        <div class="it-card it-summary">
+          <h3>Tax Summary</h3>
+
+          <div class="it-row">
+            <span>Old Regime</span><strong id="oldFinal">₹ 0</strong>
+          </div>
+          <div class="it-row">
+            <span>New Regime</span><strong id="newFinal">₹ 0</strong>
+          </div>
+
+          <div class="it-save">
+            You Save<br />
+            <strong id="youSave">₹ 0</strong>
+          </div>
+
+          <button class="primary-btn">Contact for Filing</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- ABOUT -->
+        <div class="footer-col">
+          <h4>About Pre-Taxes Solutions</h4>
+          <p>
+            Pre-Taxes Solutions helps individuals, startups and businesses
+            manage taxation, compliance, insurance and financial services with
+            accuracy, transparency and expert guidance.
+          </p>
+
+          <div class="footer-social">
+            <a href="https://www.facebook.com/share/17q7JfRwk5/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://x.com/MMahidhariya"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="./../index.html">Home</a></li>
+            <li><a href="./../overview.html">About Us</a></li>
+            <li><a href="./../team.html">Our Team</a></li>
+            <li><a href="./../insaurance.html">Insurance</a></li>
+            <li><a href="./../taxcal.html">Tax Calendar</a></li>
+            <li><a href="./../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- BUSINESS SERVICES -->
+        <div class="footer-col">
+          <h4>Business Services</h4>
+          <ul>
+            <li><a href="./../business/company.html">Company Formation</a></li>
+            <li>
+              <a href="./../business/consulting.html">Consulting & Advisory</a>
+            </li>
+            <li>
+              <a href="./../business/accounting.html"
+                >Accounting & Bookkeeping</a
+              >
+            </li>
+            <li>
+              <a href="./../business/auditioning.html">Auditing Services</a>
+            </li>
+            <li>
+              <a href="./../business/companylaw.html">Company Law Services</a>
+            </li>
+            <li><a href="./../business/payroll.html">Payroll Management</a></li>
+            <li><a href="./../business/other.html">Other Services</a></li>
+          </ul>
+        </div>
+
+        <!-- INSURANCE SERVICES -->
+        <div class="footer-col">
+          <h4>Insurance Services</h4>
+          <ul>
+            <li><a href="./../insaurance/life.html">Life Insurance</a></li>
+            <li><a href="./../insaurance/health.html">Health Insurance</a></li>
+            <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
+            <li>
+              <a href="./../insaurance/general.html">General Insurance</a>
+            </li>
+            <li>
+              <a href="./../insaurance/corporate.html">Corporate Insurance</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- LOANS & INVESTMENT -->
+        <div class="footer-col">
+          <h4>Loans & Investment</h4>
+          <ul>
+            <li><a href="./../loans/personal.html">Personal Loan</a></li>
+            <li><a href="./../business.html">Business Loan</a></li>
+            <li><a href="./../loans/home.html">Home Loan</a></li>
+            <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
+            <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
+            <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
+          </ul>
+        </div>
+
+        <!-- CALCULATORS -->
+        <div class="footer-col">
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
+            <li><a href="./../calculator/gst.html">GST Calculator</a></li>
+            <li>
+              <a href="./../calculator/incometax.html">Income Tax Calculator</a>
+            </li>
+            <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+            <li><i class="fas fa-phone"></i> +91 7977286123</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- ================= STEP 2 ================= -->
-      <div class="it-step" id="step-2">
-        <h3>Income Details</h3>
-
-        <label>Income from Salary</label>
-        <input type="number" id="salary" placeholder="₹">
-
-        <label>Income from Interest</label>
-        <input type="number" id="interest" placeholder="₹">
-
-        <label>Rental Income</label>
-        <input type="number" id="rent" placeholder="₹">
-
-        <label>Other Income</label>
-        <input type="number" id="otherIncome" placeholder="₹">
-
-        <div class="nav-btns">
-          <button class="back">Back</button>
-          <button class="next">Continue</button>
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="./../policy.html">Privacy Policy</a>
+          <a href="./../disclaimer.html">Disclaimer</a>
         </div>
       </div>
-
-      <!-- ================= STEP 3 ================= -->
-      <div class="it-step" id="step-3">
-        <h3>Deductions (Old Regime)</h3>
-
-        <label>80C (Investments)</label>
-        <input type="number" id="d80c" placeholder="₹">
-
-        <label>80D (Medical Insurance)</label>
-        <input type="number" id="d80d" placeholder="₹">
-
-        <label>Home Loan Interest</label>
-        <input type="number" id="homeLoan" placeholder="₹">
-
-        <label>Other Deductions</label>
-        <input type="number" id="otherDeduction" placeholder="₹">
-
-        <div class="nav-btns">
-          <button class="back">Back</button>
-          <button type="button" class="primary-btn" onclick="viewCalculation()">
-  View Calculation
-</button>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ================= RIGHT SIDE ================= -->
-    <div class="it-right">
-      <h3>Tax Liability Summary</h3>
-
-      <div class="summary">
-        <p>Old Regime <span id="oldTax">₹ 0</span></p>
-        <p>New Regime <span id="newTax">₹ 0</span></p>
-      </div>
-
-      <div class="save-box">
-        You save<br>
-        <strong id="saving">₹ 0</strong>
-      </div>
-
-      <button class="cta">Contact for Filing</button>
-    </div>
-
-  </div>
-</section>
-<!-- ================= INCOME TAX RESULT PAGE ================= -->
- 
-<section id="taxResultPage" class="it-result-page">
-
-  <div class="it-result-grid">
-
-    <!-- LEFT -->
-    <div class="it-card">
-      <h3>Tax Breakdown</h3>
-
-      <h4>Old Regime</h4>
-      <div class="it-row"><span>Gross Income</span><span id="oldGross">₹ 0</span></div>
-      <div class="it-row"><span>Deductions</span><span id="oldDeduction">₹ 0</span></div>
-      <div class="it-row"><span>Taxable Income</span><span id="oldTaxable">₹ 0</span></div>
-      <div class="it-row bold"><span>Total Tax</span><span id="oldTotal">₹ 0</span></div>
-
-      <h4 style="margin-top:24px;">New Regime</h4>
-      <div class="it-row"><span>Gross Income</span><span id="newGross">₹ 0</span></div>
-      <div class="it-row"><span>Standard Deduction</span><span id="newStd">₹ 50,000</span></div>
-      <div class="it-row bold"><span>Total Tax</span><span id="newTotal">₹ 0</span></div>
-
-      <div class="it-highlight" id="bestRegime">
-        —
-      </div>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="it-card it-summary">
-      <h3>Tax Summary</h3>
-
-      <div class="it-row"><span>Old Regime</span><strong id="oldFinal">₹ 0</strong></div>
-      <div class="it-row"><span>New Regime</span><strong id="newFinal">₹ 0</strong></div>
-
-      <div class="it-save">
-        You Save<br>
-        <strong id="youSave">₹ 0</strong>
-      </div>
-
-      <button class="primary-btn">Contact for Filing</button>
-    </div>
-
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <!-- ABOUT -->
-    <div class="footer-col">
-      <h4>About Pre-Taxes Solutions</h4>
-      <p>
-        Pre-Taxes Solutions helps individuals, startups and businesses
-        manage taxation, compliance, insurance and financial services
-        with accuracy, transparency and expert guidance.
-      </p>
-
-      <div class="footer-social">
-        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <!-- QUICK LINKS -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./../index.html">Home</a></li>
-        <li><a href="./../overview.html">About Us</a></li>
-        <li><a href="./../team.html">Our Team</a></li>
-        <li><a href="./../insaurance.html">Insurance</a></li>
-        <li><a href="./../taxcal.html">Tax Calendar</a></li>
-        <li><a href="./../contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- BUSINESS SERVICES -->
-    <div class="footer-col">
-      <h4>Business Services</h4>
-      <ul>
-        <li><a href="./../business/company.html">Company Formation</a></li>
-        <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
-        <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
-        <li><a href="./../business/auditioning.html">Auditing Services</a></li>
-        <li><a href="./../business/companylaw.html">Company Law Services</a></li>
-        <li><a href="./../business/payroll.html">Payroll Management</a></li>
-        <li><a href="./../business/other.html">Other Services</a></li>
-      </ul>
-    </div>
-
-    <!-- INSURANCE SERVICES -->
-    <div class="footer-col">
-      <h4>Insurance Services</h4>
-      <ul>
-        <li><a href="./../insaurance/life.html">Life Insurance</a></li>
-        <li><a href="./../insaurance/health.html">Health Insurance</a></li>
-        <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
-        <li><a href="./../insaurance/general.html">General Insurance</a></li>
-        <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
-      </ul>
-    </div>
-
-    <!-- LOANS & INVESTMENT -->
-    <div class="footer-col">
-      <h4>Loans & Investment</h4>
-      <ul>
-        <li><a href="./../loans/personal.html">Personal Loan</a></li>
-        <li><a href="./../business.html">Business Loan</a></li>
-        <li><a href="./../loans/home.html">Home Loan</a></li>
-        <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
-        <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
-        <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
-      </ul>
-    </div>
-
-    <!-- CALCULATORS -->
-    <div class="footer-col">
-      <h4>Calculators</h4>
-      <ul>
-        <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
-        <li><a href="./../calculator/gst.html">GST Calculator</a></li>
-        <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
-         <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer-col">
-      <h4>Contact Info</h4>
-      <ul class="footer-contact">
-        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
-        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
-        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
-    <div class="footer-links">
-      <a href="./../policy.html">Privacy Policy</a>
-      <a href="./../disclaimer.html">Disclaimer</a>
-    </div>
-  </div>
-</footer>
-<script src="calculator.js"></script>
-<script src="./../index.js"></script>
-</body>
+    </footer>
+    <script src="calculator.js"></script>
+    <script src="./../index.js"></script>
+  </body>
 </html>
-
