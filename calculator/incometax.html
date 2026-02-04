@@ -117,168 +117,134 @@
     </nav>
   </div>
 </header>
-    <section class="it-wrapper">
-      <h1>Income Tax Calculator</h1>
 
-      <!-- ================= MAIN GRID ================= -->
-      <div class="it-grid">
-        <!-- ================= LEFT SIDE ================= -->
-        <div class="it-left">
-          <!-- TABS -->
-          <div class="it-tabs">
-            <button class="tab active" data-step="1">Basic Details</button>
-            <button class="tab" data-step="2">Income Details</button>
-            <button class="tab" data-step="3">Deductions</button>
-          </div>
 
-          <!-- ================= STEP 1 ================= -->
+<section class="it-wrapper">
 
-          <div class="it-step active" id="step-1">
-            <h3>Basic Details</h3>
+  <h1>Income Tax Calculator</h1>
 
-            <label>Financial Year</label>
-            <select>
-              <option>FY 2025–2026</option>
-            </select>
+  <div class="it-grid">
 
-            <label>Age Group</label>
-            <select>
-              <option>Below 60</option>
-              <option>60 – 80</option>
-              <option>Above 80</option>
-            </select>
+    <!-- LEFT -->
+    <div class="it-left">
 
-            <div class="nav-btns">
-              <button class="next">Continue</button>
-            </div>
-          </div>
+      <!-- TABS -->
+      <div class="it-tabs">
+        <button class="tab active" data-step="1">Basic Details</button>
+        <button class="tab" data-step="2">Income Details</button>
+        <button class="tab" data-step="3">Deductions</button>
+      </div>
 
-          <!-- ================= STEP 2 ================= -->
-          <div class="it-step" id="step-2">
-            <h3>Income Details</h3>
+      <!-- STEP 1 -->
+      <div class="it-step active" id="step-1">
+        <h3>Basic Details</h3>
 
-            <label>Income from Salary</label>
-            <input type="number" id="salary" placeholder="₹" />
+        <label>Financial Year</label>
+        <select>
+          <option>FY 2025–2026</option>
+        </select>
 
-            <label>Income from Interest</label>
-            <input type="number" id="interest" placeholder="₹" />
+        <label>Age Group</label>
+        <select id="age">
+          <option value="below60">Below 60</option>
+          <option value="60to80">60 – 80</option>
+          <option value="above80">Above 80</option>
+        </select>
 
-            <label>Rental Income</label>
-            <input type="number" id="rent" placeholder="₹" />
-
-            <label>Other Income</label>
-            <input type="number" id="otherIncome" placeholder="₹" />
-
-            <div class="nav-btns">
-              <button class="back">Back</button>
-              <button class="next">Continue</button>
-            </div>
-          </div>
-
-          <!-- ================= STEP 3 ================= -->
-          <div class="it-step" id="step-3">
-            <h3>Deductions (Old Regime)</h3>
-
-            <label>80C (Investments)</label>
-            <input type="number" id="d80c" placeholder="₹" />
-
-            <label>80D (Medical Insurance)</label>
-            <input type="number" id="d80d" placeholder="₹" />
-
-            <label>Home Loan Interest</label>
-            <input type="number" id="homeLoan" placeholder="₹" />
-
-            <label>Other Deductions</label>
-            <input type="number" id="otherDeduction" placeholder="₹" />
-
-            <div class="nav-btns">
-              <button class="back">Back</button>
-              <button
-                type="button"
-                class="primary-btn"
-                onclick="viewCalculation()"
-              >
-                View Calculation
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= RIGHT SIDE ================= -->
-        <div class="it-right">
-          <h3>Tax Liability Summary</h3>
-
-          <div class="summary">
-            <p>Old Regime <span id="oldTax">₹ 0</span></p>
-            <p>New Regime <span id="newTax">₹ 0</span></p>
-          </div>
-
-          <div class="save-box">
-            You save<br />
-            <strong id="saving">₹ 0</strong>
-          </div>
-
-          <button class="cta">Contact for Filing</button>
+        <div class="nav-btns">
+          <button class="primary-btn next">Continue</button>
         </div>
       </div>
-    </section>
-    <!-- ================= INCOME TAX RESULT PAGE ================= -->
 
-    <section id="taxResultPage" class="it-result-page">
-      <div class="it-result-grid">
-        <!-- LEFT -->
-        <div class="it-card">
-          <h3>Tax Breakdown</h3>
+      <!-- STEP 2 -->
+      <div class="it-step" id="step-2">
+        <h3>Income Details</h3>
 
-          <h4>Old Regime</h4>
-          <div class="it-row">
-            <span>Gross Income</span><span id="oldGross">₹ 0</span>
-          </div>
-          <div class="it-row">
-            <span>Deductions</span><span id="oldDeduction">₹ 0</span>
-          </div>
-          <div class="it-row">
-            <span>Taxable Income</span><span id="oldTaxable">₹ 0</span>
-          </div>
-          <div class="it-row bold">
-            <span>Total Tax</span><span id="oldTotal">₹ 0</span>
-          </div>
+        <label>Income from Salary</label>
+        <input type="number" id="salary">
 
-          <h4 style="margin-top: 24px">New Regime</h4>
-          <div class="it-row">
-            <span>Gross Income</span><span id="newGross">₹ 0</span>
-          </div>
-          <div class="it-row">
-            <span>Standard Deduction</span><span id="newStd">₹ 50,000</span>
-          </div>
-          <div class="it-row bold">
-            <span>Total Tax</span><span id="newTotal">₹ 0</span>
-          </div>
+        <label>Interest Income</label>
+        <input type="number" id="interest">
 
-          <div class="it-highlight" id="bestRegime">—</div>
-        </div>
+        <label>Rental Income</label>
+        <input type="number" id="rent">
 
-        <!-- RIGHT -->
-        <div class="it-card it-summary">
-          <h3>Tax Summary</h3>
+        <label>Other Income</label>
+        <input type="number" id="otherIncome">
 
-          <div class="it-row">
-            <span>Old Regime</span><strong id="oldFinal">₹ 0</strong>
-          </div>
-          <div class="it-row">
-            <span>New Regime</span><strong id="newFinal">₹ 0</strong>
-          </div>
-
-          <div class="it-save">
-            You Save<br />
-            <strong id="youSave">₹ 0</strong>
-          </div>
-
-          <button class="primary-btn">Contact for Filing</button>
+        <div class="nav-btns">
+          <button class="back">Back</button>
+          <button class="primary-btn next">Continue</button>
         </div>
       </div>
-    </section>
 
+      <!-- STEP 3 -->
+      <div class="it-step" id="step-3">
+        <h3>Deductions (Old Regime)</h3>
+
+        <label>80C</label>
+        <input type="number" id="d80c">
+
+        <label>80D</label>
+        <input type="number" id="d80d">
+
+        <label>Home Loan Interest</label>
+        <input type="number" id="homeLoan">
+
+        <label>Other Deductions</label>
+        <input type="number" id="otherDeduction">
+
+        <div class="nav-btns">
+          <button class="back">Back</button>
+          <button class="primary-btn" onclick="calculateTax()">
+            Calculate Tax
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="it-right">
+      <h3>Tax Liability Summary</h3>
+
+      <p>Old Regime <span id="oldTax">₹ 0</span></p>
+      <p>New Regime <span id="newTax">₹ 0</span></p>
+
+      <div class="save-box">
+        You Save<br>
+        <strong id="saving">₹ 0</strong>
+      </div>
+
+      <button class="cta">Contact for Filing</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULT -->
+<section id="resultSection" class="it-result hidden">
+  <div class="it-result-card">
+
+    <h3>Tax Comparison</h3>
+
+    <div class="it-row">
+      <span>Old Regime Tax</span>
+      <strong id="oldFinal">₹ 0</strong>
+    </div>
+
+    <div class="it-row">
+      <span>New Regime Tax</span>
+      <strong id="newFinal">₹ 0</strong>
+    </div>
+
+    <div class="it-save">
+      You Save<br>
+      <strong id="youSave">₹ 0</strong>
+    </div>
+
+  </div>
+</section>
     <footer class="site-footer">
       <div class="footer-inner">
         <!-- ABOUT -->
@@ -409,7 +375,98 @@
         </div>
       </div>
     </footer>
-    <script src="calculator.js"></script>
+    <script>
+      let step = 1;
+
+document.querySelectorAll(".next").forEach(btn =>
+  btn.onclick = () => changeStep(1)
+);
+document.querySelectorAll(".back").forEach(btn =>
+  btn.onclick = () => changeStep(-1)
+);
+
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.onclick = () => {
+    step = parseInt(tab.dataset.step);
+    updateSteps();
+  };
+});
+
+function changeStep(dir){
+  step += dir;
+  updateSteps();
+}
+
+function updateSteps(){
+  document.querySelectorAll(".it-step").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+
+  document.getElementById(`step-${step}`).classList.add("active");
+  document.querySelector(`.tab[data-step="${step}"]`).classList.add("active");
+}
+
+function calculateTax(){
+
+  const salary = +document.getElementById("salary").value || 0;
+  const interest = +document.getElementById("interest").value || 0;
+  const rent = +document.getElementById("rent").value || 0;
+  const other = +document.getElementById("otherIncome").value || 0;
+
+  const gross = salary + interest + rent + other;
+
+  const deductions =
+    (+d80c.value||0) + (+d80d.value||0) +
+    (+homeLoan.value||0) + (+otherDeduction.value||0);
+
+  const oldTaxable = Math.max(gross - deductions, 0);
+  const newTaxable = Math.max(gross - 50000, 0);
+
+  const oldTax = calcOld(oldTaxable);
+  const newTax = calcNew(newTaxable);
+
+  document.getElementById("oldTax").innerText = `₹ ${oldTax}`;
+  document.getElementById("newTax").innerText = `₹ ${newTax}`;
+
+  document.getElementById("oldFinal").innerText = `₹ ${oldTax}`;
+  document.getElementById("newFinal").innerText = `₹ ${newTax}`;
+
+  const save = Math.abs(oldTax - newTax);
+  document.getElementById("saving").innerText = `₹ ${save}`;
+  document.getElementById("youSave").innerText = `₹ ${save}`;
+
+  document.getElementById("resultSection").classList.remove("hidden");
+  document.getElementById("resultSection").scrollIntoView({behavior:"smooth"});
+}
+
+function calcOld(t){
+  let tax = 0;
+  if(t > 250000) tax += Math.min(t-250000,250000)*0.05;
+  if(t > 500000) tax += Math.min(t-500000,500000)*0.2;
+  if(t > 1000000) tax += (t-1000000)*0.3;
+  return Math.round(tax);
+}
+
+function calcNew(t){
+  let tax = 0;
+  const slabs = [
+    [300000,0],
+    [300000,0.05],
+    [300000,0.1],
+    [300000,0.15],
+    [300000,0.2],
+    [Infinity,0.3]
+  ];
+  let r = t;
+  for(const [limit,rate] of slabs){
+    if(r<=0) break;
+    const amt = Math.min(r,limit);
+    tax += amt*rate;
+    r -= amt;
+  }
+  return Math.round(tax);
+}
+
+    </script>
     <script src="./../index.js"></script>
   </body>
 </html>

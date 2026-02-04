@@ -2,9 +2,9 @@
 include 'db_dsc.php';
 
 $result = $conn->query("
-  SELECT DISTINCT 
-    certificate_class, 
-    certificate_type 
+  SELECT DISTINCT
+    certificate_class,
+    certificate_type
   FROM dsc_certificate_rates
 ");
 
