@@ -138,20 +138,29 @@
         </select>
       </div>
     </div>
+    <div>
+  <label>Supply Type</label>
+  <select id="supplyType">
+    <option value="intra" selected>Intra State (CGST + SGST)</option>
+    <option value="inter">Inter State (IGST)</option>
+  </select>
+</div>
 
     <div class="gst-toggle">
-      <button class="active" onclick="setGSTMode('exclusive')">Exclusive GST</button>
-      <button onclick="setGSTMode('inclusive')">Inclusive GST</button>
+      <button class="active" onclick="setGSTMode('exclusive')">+ ADD GST</button>
+      <button onclick="setGSTMode('inclusive')">- REMOVE GST</button>
     </div>
 
     <button class="gst-calc-btn" onclick="calculateGST()">Calculate GST</button>
+<div class="gst-results hidden" id="gstResults">
+  <div><span>Base Amount</span><strong id="baseAmount">₹0</strong></div>
 
-    <div class="gst-results hidden" id="gstResults">
-      <div><span>Base Amount</span><strong id="baseAmount">₹0</strong></div>
-      <div><span>CGST</span><strong id="cgst">₹0</strong></div>
-      <div><span>SGST</span><strong id="sgst">₹0</strong></div>
-      <div class="total"><span>Total Amount</span><strong id="totalGST">₹0</strong></div>
-    </div>
+  <div id="cgstRow"><span>CGST</span><strong id="cgst">₹0</strong></div>
+  <div id="sgstRow"><span>SGST</span><strong id="sgst">₹0</strong></div>
+  <div id="igstRow" style="display:none;"><span>IGST</span><strong id="igst">₹0</strong></div>
+
+  <div class="total"><span>Total Amount</span><strong id="totalGST">₹0</strong></div>
+</div>
 
   </div>
 
@@ -261,8 +270,10 @@
   </div>
 </footer>
 <script>
-  let gstMode = "exclusive";
 
+let gstMode = "exclusive";
+
+/* ADD / REMOVE GST TOGGLE */
 function setGSTMode(mode){
   gstMode = mode;
 
@@ -272,10 +283,12 @@ function setGSTMode(mode){
   event.target.classList.add("active");
 }
 
+/* MAIN CALCULATION */
 function calculateGST(){
 
   const amount = parseFloat(document.getElementById("gstAmount").value);
   const rate = parseFloat(document.getElementById("gstRate").value);
+  const supplyType = document.getElementById("supplyType").value;
 
   if(!amount){
     alert("Please enter amount");
@@ -284,28 +297,53 @@ function calculateGST(){
 
   let base, gst, total;
 
+  /* ADD GST */
   if(gstMode === "exclusive"){
     gst = amount * rate / 100;
     base = amount;
     total = amount + gst;
-  } else {
+  }
+  /* REMOVE GST */
+  else{
     base = amount * 100 / (100 + rate);
     gst = amount - base;
     total = amount;
   }
 
-  const cgst = gst / 2;
-  const sgst = gst / 2;
+  /* ===== SUPPLY TYPE LOGIC ===== */
 
+  if(supplyType === "intra"){
+
+    const cgst = gst / 2;
+    const sgst = gst / 2;
+
+    document.getElementById("cgstRow").style.display="flex";
+    document.getElementById("sgstRow").style.display="flex";
+    document.getElementById("igstRow").style.display="none";
+
+    document.getElementById("cgst").innerText = "₹" + cgst.toFixed(2);
+    document.getElementById("sgst").innerText = "₹" + sgst.toFixed(2);
+
+  }
+  else{
+
+    document.getElementById("cgstRow").style.display="none";
+    document.getElementById("sgstRow").style.display="none";
+    document.getElementById("igstRow").style.display="flex";
+
+    document.getElementById("igst").innerText = "₹" + gst.toFixed(2);
+  }
+
+  /* COMMON OUTPUTS */
   document.getElementById("baseAmount").innerText = "₹" + base.toFixed(2);
-  document.getElementById("cgst").innerText = "₹" + cgst.toFixed(2);
-  document.getElementById("sgst").innerText = "₹" + sgst.toFixed(2);
   document.getElementById("totalGST").innerText = "₹" + total.toFixed(2);
 
   document.getElementById("gstResults").classList.remove("hidden");
 }
 
 </script>
+
+
 
 <script src="./../index.js"></script>
 </body>

@@ -155,6 +155,38 @@
     <canvas id="emiChart"></canvas>
   </div>
 </div>
+<!-- EMI SCHEDULE SECTION -->
+<section class="emi-schedule-section">
+
+  <div class="emi-summary" id="emiSummary" style="display:none;">
+    <div class="sum-card">
+      <p>Total Interest</p>
+      <h3 id="sumInterest">₹0</h3>
+    </div>
+    <div class="sum-card">
+      <p>Total Payment</p>
+      <h3 id="sumTotal">₹0</h3>
+    </div>
+  </div>
+
+  <div class="schedule-box" id="scheduleBox" style="display:none;">
+    <h2>Repayment Schedule</h2>
+
+    <table id="scheduleTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Principal</th>
+          <th>Interest</th>
+          <th>EMI</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -261,7 +293,7 @@
   </div>
 </footer>
 <script>
-  let chart;
+let chart;
 
 document.getElementById("calcBtn").addEventListener("click", () => {
 
@@ -274,49 +306,66 @@ document.getElementById("calcBtn").addEventListener("click", () => {
     return;
   }
 
-  const r = rate / 12 / 100;
-  const n = tenure * 12;
+  const r = rate/12/100;
+  const n = tenure*12;
 
-  const emi = amount * r * Math.pow(1+r, n) / (Math.pow(1+r, n)-1);
-  const total = emi * n;
-  const interest = total - amount;
+  const emi = amount*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const total = emi*n;
+  const interestTotal = total - amount;
 
-  document.getElementById("emi").innerText = "₹" + emi.toFixed(0);
-  document.getElementById("interest").innerText = "₹" + interest.toFixed(0);
-  document.getElementById("total").innerText = "₹" + total.toFixed(0);
-
+  document.getElementById("emi").innerText = "₹"+emi.toFixed(0);
+  document.getElementById("interest").innerText = "₹"+interestTotal.toFixed(0);
+  document.getElementById("total").innerText = "₹"+total.toFixed(0);
   document.getElementById("results").classList.remove("hidden");
 
+  /* CHART */
   const ctx = document.getElementById("emiChart");
-
   if(chart) chart.destroy();
-
-  chart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Principal', 'Interest'],
-      datasets: [{
-        data: [amount, interest],
-        backgroundColor: ['#3282B8', '#BBE1FA'],
+  chart = new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Principal','Interest'],
+      datasets:[{
+        data:[amount,interestTotal],
+        backgroundColor:['#3282B8','#BBE1FA'],
         borderWidth:0
       }]
     },
-    options: {
-      animation:{
-        duration:1200,
-        easing:'easeOutQuart'
-      },
-      plugins:{
-        legend:{
-          position:'bottom'
-        }
-      }
-    }
+    options:{plugins:{legend:{position:'bottom'}}}
   });
 
-});
+  /* ⭐ REPAYMENT TABLE GENERATION ⭐ */
+  let balance = amount;
+  let tbody = document.querySelector("#scheduleTable tbody");
+  tbody.innerHTML="";
+  let totalInterest=0;
 
+  for(let m=1;m<=n;m++){
+    let interest = balance*r;
+    let principal = emi - interest;
+    balance -= principal;
+    if(balance<0) balance=0;
+    totalInterest+=interest;
+
+    tbody.innerHTML += `
+      <tr>
+        <td>${m}</td>
+        <td>₹${Math.round(principal).toLocaleString()}</td>
+        <td>₹${Math.round(interest).toLocaleString()}</td>
+        <td>₹${Math.round(emi).toLocaleString()}</td>
+        <td>₹${Math.round(balance).toLocaleString()}</td>
+      </tr>`;
+  }
+
+  document.getElementById("sumInterest").innerText="₹"+Math.round(totalInterest).toLocaleString();
+  document.getElementById("sumTotal").innerText="₹"+Math.round(total).toLocaleString();
+
+  document.getElementById("scheduleBox").style.display="block";
+  document.getElementById("emiSummary").style.display="flex";
+
+});
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="./../index.js"></script>
