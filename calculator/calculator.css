@@ -483,101 +483,125 @@ canvas{
     grid-template-columns:1fr;
   }
 }
-/* ===== DSC SECTION SAFE SCOPE ===== */
-
+/* ===== DSC WRAPPER ===== */
 .dsc-wrapper {
-  padding: 40px 16px;
+  padding: 60px 16px;
+  background:#f4f7fb;
 }
 
-/* card */
-.dsc-wrapper .dsc-card {
-  max-width: 520px;
-  margin: auto;
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+/* CARD */
+.dsc-card {
+  max-width: 560px;
+  margin:auto;
+  background:#fff;
+  border-radius:18px;
+  padding:35px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+  transition:.3s;
 }
 
-/* heading scoped */
-.dsc-wrapper h2 {
-  text-align: center;
-  color: #0F4C75;
-  margin-bottom: 25px;
+.dsc-card:hover{
+  transform:translateY(-4px);
 }
 
-/* grid */
-.dsc-wrapper .dsc-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+/* HEADING */
+.dsc-wrapper h2{
+  text-align:center;
+  color:#0F4C75;
+  margin-bottom:30px;
 }
 
-/* label scoped */
-.dsc-wrapper label {
-  font-size: 14px;
-  color: #333;
+/* GRID */
+.dsc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
-/* select scoped */
-.dsc-wrapper select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #cfe3f7;
+/* LABEL */
+.dsc-wrapper label{
+  font-size:13px;
+  font-weight:600;
+  color:#555;
+  margin-bottom:6px;
+  display:block;
 }
 
-/* buttons scoped (navbar safe now) */
-.dsc-wrapper button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  margin-top: 20px;
-  cursor: pointer;
+/* SELECT */
+.dsc-wrapper select{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #cfe3f7;
+  font-size:14px;
+  background:#f9fbfd;
+  transition:.2s;
 }
 
-.dsc-wrapper .btn-primary {
-  background: #0F4C75;
-  color: #fff;
+.dsc-wrapper select:focus{
+  border-color:#0F4C75;
+  outline:none;
+  background:#fff;
 }
 
-.dsc-wrapper .btn-secondary {
-  background: #3282B8;
-  color: #fff;
+/* BUTTONS */
+.dsc-wrapper button{
+  width:100%;
+  padding:15px;
+  border-radius:12px;
+  border:none;
+  font-size:16px;
+  margin-top:22px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
 }
 
-/* result boxes */
-.dsc-wrapper .result-box,
-.dsc-wrapper .gst-box {
-  margin-top: 20px;
-  display: none;
+.btn-primary{ background:#0F4C75; color:#fff; }
+.btn-primary:hover{ background:#0b3e61; }
+
+.btn-secondary{ background:#3282B8; color:#fff; }
+.btn-secondary:hover{ background:#236a96; }
+
+/* RESULT BOX */
+.result-box,.gst-box{
+  margin-top:25px;
+  background:#f7fbff;
+  padding:18px;
+  border-radius:12px;
+  border-left:5px solid #0F4C75;
+  display:none;
 }
 
-.dsc-wrapper .row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-size:15px;
 }
 
-.dsc-wrapper .total {
-  font-weight: bold;
-  font-size: 17px;
+.total{
+  font-weight:bold;
+  font-size:18px;
+  margin-top:8px;
 }
 
-.dsc-wrapper .note {
-  font-size: 12px;
-  color: #555;
-  margin-top: 12px;
+/* NOTE */
+.note{
+  font-size:12px;
+  color:#666;
+  margin-top:12px;
+  text-align:center;
 }
 
-.dsc-wrapper .done {
-  margin-top: 16px;
-  text-align: center;
-  font-weight: bold;
-  color: green;
+/* DONE MSG */
+.done{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
+  color:green;
 }
+
 /* DSC SUBMIT BUTTON */
 #gstBox .submit-lead-btn{
   margin-top:18px;

@@ -116,95 +116,106 @@
     </nav>
   </div>
 </header>
-
-
 <section class="dsc-wrapper">
   <div class="dsc-card">
-
     <h2>DSC Rate Calculator</h2>
 
-    <!-- FORM -->
     <div class="dsc-grid">
+
+      <!-- Nationality -->
       <div>
         <label>Nationality</label>
         <select id="nationality">
+          <option value="">Select Nationality</option>
           <option value="Indian">Indian</option>
           <option value="Foreign">Foreign</option>
         </select>
       </div>
 
+      <!-- DSC Type -->
       <div>
         <label>DSC Type</label>
         <select id="dscType">
+          <option value="">Select DSC Type</option>
           <option value="Individual">Individual</option>
           <option value="Organization">Organization</option>
         </select>
       </div>
 
+      <!-- Certificate -->
       <div>
         <label>Certificate Type</label>
         <select id="certType">
-          <option value="Signature">Signature</option>
+          <option value="">Select Certificate</option>
+          <option value="General">Signature</option>
           <option value="Encryption">Encryption</option>
+          <option value="Combo">Combo (Sign + Encrypt)</option>
+          <option value="DGFT">DGFT</option>
         </select>
       </div>
 
+      <!-- Validity -->
       <div>
         <label>Validity</label>
         <select id="validity">
+          <option value="">Select Validity</option>
           <option value="1">1 Year</option>
           <option value="2">2 Years</option>
-          <option value="2">3 Years</option>
+          <option value="3">3 Years</option>
         </select>
       </div>
 
+      <!-- USB -->
       <div>
         <label>USB Token</label>
         <select id="usb">
-          <option value="Yes">Required</option>
-          <option value="No">Not Required</option>
+          <option value="">USB Required?</option>
+          <option value="Required">Required</option>
+          <option value="Not Required">Not Required</option>
         </select>
       </div>
 
+      <!-- Support -->
       <div>
         <label>Extra Support</label>
         <select id="support">
-          <option value="Yes">Required</option>
-          <option value="No">Not Required</option>
+          <option value="">Support Required?</option>
+          <option value="Required">Required</option>
+          <option value="Not Required">Not Required</option>
         </select>
       </div>
+
     </div>
 
-    <!-- BUTTON 1 -->
     <button class="btn-primary" onclick="calculateBase()">Calculate Charges</button>
 
-      <p class="note">
-        DSC certificate charges are exclusive of GST<br />
-        Charge for USB token is ₹500 + GST
-      </p>
+    <p class="note">
+      DSC certificate charges are exclusive of GST <br>
+      USB token charge is ₹500 + GST
+    </p>
+
     <!-- RESULT -->
     <div class="result-box" id="resultBox">
-      <div class="row"><span>DSC Cost</span><strong id="dscCost">₹0</strong></div>
-      <div class="row"><span>USB Token</span><strong id="tokenCost">₹0</strong></div>
-      <div class="row"><span>Support Services</span><strong id="supportCost">₹0</strong></div>
-      <div class="row total"><span>Subtotal</span><strong id="subTotal">₹0</strong></div>
+      <div class="row"><span>DSC Cost</span><span id="dscCost">₹ 0</span></div>
+      <div class="row"><span>USB Token</span><span id="tokenCost">₹ 0</span></div>
+      <div class="row"><span>Support Services</span><span id="supportCost">₹ 0</span></div>
+      <div class="row total"><span>Subtotal</span><span id="subTotal">₹ 0</span></div>
     </div>
 
-    <!-- BUTTON 2 -->
     <button class="btn-secondary" onclick="addGST()">Add GST & Finish</button>
 
-    <!-- GST RESULT -->
+
+    <!-- GST -->
     <div class="gst-box" id="gstBox">
-      <div class="row"><span>GST on DSC (18%)</span><strong id="gstDsc">₹0</strong></div>
-      <div class="row"><span>GST on USB Token (18%)</span><strong id="gstToken">₹0</strong></div>
-      <div class="row total"><span>Final Payable</span><strong id="finalTotal">₹0</strong></div>
-
-
-      <div class="done">🎉 Yayyy! You’re done</div>
+      <div class="row"><span>GST on DSC (18%)</span><span id="gstDsc">₹ 0</span></div>
+      <div class="row"><span>GST on USB (18%)</span><span id="gstToken">₹ 0</span></div>
+      <div class="row total"><span>Final Payable</span><span id="finalTotal">₹ 0</span></div>
+      <div class="done">🎉 Yayyy! You're done</div>
     </div>
 
   </div>
 </section>
+
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -311,41 +322,69 @@
   </div>
 </footer>
 <script>
-  let subtotal = 0;
+let subtotal = 0;
 let dscPrice = 0;
 let tokenPrice = 0;
+let supportPrice = 0;
 
-function calculateBase() {
+async function calculateBase() {
 
-  const nationality = nationalityEl().value;
-  const type = dscTypeEl().value;
-  const cert = certTypeEl().value;
-  const validity = validityEl().value;
+  const data = {
+    category: "Standard", // abhi fixed hai (later dropdown bana sakte)
+    nationality: nationalityEl().value,
+    dscType: dscTypeEl().value,
+    certType: certTypeEl().value,
+    validity: validityEl().value,
+    usb: usbEl().value,
+    support: supportEl().value
+  };
 
-  // BASE PRICE LOGIC (example)
-  dscPrice = nationality === "Foreign" ? 1200 : 750;
-  if (type === "Organization") dscPrice += 200;
-  if (cert === "Encryption") dscPrice += 150;
-  if (validity === "2") dscPrice += 300;
+  try {
+    const res = await fetch("getPrice.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-  tokenPrice = usbEl().value === "Yes" ? 500 : 0;
-  const supportPrice = supportEl().value === "Yes" ? 300 : 0;
+    const result = await res.json();
+    console.log(result); // debugging ke liye
 
-  subtotal = dscPrice + tokenPrice + supportPrice;
+    dscPrice = Number(result.dscPrice);
+    tokenPrice = Number(result.tokenPrice);
+    supportPrice = Number(result.supportPrice);
+    subtotal = Number(result.subtotal);
 
-  // UPDATE UI
-  document.getElementById("dscCost").innerText = "₹ " + dscPrice;
-  document.getElementById("tokenCost").innerText = "₹ " + tokenPrice;
-  document.getElementById("supportCost").innerText = "₹ " + supportPrice;
-  document.getElementById("subTotal").innerText = "₹ " + subtotal;
+    document.getElementById("dscCost").innerText = "₹ " + dscPrice;
+    document.getElementById("tokenCost").innerText = "₹ " + tokenPrice;
+    document.getElementById("supportCost").innerText = "₹ " + supportPrice;
+    document.getElementById("subTotal").innerText = "₹ " + subtotal;
 
-  document.getElementById("resultBox").style.display = "block";
+    document.getElementById("resultBox").style.display = "block";
+
+  } catch (err) {
+    console.error("Fetch error:", err);
+    alert("PHP connection error — check path");
+  }
 }
 
+/* SELECTORS */
+const nationalityEl = () => document.getElementById("nationality");
+const dscTypeEl = () => document.getElementById("dscType");
+const certTypeEl = () => document.getElementById("certType");
+const validityEl = () => document.getElementById("validity");
+const usbEl = () => document.getElementById("usb");
+const supportEl = () => document.getElementById("support");
 function addGST() {
 
+  if(subtotal == 0){
+    alert("Please calculate charges first");
+    return;
+  }
+
+  // GST 18%
   const gstDsc = Math.round(dscPrice * 0.18);
-  const gstToken = tokenPrice ? Math.round(tokenPrice * 0.18) : 0;
+  const gstToken = Math.round(tokenPrice * 0.18);
+
   const finalAmount = subtotal + gstDsc + gstToken;
 
   document.getElementById("gstDsc").innerText = "₹ " + gstDsc;
@@ -355,15 +394,9 @@ function addGST() {
   document.getElementById("gstBox").style.display = "block";
 }
 
-/* SHORTCUT SELECTORS */
-const nationalityEl = () => document.getElementById("nationality");
-const dscTypeEl = () => document.getElementById("dscType");
-const certTypeEl = () => document.getElementById("certType");
-const validityEl = () => document.getElementById("validity");
-const usbEl = () => document.getElementById("usb");
-const supportEl = () => document.getElementById("support");
-
 </script>
+
+
 <script src="calculator.js"></script>
 <script src="./../index.js"></script>
 </body>
