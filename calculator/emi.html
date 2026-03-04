@@ -1,353 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Loan EMI Calculator</title>
-  
-  <!-- Google Font -->
-   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Loan EMI Calculator</title>
 
-  <link rel="stylesheet" href="./../calculator/calculator.css">
-  <link rel="stylesheet" href="./../style.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./../calculator/calculator.css">
+    <link rel="stylesheet" href="./../style.css">
 </head>
+
 <body>
-  
-<header class="navbar">
-  <div class="nav-container">
 
-    <!-- LOGO -->
-    <div class="nav-logo">
-      <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
-    </div>
+    <header class="navbar">
+        <div class="nav-container">
 
-    <!-- HAMBURGER -->
-    <button class="menu-toggle" id="mobile-menu">
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
 
-    <!-- NAV -->
-    <nav class="nav-menu" id="nav-menu">
+            <!-- NAV -->
+            <nav class="nav-menu" id="nav-menu">
 
-      <a href="./../index.html">Home</a>
+                <a href="./../index.html">Home</a>
 
-      <!-- ABOUT -->
-      <div class="nav-item dropdown">
-        <button class="dropdown-toggle">About Us ▾</button>
-        <div class="dropdown-menu">
-          <a href="./../overview.html">Overview</a>
-          <a href="./../team.html">Our Team</a>
+                <!-- ABOUT -->
+                <div class="nav-item dropdown">
+                    <button class="dropdown-toggle">About Us ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="./../overview.html">Overview</a>
+                        <a href="./../team.html">Our Team</a>
+                    </div>
+                </div>
+
+                <!-- SERVICES (MEGA MENU) -->
+                <div class="nav-item dropdown services">
+                    <button class="dropdown-toggle">Services ▾</button>
+
+                    <div class="services-menu">
+
+                        <!-- BUSINESS -->
+                        <div class="service-item">
+                            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../business/company.html">Company Formation</a>
+                                <a href="./../business/consulting.html">Consulting & Advisory</a>
+                                <a href="./../business/accounting.html">Accounting & Bookkeeping</a>
+                                <a href="./../business/auditing.html">Auditing Services</a>
+                                <a href="./../business/companylaw.html">Company Law Services</a>
+                                <a href="./../business/payroll.html">Payroll Management</a>
+                                <a href="./../business/other.html">Other Services</a>
+                            </div>
+                        </div>
+
+                        <!-- INSURANCE -->
+                        <div class="service-item">
+                            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../insurance/life.html">Life Insurance</a>
+                                <a href="./../insurance/health.html">Health Insurance</a>
+                                <a href="./../insurance/motor.html">Motor Insurance</a>
+                                <a href="./../insurance/general.html">General Insurance</a>
+                                <a href="./../insurance/corporate.html">Corporate Insurance</a>
+                            </div>
+                        </div>
+
+                        <!-- LOANS -->
+                        <div class="service-item">
+                            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../loans/personal.html">Personal Loan</a>
+                                <a href="./../loans/business.html">Business Loan</a>
+                                <a href="./../loans/home.html">Home Loan</a>
+                                <a href="./../loans/startup.html">MSME / Startup Loan</a>
+                                <a href="./../loans/mutual.html">Mutual Funds</a>
+                                <a href="./../loans/fixed.html">Fixed Deposits</a>
+                            </div>
+                        </div>
+
+                        <a href="./../usa.html">USA Accounting & Bookeeping</a>
+                        <a href="./../canada.html">Canada  Accounting & Bookeeping</a>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR -->
+                <div class="nav-item dropdown">
+                    <button class="dropdown-toggle">Calculator ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="./../calculator/emi.html">Loan EMI Calculator</a>
+                        <a href="./../calculator/gst.html">GST Calculator</a>
+                        <a href="./../calculator/incometax.html">Income Tax Calculator</a>
+                        <a href="./../calculator/dsc.html">DSC Calculator</a>
+                    </div>
+                </div>
+
+                <a href="./../tax.html">Tax Calendar</a>
+                <a href="./../contact.html">Contact Us</a>
+
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <!-- SERVICES (MEGA MENU) -->
-      <div class="nav-item dropdown services">
-        <button class="dropdown-toggle">Services ▾</button>
+    <div class="emi-card">
+        <h2>EMI Calculator</h2>
 
-        <div class="services-menu">
-
-          <!-- BUSINESS -->
-          <div class="service-item">
-            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../business/company.html">Company Formation</a>
-              <a href="./../business/consulting.html">Consulting & Advisory</a>
-              <a href="./../business/accounting.html">Accounting & Bookkeeping</a>
-              <a href="./../business/auditing.html">Auditing Services</a>
-              <a href="./../business/companylaw.html">Company Law Services</a>
-              <a href="./../business/payroll.html">Payroll Management</a>
-              <a href="./../business/other.html">Other Services</a>
+        <div class="inputs">
+            <div>
+                <label>Loan Amount (₹)</label>
+                <input type="number" id="amount">
             </div>
-          </div>
 
-          <!-- INSURANCE -->
-          <div class="service-item">
-            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../insurance/life.html">Life Insurance</a>
-              <a href="./../insurance/health.html">Health Insurance</a>
-              <a href="./../insurance/motor.html">Motor Insurance</a>
-              <a href="./../insurance/general.html">General Insurance</a>
-              <a href="./../insurance/corporate.html">Corporate Insurance</a>
+            <div>
+                <label>Interest Rate (% p.a)</label>
+                <input type="number" id="rate">
             </div>
-          </div>
 
-          <!-- LOANS -->
-          <div class="service-item">
-            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../loans/personal.html">Personal Loan</a>
-              <a href="./../loans/business.html">Business Loan</a>
-              <a href="./../loans/home.html">Home Loan</a>
-              <a href="./../loans/startup.html">MSME / Startup Loan</a>
-              <a href="./../loans/mutual.html">Mutual Funds</a>
-              <a href="./../loans/fixed.html">Fixed Deposits</a>
+            <div>
+                <label>Tenure (Years)</label>
+                <input type="number" id="tenure">
             </div>
-          </div>
+        </div>
+
+        <button id="calcBtn">Calculate EMI</button>
+
+        <div class="results hidden" id="results">
+            <div class="result-item">
+                <span>Monthly EMI</span>
+                <strong id="emi">₹0</strong>
+            </div>
+            <div class="result-item">
+                <span>Total Interest</span>
+                <strong id="interest">₹0</strong>
+            </div>
+            <div class="result-item">
+                <span>Total Payable</span>
+                <strong id="total">₹0</strong>
+            </div>
+
+            <canvas id="emiChart"></canvas>
+        </div>
+    </div>
+    <!-- EMI SCHEDULE SECTION -->
+    <section class="emi-schedule-section">
+
+        <div class="emi-summary" id="emiSummary" style="display:none;">
+            <div class="sum-card">
+                <p>Total Interest</p>
+                <h3 id="sumInterest">₹0</h3>
+            </div>
+            <div class="sum-card">
+                <p>Total Payment</p>
+                <h3 id="sumTotal">₹0</h3>
+            </div>
+        </div>
+
+        <div class="schedule-box" id="scheduleBox" style="display:none;">
+            <h2>Repayment Schedule</h2>
+
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>EMI</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h4>About Pre-Taxes Solutions</h4>
+                <p>
+                    Pre-Taxes Solutions helps individuals, startups and businesses manage taxation, compliance, insurance and financial services with accuracy, transparency and expert guidance.
+                </p>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./../index.html">Home</a></li>
+                    <li><a href="./../overview.html">About Us</a></li>
+                    <li><a href="./../team.html">Our Team</a></li>
+                    <li><a href="./../insaurance.html">Insurance</a></li>
+                    <li><a href="./../taxcal.html">Tax Calendar</a></li>
+                    <li><a href="./../contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- BUSINESS SERVICES -->
+            <div class="footer-col">
+                <h4>Business Services</h4>
+                <ul>
+                    <li><a href="./../business/company.html">Company Formation</a></li>
+                    <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
+                    <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
+                    <li><a href="./../business/auditioning.html">Auditing Services</a></li>
+                    <li><a href="./../business/companylaw.html">Company Law Services</a></li>
+                    <li><a href="./../business/payroll.html">Payroll Management</a></li>
+                    <li><a href="./../business/other.html">Other Services</a></li>
+                </ul>
+            </div>
+
+            <!-- INSURANCE SERVICES -->
+            <div class="footer-col">
+                <h4>Insurance Services</h4>
+                <ul>
+                    <li><a href="./../insaurance/life.html">Life Insurance</a></li>
+                    <li><a href="./../insaurance/health.html">Health Insurance</a></li>
+                    <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
+                    <li><a href="./../insaurance/general.html">General Insurance</a></li>
+                    <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
+                </ul>
+            </div>
+
+            <!-- LOANS & INVESTMENT -->
+            <div class="footer-col">
+                <h4>Loans & Investment</h4>
+                <ul>
+                    <li><a href="./../loans/personal.html">Personal Loan</a></li>
+                    <li><a href="./../business.html">Business Loan</a></li>
+                    <li><a href="./../loans/home.html">Home Loan</a></li>
+                    <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
+                    <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
+                    <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
+                </ul>
+            </div>
+
+            <!-- CALCULATORS -->
+            <div class="footer-col">
+                <h4>Calculators</h4>
+                <ul>
+                    <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
+                    <li><a href="./../calculator/gst.html">GST Calculator</a></li>
+                    <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
+                    <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7977286123 </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
+                </ul>
+            </div>
 
         </div>
-      </div>
 
-      <!-- CALCULATOR -->
-      <div class="nav-item dropdown">
-        <button class="dropdown-toggle">Calculator ▾</button>
-        <div class="dropdown-menu">
-          <a href="./../calculator/emi.html">Loan EMI Calculator</a>
-          <a href="./../calculator/gst.html">GST Calculator</a>
-          <a href="./../calculator/incometax.html">Income Tax Calculator</a>
-                <a href="./../calculator/dsc.html">DSC Calculator</a>
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="./../policy.html">Privacy Policy</a>
+                <a href="./../disclaimer.html">Disclaimer</a>
+            </div>
         </div>
-      </div>
+    </footer>
+    <script>
+        let chart;
 
-      <a href="./../tax.html">Tax Calendar</a>
-      <a href="./../contact.html">Contact Us</a>
+        document.getElementById("calcBtn").addEventListener("click", () => {
 
-    </nav>
-  </div>
-</header>
+            const amount = +document.getElementById("amount").value;
+            const rate = +document.getElementById("rate").value;
+            const tenure = +document.getElementById("tenure").value;
 
-<div class="emi-card">
-  <h2>EMI Calculator</h2>
+            if (!amount || !rate || !tenure) {
+                alert("Please fill all fields");
+                return;
+            }
 
-  <div class="inputs">
-    <div>
-      <label>Loan Amount (₹)</label>
-      <input type="number" id="amount">
-    </div>
+            const r = rate / 12 / 100;
+            const n = tenure * 12;
 
-    <div>
-      <label>Interest Rate (% p.a)</label>
-      <input type="number" id="rate">
-    </div>
+            const emi = amount * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+            const total = emi * n;
+            const interestTotal = total - amount;
 
-    <div>
-      <label>Tenure (Years)</label>
-      <input type="number" id="tenure">
-    </div>
-  </div>
+            document.getElementById("emi").innerText = "₹" + emi.toFixed(0);
+            document.getElementById("interest").innerText = "₹" + interestTotal.toFixed(0);
+            document.getElementById("total").innerText = "₹" + total.toFixed(0);
+            document.getElementById("results").classList.remove("hidden");
 
-  <button id="calcBtn">Calculate EMI</button>
+            /* CHART */
+            const ctx = document.getElementById("emiChart");
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Principal', 'Interest'],
+                    datasets: [{
+                        data: [amount, interestTotal],
+                        backgroundColor: ['#3282B8', '#BBE1FA'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
 
-  <div class="results hidden" id="results">
-    <div class="result-item">
-      <span>Monthly EMI</span>
-      <strong id="emi">₹0</strong>
-    </div>
-    <div class="result-item">
-      <span>Total Interest</span>
-      <strong id="interest">₹0</strong>
-    </div>
-    <div class="result-item">
-      <span>Total Payable</span>
-      <strong id="total">₹0</strong>
-    </div>
+            /* ⭐ REPAYMENT TABLE GENERATION ⭐ */
+            let balance = amount;
+            let tbody = document.querySelector("#scheduleTable tbody");
+            tbody.innerHTML = "";
+            let totalInterest = 0;
 
-    <canvas id="emiChart"></canvas>
-  </div>
-</div>
-<!-- EMI SCHEDULE SECTION -->
-<section class="emi-schedule-section">
+            for (let m = 1; m <= n; m++) {
+                let interest = balance * r;
+                let principal = emi - interest;
+                balance -= principal;
+                if (balance < 0) balance = 0;
+                totalInterest += interest;
 
-  <div class="emi-summary" id="emiSummary" style="display:none;">
-    <div class="sum-card">
-      <p>Total Interest</p>
-      <h3 id="sumInterest">₹0</h3>
-    </div>
-    <div class="sum-card">
-      <p>Total Payment</p>
-      <h3 id="sumTotal">₹0</h3>
-    </div>
-  </div>
-
-  <div class="schedule-box" id="scheduleBox" style="display:none;">
-    <h2>Repayment Schedule</h2>
-
-    <table id="scheduleTable">
-      <thead>
-        <tr>
-          <th>Month</th>
-          <th>Principal</th>
-          <th>Interest</th>
-          <th>EMI</th>
-          <th>Balance</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <!-- ABOUT -->
-    <div class="footer-col">
-      <h4>About Pre-Taxes Solutions</h4>
-      <p>
-        Pre-Taxes Solutions helps individuals, startups and businesses
-        manage taxation, compliance, insurance and financial services
-        with accuracy, transparency and expert guidance.
-      </p>
-
-      <div class="footer-social">
-        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <!-- QUICK LINKS -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./../index.html">Home</a></li>
-        <li><a href="./../overview.html">About Us</a></li>
-        <li><a href="./../team.html">Our Team</a></li>
-        <li><a href="./../insaurance.html">Insurance</a></li>
-        <li><a href="./../taxcal.html">Tax Calendar</a></li>
-        <li><a href="./../contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- BUSINESS SERVICES -->
-    <div class="footer-col">
-      <h4>Business Services</h4>
-      <ul>
-        <li><a href="./../business/company.html">Company Formation</a></li>
-        <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
-        <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
-        <li><a href="./../business/auditioning.html">Auditing Services</a></li>
-        <li><a href="./../business/companylaw.html">Company Law Services</a></li>
-        <li><a href="./../business/payroll.html">Payroll Management</a></li>
-        <li><a href="./../business/other.html">Other Services</a></li>
-      </ul>
-    </div>
-
-    <!-- INSURANCE SERVICES -->
-    <div class="footer-col">
-      <h4>Insurance Services</h4>
-      <ul>
-        <li><a href="./../insaurance/life.html">Life Insurance</a></li>
-        <li><a href="./../insaurance/health.html">Health Insurance</a></li>
-        <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
-        <li><a href="./../insaurance/general.html">General Insurance</a></li>
-        <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
-      </ul>
-    </div>
-
-    <!-- LOANS & INVESTMENT -->
-    <div class="footer-col">
-      <h4>Loans & Investment</h4>
-      <ul>
-        <li><a href="./../loans/personal.html">Personal Loan</a></li>
-        <li><a href="./../business.html">Business Loan</a></li>
-        <li><a href="./../loans/home.html">Home Loan</a></li>
-        <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
-        <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
-        <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
-      </ul>
-    </div>
-
-    <!-- CALCULATORS -->
-    <div class="footer-col">
-      <h4>Calculators</h4>
-      <ul>
-        <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
-        <li><a href="./../calculator/gst.html">GST Calculator</a></li>
-        <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
-         <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer-col">
-      <h4>Contact Info</h4>
-      <ul class="footer-contact">
-        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
-        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
-        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
-    <div class="footer-links">
-      <a href="./../policy.html">Privacy Policy</a>
-      <a href="./../disclaimer.html">Disclaimer</a>
-    </div>
-  </div>
-</footer>
-<script>
-let chart;
-
-document.getElementById("calcBtn").addEventListener("click", () => {
-
-  const amount = +document.getElementById("amount").value;
-  const rate = +document.getElementById("rate").value;
-  const tenure = +document.getElementById("tenure").value;
-
-  if(!amount || !rate || !tenure){
-    alert("Please fill all fields");
-    return;
-  }
-
-  const r = rate/12/100;
-  const n = tenure*12;
-
-  const emi = amount*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
-  const total = emi*n;
-  const interestTotal = total - amount;
-
-  document.getElementById("emi").innerText = "₹"+emi.toFixed(0);
-  document.getElementById("interest").innerText = "₹"+interestTotal.toFixed(0);
-  document.getElementById("total").innerText = "₹"+total.toFixed(0);
-  document.getElementById("results").classList.remove("hidden");
-
-  /* CHART */
-  const ctx = document.getElementById("emiChart");
-  if(chart) chart.destroy();
-  chart = new Chart(ctx,{
-    type:'doughnut',
-    data:{
-      labels:['Principal','Interest'],
-      datasets:[{
-        data:[amount,interestTotal],
-        backgroundColor:['#3282B8','#BBE1FA'],
-        borderWidth:0
-      }]
-    },
-    options:{plugins:{legend:{position:'bottom'}}}
-  });
-
-  /* ⭐ REPAYMENT TABLE GENERATION ⭐ */
-  let balance = amount;
-  let tbody = document.querySelector("#scheduleTable tbody");
-  tbody.innerHTML="";
-  let totalInterest=0;
-
-  for(let m=1;m<=n;m++){
-    let interest = balance*r;
-    let principal = emi - interest;
-    balance -= principal;
-    if(balance<0) balance=0;
-    totalInterest+=interest;
-
-    tbody.innerHTML += `
+                tbody.innerHTML += `
       <tr>
         <td>${m}</td>
         <td>₹${Math.round(principal).toLocaleString()}</td>
@@ -355,20 +359,20 @@ document.getElementById("calcBtn").addEventListener("click", () => {
         <td>₹${Math.round(emi).toLocaleString()}</td>
         <td>₹${Math.round(balance).toLocaleString()}</td>
       </tr>`;
-  }
+            }
 
-  document.getElementById("sumInterest").innerText="₹"+Math.round(totalInterest).toLocaleString();
-  document.getElementById("sumTotal").innerText="₹"+Math.round(total).toLocaleString();
+            document.getElementById("sumInterest").innerText = "₹" + Math.round(totalInterest).toLocaleString();
+            document.getElementById("sumTotal").innerText = "₹" + Math.round(total).toLocaleString();
 
-  document.getElementById("scheduleBox").style.display="block";
-  document.getElementById("emiSummary").style.display="flex";
+            document.getElementById("scheduleBox").style.display = "block";
+            document.getElementById("emiSummary").style.display = "flex";
 
-});
-</script>
+        });
+    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="./../index.js"></script>
+    <script src="./../index.js"></script>
 </body>
-</html>
 
+</html>

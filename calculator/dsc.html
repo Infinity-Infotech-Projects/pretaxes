@@ -1,403 +1,402 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>DSC Calculator</title>
 
-  <!-- Google Font -->
-   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./../calculator/calculator.css">
-<link rel="stylesheet" href="./../style.css">
-<meta charset="UTF-8">
+<head>
+    <title>DSC Calculator</title>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../calculator/calculator.css">
+    <link rel="stylesheet" href="./../style.css">
+    <meta charset="UTF-8">
 
 </head>
+
 <body>
-  
-<header class="navbar">
-  <div class="nav-container">
 
-    <!-- LOGO -->
-    <div class="nav-logo">
-      <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
-    </div>
+    <header class="navbar">
+        <div class="nav-container">
 
-    <!-- HAMBURGER -->
-    <button class="menu-toggle" id="mobile-menu">
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <img src="./../img/pretaxeslogo.png" alt="Pre-Taxes Solutions">
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
 
-    <!-- NAV -->
-    <nav class="nav-menu" id="nav-menu">
+            <!-- NAV -->
+            <nav class="nav-menu" id="nav-menu">
 
-      <a href="./../index.html">Home</a>
+                <a href="./../index.html">Home</a>
 
-      <!-- ABOUT -->
-      <div class="nav-item dropdown">
-        <button class="dropdown-toggle">About Us ▾</button>
-        <div class="dropdown-menu">
-          <a href="./../overview.html">Overview</a>
-          <a href="./../team.html">Our Team</a>
+                <!-- ABOUT -->
+                <div class="nav-item dropdown">
+                    <button class="dropdown-toggle">About Us ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="./../overview.html">Overview</a>
+                        <a href="./../team.html">Our Team</a>
+                    </div>
+                </div>
+
+                <!-- SERVICES (MEGA MENU) -->
+                <div class="nav-item dropdown services">
+                    <button class="dropdown-toggle">Services ▾</button>
+
+                    <div class="services-menu">
+
+                        <!-- BUSINESS -->
+                        <div class="service-item">
+                            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../business/company.html">Company Formation</a>
+                                <a href="./../business/consulting.html">Consulting & Advisory</a>
+                                <a href="./../business/accounting.html">Accounting & Bookkeeping</a>
+                                <a href="./../business/auditing.html">Auditing Services</a>
+                                <a href="./../business/companylaw.html">Company Law Services</a>
+                                <a href="./../business/payroll.html">Payroll Management</a>
+                                <a href="./../business/other.html">Other Services</a>
+                            </div>
+                        </div>
+
+                        <!-- INSURANCE -->
+                        <div class="service-item">
+                            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../insurance/life.html">Life Insurance</a>
+                                <a href="./../insurance/health.html">Health Insurance</a>
+                                <a href="./../insurance/motor.html">Motor Insurance</a>
+                                <a href="./../insurance/general.html">General Insurance</a>
+                                <a href="./../insurance/corporate.html">Corporate Insurance</a>
+                            </div>
+                        </div>
+
+                        <!-- LOANS -->
+                        <div class="service-item">
+                            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
+
+                            <div class="sub-menu">
+                                <a href="./../loans/personal.html">Personal Loan</a>
+                                <a href="./../loans/business.html">Business Loan</a>
+                                <a href="./../loans/home.html">Home Loan</a>
+                                <a href="./../loans/startup.html">MSME / Startup Loan</a>
+                                <a href="./../loans/mutual.html">Mutual Funds</a>
+                                <a href="./../loans/fixed.html">Fixed Deposits</a>
+                            </div>
+                        </div>
+
+                        <a href="./../usa.html">USA Accounting & Bookeeping</a>
+                        <a href="./../canada.html">Canada  Accounting & Bookeeping</a>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR -->
+                <div class="nav-item dropdown">
+                    <button class="dropdown-toggle">Calculator ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="./../calculator/emi.html">Loan EMI Calculator</a>
+                        <a href="./../calculator/gst.html">GST Calculator</a>
+                        <a href="./../calculator/incometax.html">Income Tax Calculator</a>
+                        <a href="./../calculator/dsc.html">DSC Calculator</a>
+                    </div>
+                </div>
+
+                <a href="./../tax.html">Tax Calendar</a>
+                <a href="./../contact.html">Contact Us</a>
+
+            </nav>
         </div>
-      </div>
+    </header>
+    <section class="dsc-wrapper">
+        <div class="dsc-card">
+            <h2>DSC Rate Calculator</h2>
 
-      <!-- SERVICES (MEGA MENU) -->
-      <div class="nav-item dropdown services">
-        <button class="dropdown-toggle">Services ▾</button>
+            <div class="dsc-grid">
 
-        <div class="services-menu">
-
-          <!-- BUSINESS -->
-          <div class="service-item">
-            <a href="./../business.html" class="service-toggle">Business Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../business/company.html">Company Formation</a>
-              <a href="./../business/consulting.html">Consulting & Advisory</a>
-              <a href="./../business/accounting.html">Accounting & Bookkeeping</a>
-              <a href="./../business/auditing.html">Auditing Services</a>
-              <a href="./../business/companylaw.html">Company Law Services</a>
-              <a href="./../business/payroll.html">Payroll Management</a>
-              <a href="./../business/other.html">Other Services</a>
-            </div>
-          </div>
-
-          <!-- INSURANCE -->
-          <div class="service-item">
-            <a href="./../insaurance.html" class="service-toggle">Insaurance Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../insurance/life.html">Life Insurance</a>
-              <a href="./../insurance/health.html">Health Insurance</a>
-              <a href="./../insurance/motor.html">Motor Insurance</a>
-              <a href="./../insurance/general.html">General Insurance</a>
-              <a href="./../insurance/corporate.html">Corporate Insurance</a>
-            </div>
-          </div>
-
-          <!-- LOANS -->
-          <div class="service-item">
-            <a href="./../loans.html" class="service-toggle">Loans Services ▸</a>
-
-            <div class="sub-menu">
-              <a href="./../loans/personal.html">Personal Loan</a>
-              <a href="./../loans/business.html">Business Loan</a>
-              <a href="./../loans/home.html">Home Loan</a>
-              <a href="./../loans/startup.html">MSME / Startup Loan</a>
-              <a href="./../loans/mutual.html">Mutual Funds</a>
-              <a href="./../loans/fixed.html">Fixed Deposits</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CALCULATOR -->
-      <div class="nav-item dropdown">
-        <button class="dropdown-toggle">Calculator ▾</button>
-        <div class="dropdown-menu">
-          <a href="./../calculator/emi.html">Loan EMI Calculator</a>
-          <a href="./../calculator/gst.html">GST Calculator</a>
-          <a href="./../calculator/incometax.html">Income Tax Calculator</a>
-                <a href="./../calculator/dsc.html">DSC Calculator</a>
-        </div>
-      </div>
-
-      <a href="./../tax.html">Tax Calendar</a>
-      <a href="./../contact.html">Contact Us</a>
-
-    </nav>
-  </div>
-</header>
-<section class="dsc-wrapper">
-  <div class="dsc-card">
-    <h2>DSC Rate Calculator</h2>
-
-    <div class="dsc-grid">
-
-      <!-- Nationality -->
-      <div>
-        <label>Nationality</label>
-        <select id="nationality">
+                <!-- Nationality -->
+                <div>
+                    <label>Nationality</label>
+                    <select id="nationality">
           <option value="">Select Nationality</option>
           <option value="Indian">Indian</option>
           <option value="Foreign">Foreign</option>
         </select>
-      </div>
+                </div>
 
-      <!-- DSC Type -->
-      <div>
-        <label>DSC Type</label>
-        <select id="dscType">
+                <!-- DSC Type -->
+                <div>
+                    <label>DSC Type</label>
+                    <select id="dscType">
           <option value="">Select DSC Type</option>
           <option value="Individual">Individual</option>
           <option value="Organization">Organization</option>
         </select>
-      </div>
+                </div>
 
-      <!-- Certificate -->
-      <div>
-        <label>Certificate Type</label>
-        <select id="certType">
+                <!-- Certificate -->
+                <div>
+                    <label>Certificate Type</label>
+                    <select id="certType">
           <option value="">Select Certificate</option>
           <option value="General">Signature</option>
           <option value="Encryption">Encryption</option>
           <option value="Combo">Combo (Sign + Encrypt)</option>
           <option value="DGFT">DGFT</option>
         </select>
-      </div>
+                </div>
 
-      <!-- Validity -->
-      <div>
-        <label>Validity</label>
-        <select id="validity">
+                <!-- Validity -->
+                <div>
+                    <label>Validity</label>
+                    <select id="validity">
           <option value="">Select Validity</option>
           <option value="1">1 Year</option>
           <option value="2">2 Years</option>
           <option value="3">3 Years</option>
         </select>
-      </div>
+                </div>
 
-      <!-- USB -->
-      <div>
-        <label>USB Token</label>
-        <select id="usb">
+                <!-- USB -->
+                <div>
+                    <label>USB Token</label>
+                    <select id="usb">
           <option value="">USB Required?</option>
           <option value="Required">Required</option>
           <option value="Not Required">Not Required</option>
         </select>
-      </div>
+                </div>
 
-      <!-- Support -->
-      <div>
-        <label>Extra Support</label>
-        <select id="support">
+                <!-- Support -->
+                <div>
+                    <label>Extra Support</label>
+                    <select id="support">
           <option value="">Support Required?</option>
           <option value="Required">Required</option>
           <option value="Not Required">Not Required</option>
         </select>
-      </div>
+                </div>
 
-    </div>
+            </div>
 
-    <button class="btn-primary" onclick="calculateBase()">Calculate Charges</button>
+            <button class="btn-primary" onclick="calculateBase()">Calculate Charges</button>
 
-    <p class="note">
-      DSC certificate charges are exclusive of GST <br>
-      USB token charge is ₹500 + GST
-    </p>
+            <p class="note">
+                DSC certificate charges are exclusive of GST <br> USB token charge is ₹500 + GST
+            </p>
 
-    <!-- RESULT -->
-    <div class="result-box" id="resultBox">
-      <div class="row"><span>DSC Cost</span><span id="dscCost">₹ 0</span></div>
-      <div class="row"><span>USB Token</span><span id="tokenCost">₹ 0</span></div>
-      <div class="row"><span>Support Services</span><span id="supportCost">₹ 0</span></div>
-      <div class="row total"><span>Subtotal</span><span id="subTotal">₹ 0</span></div>
-    </div>
+            <!-- RESULT -->
+            <div class="result-box" id="resultBox">
+                <div class="row"><span>DSC Cost</span><span id="dscCost">₹ 0</span></div>
+                <div class="row"><span>USB Token</span><span id="tokenCost">₹ 0</span></div>
+                <div class="row"><span>Support Services</span><span id="supportCost">₹ 0</span></div>
+                <div class="row total"><span>Subtotal</span><span id="subTotal">₹ 0</span></div>
+            </div>
 
-    <button class="btn-secondary" onclick="addGST()">Add GST & Finish</button>
-
-
-    <!-- GST -->
-    <div class="gst-box" id="gstBox">
-      <div class="row"><span>GST on DSC (18%)</span><span id="gstDsc">₹ 0</span></div>
-      <div class="row"><span>GST on USB (18%)</span><span id="gstToken">₹ 0</span></div>
-      <div class="row total"><span>Final Payable</span><span id="finalTotal">₹ 0</span></div>
-      <div class="done">🎉 Yayyy! You're done</div>
-    </div>
-
-  </div>
-</section>
+            <button class="btn-secondary" onclick="addGST()">Add GST & Finish</button>
 
 
-<footer class="site-footer">
-  <div class="footer-inner">
+            <!-- GST -->
+            <div class="gst-box" id="gstBox">
+                <div class="row"><span>GST on DSC (18%)</span><span id="gstDsc">₹ 0</span></div>
+                <div class="row"><span>GST on USB (18%)</span><span id="gstToken">₹ 0</span></div>
+                <div class="row total"><span>Final Payable</span><span id="finalTotal">₹ 0</span></div>
+                <div class="done">🎉 Yayyy! You're done</div>
+            </div>
 
-    <!-- ABOUT -->
-    <div class="footer-col">
-      <h4>About Pre-Taxes Solutions</h4>
-      <p>
-        Pre-Taxes Solutions helps individuals, startups and businesses
-        manage taxation, compliance, insurance and financial services
-        with accuracy, transparency and expert guidance.
-      </p>
-
-      <div class="footer-social">
-        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <!-- QUICK LINKS -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./../index.html">Home</a></li>
-        <li><a href="./../overview.html">About Us</a></li>
-        <li><a href="./../team.html">Our Team</a></li>
-        <li><a href="./../insaurance.html">Insurance</a></li>
-        <li><a href="./../taxcal.html">Tax Calendar</a></li>
-        <li><a href="./../contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- BUSINESS SERVICES -->
-    <div class="footer-col">
-      <h4>Business Services</h4>
-      <ul>
-        <li><a href="./../business/company.html">Company Formation</a></li>
-        <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
-        <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
-        <li><a href="./../business/auditioning.html">Auditing Services</a></li>
-        <li><a href="./../business/companylaw.html">Company Law Services</a></li>
-        <li><a href="./../business/payroll.html">Payroll Management</a></li>
-        <li><a href="./../business/other.html">Other Services</a></li>
-      </ul>
-    </div>
-
-    <!-- INSURANCE SERVICES -->
-    <div class="footer-col">
-      <h4>Insurance Services</h4>
-      <ul>
-        <li><a href="./../insaurance/life.html">Life Insurance</a></li>
-        <li><a href="./../insaurance/health.html">Health Insurance</a></li>
-        <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
-        <li><a href="./../insaurance/general.html">General Insurance</a></li>
-        <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
-      </ul>
-    </div>
-
-    <!-- LOANS & INVESTMENT -->
-    <div class="footer-col">
-      <h4>Loans & Investment</h4>
-      <ul>
-        <li><a href="./../loans/personal.html">Personal Loan</a></li>
-        <li><a href="./../business.html">Business Loan</a></li>
-        <li><a href="./../loans/home.html">Home Loan</a></li>
-        <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
-        <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
-        <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
-      </ul>
-    </div>
-
-    <!-- CALCULATORS -->
-    <div class="footer-col">
-      <h4>Calculators</h4>
-      <ul>
-        <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
-        <li><a href="./../calculator/gst.html">GST Calculator</a></li>
-        <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
-         <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer-col">
-      <h4>Contact Info</h4>
-      <ul class="footer-contact">
-        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
-        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
-        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
-    <div class="footer-links">
-      <a href="./../policy.html">Privacy Policy</a>
-      <a href="./../disclaimer.html">Disclaimer</a>
-    </div>
-  </div>
-</footer>
-<script>
-let subtotal = 0;
-let dscPrice = 0;
-let tokenPrice = 0;
-let supportPrice = 0;
-
-async function calculateBase() {
-
-  const data = {
-    category: "Standard", // abhi fixed hai (later dropdown bana sakte)
-    nationality: nationalityEl().value,
-    dscType: dscTypeEl().value,
-    certType: certTypeEl().value,
-    validity: validityEl().value,
-    usb: usbEl().value,
-    support: supportEl().value
-  };
-
-  try {
-    const res = await fetch("getPrice.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-    console.log(result); // debugging ke liye
-
-    dscPrice = Number(result.dscPrice);
-    tokenPrice = Number(result.tokenPrice);
-    supportPrice = Number(result.supportPrice);
-    subtotal = Number(result.subtotal);
-
-    document.getElementById("dscCost").innerText = "₹ " + dscPrice;
-    document.getElementById("tokenCost").innerText = "₹ " + tokenPrice;
-    document.getElementById("supportCost").innerText = "₹ " + supportPrice;
-    document.getElementById("subTotal").innerText = "₹ " + subtotal;
-
-    document.getElementById("resultBox").style.display = "block";
-
-  } catch (err) {
-    console.error("Fetch error:", err);
-    alert("PHP connection error — check path");
-  }
-}
-
-/* SELECTORS */
-const nationalityEl = () => document.getElementById("nationality");
-const dscTypeEl = () => document.getElementById("dscType");
-const certTypeEl = () => document.getElementById("certType");
-const validityEl = () => document.getElementById("validity");
-const usbEl = () => document.getElementById("usb");
-const supportEl = () => document.getElementById("support");
-function addGST() {
-
-  if(subtotal == 0){
-    alert("Please calculate charges first");
-    return;
-  }
-
-  // GST 18%
-  const gstDsc = Math.round(dscPrice * 0.18);
-  const gstToken = Math.round(tokenPrice * 0.18);
-
-  const finalAmount = subtotal + gstDsc + gstToken;
-
-  document.getElementById("gstDsc").innerText = "₹ " + gstDsc;
-  document.getElementById("gstToken").innerText = "₹ " + gstToken;
-  document.getElementById("finalTotal").innerText = "₹ " + finalAmount;
-
-  document.getElementById("gstBox").style.display = "block";
-}
-
-</script>
+        </div>
+    </section>
 
 
-<script src="calculator.js"></script>
-<script src="./../index.js"></script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h4>About Pre-Taxes Solutions</h4>
+                <p>
+                    Pre-Taxes Solutions helps individuals, startups and businesses manage taxation, compliance, insurance and financial services with accuracy, transparency and expert guidance.
+                </p>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./../index.html">Home</a></li>
+                    <li><a href="./../overview.html">About Us</a></li>
+                    <li><a href="./../team.html">Our Team</a></li>
+                    <li><a href="./../insaurance.html">Insurance</a></li>
+                    <li><a href="./../taxcal.html">Tax Calendar</a></li>
+                    <li><a href="./../contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- BUSINESS SERVICES -->
+            <div class="footer-col">
+                <h4>Business Services</h4>
+                <ul>
+                    <li><a href="./../business/company.html">Company Formation</a></li>
+                    <li><a href="./../business/consulting.html">Consulting & Advisory</a></li>
+                    <li><a href="./../business/accounting.html">Accounting & Bookkeeping</a></li>
+                    <li><a href="./../business/auditioning.html">Auditing Services</a></li>
+                    <li><a href="./../business/companylaw.html">Company Law Services</a></li>
+                    <li><a href="./../business/payroll.html">Payroll Management</a></li>
+                    <li><a href="./../business/other.html">Other Services</a></li>
+                </ul>
+            </div>
+
+            <!-- INSURANCE SERVICES -->
+            <div class="footer-col">
+                <h4>Insurance Services</h4>
+                <ul>
+                    <li><a href="./../insaurance/life.html">Life Insurance</a></li>
+                    <li><a href="./../insaurance/health.html">Health Insurance</a></li>
+                    <li><a href="./../insaurance/motar.html">Motor Insurance</a></li>
+                    <li><a href="./../insaurance/general.html">General Insurance</a></li>
+                    <li><a href="./../insaurance/corporate.html">Corporate Insurance</a></li>
+                </ul>
+            </div>
+
+            <!-- LOANS & INVESTMENT -->
+            <div class="footer-col">
+                <h4>Loans & Investment</h4>
+                <ul>
+                    <li><a href="./../loans/personal.html">Personal Loan</a></li>
+                    <li><a href="./../business.html">Business Loan</a></li>
+                    <li><a href="./../loans/home.html">Home Loan</a></li>
+                    <li><a href="./../loans/startup.html">MSME / Startup Loan</a></li>
+                    <li><a href="./../loans/mutual.html">Mutual Funds</a></li>
+                    <li><a href="./../loans/fixed.html">Fixed Deposits</a></li>
+                </ul>
+            </div>
+
+            <!-- CALCULATORS -->
+            <div class="footer-col">
+                <h4>Calculators</h4>
+                <ul>
+                    <li><a href="./../calculator/emi.html">Loan EMI Calculator</a></li>
+                    <li><a href="./../calculator/gst.html">GST Calculator</a></li>
+                    <li><a href="./../calculator/incometax.html">Income Tax Calculator</a></li>
+                    <li><a href="./../calculator/dsc.html">DSC Calculator</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7977286123 </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="./../policy.html">Privacy Policy</a>
+                <a href="./../disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let subtotal = 0;
+        let dscPrice = 0;
+        let tokenPrice = 0;
+        let supportPrice = 0;
+
+        async function calculateBase() {
+
+            const data = {
+                category: "Standard", // abhi fixed hai (later dropdown bana sakte)
+                nationality: nationalityEl().value,
+                dscType: dscTypeEl().value,
+                certType: certTypeEl().value,
+                validity: validityEl().value,
+                usb: usbEl().value,
+                support: supportEl().value
+            };
+
+            try {
+                const res = await fetch("getPrice.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+                console.log(result); // debugging ke liye
+
+                dscPrice = Number(result.dscPrice);
+                tokenPrice = Number(result.tokenPrice);
+                supportPrice = Number(result.supportPrice);
+                subtotal = Number(result.subtotal);
+
+                document.getElementById("dscCost").innerText = "₹ " + dscPrice;
+                document.getElementById("tokenCost").innerText = "₹ " + tokenPrice;
+                document.getElementById("supportCost").innerText = "₹ " + supportPrice;
+                document.getElementById("subTotal").innerText = "₹ " + subtotal;
+
+                document.getElementById("resultBox").style.display = "block";
+
+            } catch (err) {
+                console.error("Fetch error:", err);
+                alert("PHP connection error — check path");
+            }
+        }
+
+        /* SELECTORS */
+        const nationalityEl = () => document.getElementById("nationality");
+        const dscTypeEl = () => document.getElementById("dscType");
+        const certTypeEl = () => document.getElementById("certType");
+        const validityEl = () => document.getElementById("validity");
+        const usbEl = () => document.getElementById("usb");
+        const supportEl = () => document.getElementById("support");
+
+        function addGST() {
+
+            if (subtotal == 0) {
+                alert("Please calculate charges first");
+                return;
+            }
+
+            // GST 18%
+            const gstDsc = Math.round(dscPrice * 0.18);
+            const gstToken = Math.round(tokenPrice * 0.18);
+
+            const finalAmount = subtotal + gstDsc + gstToken;
+
+            document.getElementById("gstDsc").innerText = "₹ " + gstDsc;
+            document.getElementById("gstToken").innerText = "₹ " + gstToken;
+            document.getElementById("finalTotal").innerText = "₹ " + finalAmount;
+
+            document.getElementById("gstBox").style.display = "block";
+        }
+    </script>
+
+
+    <script src="calculator.js"></script>
+    <script src="./../index.js"></script>
 </body>
+
 </html>
