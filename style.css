@@ -4692,13 +4692,10 @@ RESPONSIVE
 }
 
 
-/* white card */
+/* container without white box */
 
 .canada-compliance .container {
-    background: #f5f7fa;
-    border-radius: 20px;
     padding: 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
 }
 
@@ -4706,21 +4703,26 @@ RESPONSIVE
 /* heading */
 
 .canada-compliance h2 {
-    font-size: 36px;
-    color: #1e5578;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 
 /* paragraph */
 
 .canada-compliance p {
-    color: #444;
+    color: #e6f2ff;
     max-width: 700px;
     margin: auto;
-    margin-bottom: 40px;
-    line-height: 1.6;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -4745,32 +4747,6 @@ RESPONSIVE
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     font-weight: 500;
     color: #333;
-}
-
-
-/* heading visible */
-
-.canada-compliance h2 {
-    font-size: 40px;
-    color: #ffffff;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-
-/* paragraph visible */
-
-.canada-compliance p {
-    color: #e6f2ff;
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 17px;
-    line-height: 1.7;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -4869,4 +4845,33 @@ CANADA ABOUT SECTION
     color: #555;
     line-height: 1.7;
     margin-bottom: 18px;
+}
+
+.tax-strip {
+    width: 100%;
+    background: linear-gradient(90deg, #0F4C75, #3282B8, #0F4C75);
+    overflow: hidden;
+}
+
+.tax-strip-track {
+    display: flex;
+    gap: 60px;
+    padding: 12px 0;
+    white-space: nowrap;
+    animation: scrollTax 35s linear infinite;
+}
+
+.tax-strip-track span {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+@keyframes scrollTax {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
