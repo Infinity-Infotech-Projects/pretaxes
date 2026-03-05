@@ -3152,13 +3152,12 @@ button {
 
 
 /* ===============================
-   YOUTUBE SECTION (LIGHT BG)
+   YOUTUBE SECTION
 ================================ */
 
 .youtube-section {
-    padding: 110px 0;
-    background: linear-gradient( 180deg, #dff1fb 0%, #eaf7fd 50%, #f6fcff 100%);
-    overflow: hidden;
+    padding: 30px 0 40px 0;
+    background: linear-gradient(180deg, #dff1fb 0%, #eaf7fd 50%, #f6fcff 100%);
     color: #0F2854;
 }
 
@@ -3207,26 +3206,24 @@ button {
 ================================ */
 
 .yt-slider {
+    position: relative;
     width: 100%;
     overflow: hidden;
-    position: relative;
 }
 
 
-/* Auto scrolling track */
+/* track */
 
 .yt-track {
     display: flex;
     gap: 34px;
-    animation: ytScroll 40s linear infinite;
-    will-change: transform;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
 }
 
-
-/* PAUSE on interaction (CRITICAL FIX) */
-
-.yt-slider:hover .yt-track {
-    animation-play-state: paused;
+.yt-track::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -3235,12 +3232,14 @@ button {
 ================================ */
 
 .yt-card {
-    min-width: 420px;
-    height: 260px;
-    border-radius: 22px;
+    min-width: 340px;
+    /* pehle 420px tha */
+    height: 200px;
+    /* pehle 260px tha */
+    border-radius: 18px;
     overflow: hidden;
     background: #ffffff;
-    box-shadow: 0 35px 80px rgba(28, 77, 141, 0.25);
+    box-shadow: 0 25px 60px rgba(28, 77, 141, 0.20);
     transition: transform .4s ease;
     flex-shrink: 0;
 }
@@ -3249,71 +3248,68 @@ button {
     transform: translateY(-10px);
 }
 
-
-/* iframe fix */
-
 .yt-card iframe {
     width: 100%;
     height: 100%;
     border: none;
-    pointer-events: auto;
 }
 
 
 /* ===============================
-   DESKTOP DRAG SCROLL CURSOR
+   NAV BUTTONS
 ================================ */
 
-.yt-slider {
-    cursor: grab;
+.yt-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #0F4C75;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
 }
 
-.yt-slider:active {
-    cursor: grabbing;
+.yt-btn:hover {
+    background: #4988C4;
 }
 
-
-/* Allow horizontal scroll */
-
-.yt-track {
-    cursor: grab;
+.yt-left {
+    left: 10px;
 }
 
-
-/* Prevent text selection while dragging */
-
-.yt-track,
-.yt-card {
-    user-select: none;
+.yt-right {
+    right: 10px;
 }
 
 
 /* ===============================
-   MOBILE RESPONSIVE (IMPORTANT)
+   MOBILE
 ================================ */
 
 @media(max-width:768px) {
     .youtube-section {
-        padding: 70px 0;
+        padding: 70px 0 100px 0;
     }
     .youtube-container h2 {
         font-size: 28px;
         margin-bottom: 30px;
     }
-    /* ❌ Disable animation on mobile */
-    .yt-track {
-        animation: none;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 10px;
-    }
-    .yt-track::-webkit-scrollbar {
-        display: none;
-    }
     .yt-card {
-        min-width: 85%;
-        height: 190px;
-        scroll-snap-align: center;
+        min-width: 80%;
+        height: 180px;
+    }
+    .yt-btn {
+        display: none;
     }
 }
 
@@ -4382,7 +4378,7 @@ section {
 }
 
 
-/* Block Bootstrap navbar styles */
+/* NAVBAR */
 
 header.navbar {
     background: #1e5578;
@@ -4392,22 +4388,26 @@ header.navbar {
     z-index: 1000;
 }
 
-header.navbar * {
-    box-sizing: border-box;
+
+/* container alignment like live site */
+
+header .nav-container {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
-/* Prevent bootstrap navbar rules */
+/* logo thoda right */
 
-.navbar {
-    all: unset;
+header .nav-logo {
+    margin-left: 20px;
 }
 
-
-/* Re-enable your header navbar layout */
-
-header.navbar {
-    display: block;
+header .nav-logo img {
+    height: 42px;
 }
 
 

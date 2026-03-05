@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="financial-tools/tools.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -284,6 +285,70 @@
 
         </div>
     </section>
+    <section class="financial-tools">
+
+        <div class="tools-wrapper">
+
+            <!-- LEFT SIDEBAR -->
+
+            <div class="tools-sidebar">
+
+                <h2>Financial Tools</h2>
+
+                <button class="tool-btn active" onclick="loadTool('tax',this)">
+₹ Income Tax Calculator
+</button>
+
+                <button class="tool-btn" onclick="loadTool('emi',this)">
+Loan EMI Calculator
+</button>
+
+                <button class="tool-btn" onclick="loadTool('sip',this)">
+SIP Investment Planner
+</button>
+
+                <button class="tool-btn" onclick="loadTool('gst',this)">
+GST Calculator
+</button>
+
+                <!-- FIXED DSC BUTTON -->
+                <button class="tool-btn" onclick="loadTool('dsc',this)">
+DSC Charges Calculator
+</button>
+
+            </div>
+
+
+            <!-- CALCULATOR AREA -->
+
+            <div class="tool-content" id="toolContent">
+
+                <!-- Default Calculator (Income Tax will load first from JS) -->
+
+            </div>
+
+
+            <!-- RESULT BOX -->
+
+            <div class="result-card">
+
+                <p class="result-title">ESTIMATED RESULT</p>
+
+                <h2 id="resultValue">₹0</h2>
+
+                <p class="result-desc">
+                    *This is an estimated calculation based on the provided inputs.
+                </p>
+
+                <button class="result-btn">
+Get Detailed Report
+</button>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <section class="solutions-section">
 
@@ -404,6 +469,10 @@
             </h2>
 
             <div class="yt-slider">
+
+                <!-- LEFT BUTTON -->
+                <button class="yt-btn yt-left">&#10094;</button>
+
                 <div class="yt-track">
 
                     <div class="yt-card">
@@ -422,7 +491,6 @@
                         <iframe src="https://www.youtube.com/embed/jFEz2kcANTQ" allowfullscreen></iframe>
                     </div>
 
-                    <!-- duplicate for seamless loop -->
                     <div class="yt-card">
                         <iframe src="https://www.youtube.com/embed/7zz5nGZoK8Q" allowfullscreen></iframe>
                     </div>
@@ -432,143 +500,166 @@
                     </div>
 
                 </div>
+
+                <!-- RIGHT BUTTON -->
+                <button class="yt-btn yt-right">&#10095;</button>
+
+            </div>
+
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h4>About Pre-Taxes Solutions</h4>
+                <p>
+                    Pre-Taxes Solutions helps individuals, startups and businesses manage taxation, compliance, insurance and financial services with accuracy, transparency and expert guidance.
+                </p>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="overview.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="insaurance.html">Insurance</a></li>
+                    <li><a href="taxcal.html">Tax Calendar</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- BUSINESS SERVICES -->
+            <div class="footer-col">
+                <h4>Business Services</h4>
+                <ul>
+                    <li><a href="./../pretaxes/business/company.html">Company Formation</a></li>
+                    <li><a href="./../pretaxes/business/consulting.html">Consulting & Advisory</a></li>
+                    <li><a href="./../pretaxes/business/accounting.html">Accounting & Bookkeeping</a></li>
+                    <li><a href="./../pretaxes/business/auditioning.html">Auditing Services</a></li>
+                    <li><a href="./../pretaxes/business/companylaw.html">Company Law Services</a></li>
+                    <li><a href="./../pretaxes/business/payroll.html">Payroll Management</a></li>
+                    <li><a href="./../pretaxes/business/other.html">Other Services</a></li>
+                </ul>
+            </div>
+
+            <!-- INSURANCE SERVICES -->
+            <div class="footer-col">
+                <h4>Insurance Services</h4>
+                <ul>
+                    <li><a href="./../pretaxes/insaurance/life.html">Life Insurance</a></li>
+                    <li><a href="./../pretaxes/insaurance/health.html">Health Insurance</a></li>
+                    <li><a href="./../pretaxes/insaurance/motar.html">Motor Insurance</a></li>
+                    <li><a href="./../pretaxes/insaurance/general.html">General Insurance</a></li>
+                    <li><a href="./../pretaxes/insaurance/corporate.html">Corporate Insurance</a></li>
+                </ul>
+            </div>
+
+            <!-- LOANS & INVESTMENT -->
+            <div class="footer-col">
+                <h4>Loans & Investment</h4>
+                <ul>
+                    <li><a href="./../pretaxes/loans/personal.html">Personal Loan</a></li>
+                    <li><a href="./../pretaxes/business.html">Business Loan</a></li>
+                    <li><a href="./../pretaxes/loans/home.html">Home Loan</a></li>
+                    <li><a href="./../pretaxes/loans/startup.html">MSME / Startup Loan</a></li>
+                    <li><a href="./../pretaxes/loans/mutual.html">Mutual Funds</a></li>
+                    <li><a href="./../pretaxes/loans/fixed.html">Fixed Deposits</a></li>
+                </ul>
+            </div>
+
+            <!-- CALCULATORS -->
+            <div class="footer-col">
+                <h4>Calculators</h4>
+                <ul>
+                    <li><a href="./../pretaxes/calculator/emi.html">Loan EMI Calculator</a></li>
+                    <li><a href="./../pretaxes/calculator/gst.html">GST Calculator</a></li>
+                    <li><a href="./../pretaxes/calculator/incometax.html">Income Tax Calculator</a></li>
+                    <li><a href="./../pretaxes/calculator/dsc.html">DSC Calculator</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7977286123 </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
+                </ul>
             </div>
 
         </div>
 
-        <footer class="site-footer">
-            <div class="footer-inner">
-
-                <!-- ABOUT -->
-                <div class="footer-col">
-                    <h4>About Pre-Taxes Solutions</h4>
-                    <p>
-                        Pre-Taxes Solutions helps individuals, startups and businesses manage taxation, compliance, insurance and financial services with accuracy, transparency and expert guidance.
-                    </p>
-
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/share/17q7JfRwk5/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/vaibhav-m-m?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/MMahidhariya"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/pre_taxes_solutions?igsh=MWk5cGFqem44YnI0MA=="><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <!-- QUICK LINKS -->
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="overview.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="insaurance.html">Insurance</a></li>
-                        <li><a href="taxcal.html">Tax Calendar</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- BUSINESS SERVICES -->
-                <div class="footer-col">
-                    <h4>Business Services</h4>
-                    <ul>
-                        <li><a href="./../pretaxes/business/company.html">Company Formation</a></li>
-                        <li><a href="./../pretaxes/business/consulting.html">Consulting & Advisory</a></li>
-                        <li><a href="./../pretaxes/business/accounting.html">Accounting & Bookkeeping</a></li>
-                        <li><a href="./../pretaxes/business/auditioning.html">Auditing Services</a></li>
-                        <li><a href="./../pretaxes/business/companylaw.html">Company Law Services</a></li>
-                        <li><a href="./../pretaxes/business/payroll.html">Payroll Management</a></li>
-                        <li><a href="./../pretaxes/business/other.html">Other Services</a></li>
-                    </ul>
-                </div>
-
-                <!-- INSURANCE SERVICES -->
-                <div class="footer-col">
-                    <h4>Insurance Services</h4>
-                    <ul>
-                        <li><a href="./../pretaxes/insaurance/life.html">Life Insurance</a></li>
-                        <li><a href="./../pretaxes/insaurance/health.html">Health Insurance</a></li>
-                        <li><a href="./../pretaxes/insaurance/motar.html">Motor Insurance</a></li>
-                        <li><a href="./../pretaxes/insaurance/general.html">General Insurance</a></li>
-                        <li><a href="./../pretaxes/insaurance/corporate.html">Corporate Insurance</a></li>
-                    </ul>
-                </div>
-
-                <!-- LOANS & INVESTMENT -->
-                <div class="footer-col">
-                    <h4>Loans & Investment</h4>
-                    <ul>
-                        <li><a href="./../pretaxes/loans/personal.html">Personal Loan</a></li>
-                        <li><a href="./../pretaxes/business.html">Business Loan</a></li>
-                        <li><a href="./../pretaxes/loans/home.html">Home Loan</a></li>
-                        <li><a href="./../pretaxes/loans/startup.html">MSME / Startup Loan</a></li>
-                        <li><a href="./../pretaxes/loans/mutual.html">Mutual Funds</a></li>
-                        <li><a href="./../pretaxes/loans/fixed.html">Fixed Deposits</a></li>
-                    </ul>
-                </div>
-
-                <!-- CALCULATORS -->
-                <div class="footer-col">
-                    <h4>Calculators</h4>
-                    <ul>
-                        <li><a href="./../pretaxes/calculator/emi.html">Loan EMI Calculator</a></li>
-                        <li><a href="./../pretaxes/calculator/gst.html">GST Calculator</a></li>
-                        <li><a href="./../pretaxes/calculator/incometax.html">Income Tax Calculator</a></li>
-                        <li><a href="./../pretaxes/calculator/dsc.html">DSC Calculator</a></li>
-                    </ul>
-                </div>
-
-                <!-- CONTACT -->
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-envelope"></i> info@pretaxessolutions.com</li>
-                        <li><i class="fas fa-phone"></i> +91 7977286123 </li>
-                        <li><i class="fas fa-map-marker-alt"></i> Dahisar, Mumbai-400068</li>
-                    </ul>
-                </div>
-
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
             </div>
+        </div>
+    </footer>
+    <!-- ================= POPUP OVERLAY ================= -->
+    <div class="popup-overlay" id="globalPopup">
+        <div class="popup-box">
 
-            <!-- BOTTOM -->
-            <div class="footer-bottom">
-                <p>© 2026 Pre-Taxes Solutions. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="policy.html">Privacy Policy</a>
-                    <a href="disclaimer.html">Disclaimer</a>
-                </div>
-            </div>
-        </footer>
-        <!-- ================= POPUP OVERLAY ================= -->
-        <div class="popup-overlay" id="globalPopup">
-            <div class="popup-box">
+            <button class="popup-close">&times;</button>
 
-                <button class="popup-close">&times;</button>
+            <h2>Quick Enquiry</h2>
+            <p>Fill the form and our expert will contact you shortly.</p>
 
-                <h2>Quick Enquiry</h2>
-                <p>Fill the form and our expert will contact you shortly.</p>
+            <!-- FORM CONNECTED TO PHP -->
+            <form class="popup-form" method="POST" action="enquiry.php">
 
-                <!-- FORM CONNECTED TO PHP -->
-                <form class="popup-form" method="POST" action="enquiry.php">
+                <input type="text" name="name" placeholder="Your Name" required>
 
-                    <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
 
-                    <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
 
-                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
 
-                    <textarea name="message" placeholder="Your Message"></textarea>
-
-                    <button type="submit" name="submit_enquiry">
+                <button type="submit" name="submit_enquiry">
         Submit Enquiry
       </button>
 
-                </form>
+            </form>
 
-            </div>
         </div>
+    </div>
+    <script>
+        const track = document.querySelector('.yt-track');
+        const next = document.querySelector('.yt-right');
+        const prev = document.querySelector('.yt-left');
 
+        next.addEventListener('click', () => {
+            track.scrollBy({
+                left: 450,
+                behavior: 'smooth'
+            });
+        });
 
-        <script src="index.js"></script>
+        prev.addEventListener('click', () => {
+            track.scrollBy({
+                left: -450,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script src="index.js"></script>
+    <script src="financial-tools/tools.js"></script>
 </body>
 
 </html>
