@@ -296,25 +296,24 @@
                 <h2>Financial Tools</h2>
 
                 <button class="tool-btn active" onclick="loadTool('tax',this)">
-₹ Income Tax Calculator
-</button>
+            ₹ Income Tax Calculator
+        </button>
 
                 <button class="tool-btn" onclick="loadTool('emi',this)">
-Loan EMI Calculator
-</button>
+            Loan EMI Calculator
+        </button>
 
                 <button class="tool-btn" onclick="loadTool('sip',this)">
-SIP Investment Planner
-</button>
+            SIP Investment Planner
+        </button>
 
                 <button class="tool-btn" onclick="loadTool('gst',this)">
-GST Calculator
-</button>
+            GST Calculator
+        </button>
 
-                <!-- FIXED DSC BUTTON -->
                 <button class="tool-btn" onclick="loadTool('dsc',this)">
-DSC Charges Calculator
-</button>
+            DSC Charges Calculator
+        </button>
 
             </div>
 
@@ -323,14 +322,14 @@ DSC Charges Calculator
 
             <div class="tool-content" id="toolContent">
 
-                <!-- Default Calculator (Income Tax will load first from JS) -->
+                <!-- Calculator will load here dynamically -->
 
             </div>
 
 
-            <!-- RESULT BOX -->
+            <!-- RESULT BOX (NOT USED FOR DSC) -->
 
-            <div class="result-card">
+            <div class="result-card" id="resultCard">
 
                 <p class="result-title">ESTIMATED RESULT</p>
 
@@ -341,8 +340,8 @@ DSC Charges Calculator
                 </p>
 
                 <button class="result-btn">
-Get Detailed Report
-</button>
+            Get Detailed Report
+        </button>
 
             </div>
 

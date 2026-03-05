@@ -1,18 +1,24 @@
 const toolContent = document.getElementById("toolContent")
 const resultValue = document.getElementById("resultValue")
-
+const resultCard = document.getElementById("resultCard")
 
 function formatINR(num) {
     return "₹" + Math.round(num).toLocaleString("en-IN")
 }
-
 
 function loadTool(tool, btn) {
 
     document.querySelectorAll(".tool-btn").forEach(b => b.classList.remove("active"))
     if (btn) btn.classList.add("active")
 
+    /* hide estimated box for DSC */
 
+    if (tool === "dsc") {
+        if (resultCard) resultCard.style.display = "none"
+    } else {
+        if (resultCard) resultCard.style.display = "block"
+    }
+    /* ================= TAX ================= */
 
     /* ================= TAX ================= */
 
@@ -20,7 +26,7 @@ function loadTool(tool, btn) {
 
         toolContent.innerHTML = `
 
-<h3>Income Tax Estimator</h3>
+<h3>Income Tax Estimator (FY 2025-26)</h3>
 
 <label>Annual Income (₹)</label>
 <input type="range" id="incomeSlider" min="0" max="5000000" step="50000" value="1000000">
@@ -42,7 +48,6 @@ function loadTool(tool, btn) {
 
         let taxResult = document.getElementById("taxResult")
 
-
         function calculateTax() {
 
             let income = parseInt(incomeSlider.value)
@@ -51,12 +56,47 @@ function loadTool(tool, btn) {
             incomeValue.innerText = formatINR(income)
             deductionValue.innerText = formatINR(deduction)
 
-            let taxable = income - deduction
+            // Standard deduction
+            const standardDeduction = 50000
 
-            let tax = taxable * 0.1
+            let taxableIncome = income - deduction - standardDeduction
 
-            taxResult.innerText = formatINR(tax)
-            resultValue.innerText = formatINR(tax)
+            if (taxableIncome < 0) taxableIncome = 0
+
+            let tax = 0
+
+            if (taxableIncome <= 300000) {
+                tax = 0
+            } else if (taxableIncome <= 600000) {
+                tax = (taxableIncome - 300000) * 0.05
+            } else if (taxableIncome <= 900000) {
+                tax = (300000 * 0.05) +
+                    (taxableIncome - 600000) * 0.10
+            } else if (taxableIncome <= 1200000) {
+                tax = (300000 * 0.05) +
+                    (300000 * 0.10) +
+                    (taxableIncome - 900000) * 0.15
+            } else if (taxableIncome <= 1500000) {
+                tax = (300000 * 0.05) +
+                    (300000 * 0.10) +
+                    (300000 * 0.15) +
+                    (taxableIncome - 1200000) * 0.20
+            } else {
+
+                tax = (300000 * 0.05) +
+                    (300000 * 0.10) +
+                    (300000 * 0.15) +
+                    (300000 * 0.20) +
+                    (taxableIncome - 1500000) * 0.30
+            }
+
+            // 4% cess
+            let cess = tax * 0.04
+
+            let totalTax = tax + cess
+
+            taxResult.innerText = formatINR(Math.round(totalTax))
+            resultValue.innerText = formatINR(Math.round(totalTax))
 
         }
 
@@ -64,11 +104,7 @@ function loadTool(tool, btn) {
         deductionSlider.oninput = calculateTax
 
         calculateTax()
-
     }
-
-
-
     /* ================= EMI ================= */
 
     if (tool === "emi") {
@@ -77,18 +113,17 @@ function loadTool(tool, btn) {
 
 <h3>Loan EMI Calculator</h3>
 
-<label>Loan Amount (₹)</label>
-<input type="range" id="loanSlider" min="50000" max="5000000" step="50000" value="500000">
+<label>Loan Amount (₹)</label> <input type="range" id="loanSlider" min="50000" max="5000000" step="50000" value="500000">
+
 <p id="loanValue">₹5,00,000</p>
 
-<label>Interest Rate (%)</label>
-<input type="range" id="rateSlider" min="5" max="15" step="0.5" value="8">
+<label>Interest Rate (%)</label> <input type="range" id="rateSlider" min="5" max="15" step="0.5" value="8">
+
 <p id="rateValue">8%</p>
 
-<label>Tenure (Years)</label>
-<input type="range" id="tenureSlider" min="1" max="30" step="1" value="10">
-<p id="tenureValue">10 Years</p>
+<label>Tenure (Years)</label> <input type="range" id="tenureSlider" min="1" max="30" step="1" value="10">
 
+<p id="tenureValue">10 Years</p>
 `
 
         let loanSlider = document.getElementById("loanSlider")
@@ -98,7 +133,6 @@ function loadTool(tool, btn) {
         let loanValue = document.getElementById("loanValue")
         let rateValue = document.getElementById("rateValue")
         let tenureValue = document.getElementById("tenureValue")
-
 
         function calculateEMI() {
 
@@ -124,8 +158,6 @@ function loadTool(tool, btn) {
 
     }
 
-
-
     /* ================= SIP ================= */
 
     if (tool === "sip") {
@@ -134,18 +166,17 @@ function loadTool(tool, btn) {
 
 <h3>SIP Investment Planner</h3>
 
-<label>Monthly Investment</label>
-<input type="range" id="sipSlider" min="1000" max="100000" step="1000" value="10000">
+<label>Monthly Investment</label> <input type="range" id="sipSlider" min="1000" max="100000" step="1000" value="10000">
+
 <p id="sipValue">₹10,000</p>
 
-<label>Return Rate (%)</label>
-<input type="range" id="sipRate" min="5" max="20" step="0.5" value="12">
+<label>Return Rate (%)</label> <input type="range" id="sipRate" min="5" max="20" step="0.5" value="12">
+
 <p id="sipRateValue">12%</p>
 
-<label>Years</label>
-<input type="range" id="sipYears" min="1" max="30" step="1" value="10">
-<p id="sipYearValue">10 Years</p>
+<label>Years</label> <input type="range" id="sipYears" min="1" max="30" step="1" value="10">
 
+<p id="sipYearValue">10 Years</p>
 `
 
         let sipSlider = document.getElementById("sipSlider")
@@ -155,7 +186,6 @@ function loadTool(tool, btn) {
         let sipValue = document.getElementById("sipValue")
         let sipRateValue = document.getElementById("sipRateValue")
         let sipYearValue = document.getElementById("sipYearValue")
-
 
         function calculateSIP() {
 
@@ -181,8 +211,6 @@ function loadTool(tool, btn) {
 
     }
 
-
-
     /* ================= GST ================= */
 
     if (tool === "gst") {
@@ -198,8 +226,7 @@ function loadTool(tool, btn) {
 <button id="removeGST" class="gst-btn">Remove GST</button>
 </div>
 
-<label>Amount (₹)</label>
-<input type="number" id="gstAmount" value="10000">
+<label>Amount (₹)</label> <input type="number" id="gstAmount" value="10000">
 
 <label>GST Rate (%)</label>
 
@@ -228,7 +255,6 @@ function loadTool(tool, btn) {
 </div>
 
 </div>
-
 `
 
         let amountInput = document.getElementById("gstAmount")
@@ -246,7 +272,6 @@ function loadTool(tool, btn) {
         let rate = 18
         let mode = "add"
 
-
         function calculateGST() {
 
             let amount = parseFloat(amountInput.value) || 0
@@ -256,17 +281,13 @@ function loadTool(tool, btn) {
             let netAmount = 0
 
             if (mode === "add") {
-
                 netAmount = amount
                 gstAmount = amount * (rate / 100)
                 totalAmount = amount + gstAmount
-
             } else {
-
                 totalAmount = amount
                 netAmount = amount / (1 + rate / 100)
                 gstAmount = totalAmount - netAmount
-
             }
 
             net.innerText = formatINR(netAmount)
@@ -312,197 +333,92 @@ function loadTool(tool, btn) {
 
     }
 
+    /* ================= DSC ================= */
+
+    if (tool === "dsc") {
+
+        fetch("financial-tools/dsc.php")
+            .then(res => res.text())
+            .then(data => {
+
+                toolContent.innerHTML = data
+
+                setTimeout(() => {
+                    initDSC()
+                }, 100)
+
+            })
+
+    }
+
 }
 
+/* ================= INIT DSC ================= */
 
+function initDSC() {
+
+    let product = document.getElementById("dscProduct")
+    let usb = document.getElementById("usbToken")
+
+    let indBtn = document.getElementById("individualBtn")
+    let orgBtn = document.getElementById("orgBtn")
+
+    let certPrice = document.getElementById("certPrice")
+    let usbPrice = document.getElementById("usbPrice")
+    let gstPrice = document.getElementById("gstPrice")
+    let totalPrice = document.getElementById("totalPrice")
+
+    let userType = "individual"
+
+    function calculateDSC() {
+
+        fetch(`financial-tools/get_dsc_data.php?product=${product.value}&user=${userType}`)
+            .then(res => res.json())
+            .then(data => {
+
+                if (!data || data.status !== "success") return
+
+                let certificate = parseFloat(data.certificate) || 0
+                let support = parseFloat(data.support) || 0
+
+                let usbCost = usb.checked ? 500 : 0
+
+                let base = certificate + support
+                let subtotal = base + usbCost
+
+                let gst = subtotal * 0.18
+                let total = subtotal + gst
+
+                certPrice.innerText = formatINR(base)
+                usbPrice.innerText = formatINR(usbCost)
+                gstPrice.innerText = formatINR(gst)
+                totalPrice.innerText = formatINR(total)
+
+            })
+
+    }
+
+    product.addEventListener("change", calculateDSC)
+    usb.addEventListener("change", calculateDSC)
+
+    indBtn.onclick = () => {
+        userType = "individual"
+        indBtn.classList.add("active")
+        orgBtn.classList.remove("active")
+        calculateDSC()
+    }
+
+    orgBtn.onclick = () => {
+        userType = "organization"
+        orgBtn.classList.add("active")
+        indBtn.classList.remove("active")
+        calculateDSC()
+    }
+
+    calculateDSC()
+
+}
+
+/* ================= DEFAULT LOAD ================= */
 
 loadTool("tax")
-let userType = "individual";
-
-const product = document.getElementById("dscProduct");
-
-const indBtn = document.getElementById("individualBtn");
-
-const orgBtn = document.getElementById("orgBtn");
-
-const usb = document.getElementById("usbToken");
-
-const certPrice = document.getElementById("certPrice");
-
-const usbPrice = document.getElementById("usbPrice");
-
-const gstPrice = document.getElementById("gstPrice");
-
-const totalPrice = document.getElementById("totalPrice");
-
-
-
-function formatINR(num) {
-
-    return "₹" + Math.round(num).toLocaleString("en-IN");
-
-}
-/* ================= DSC ================= */
-
-if (tool === "dsc") {
-
-    fetch("financial-tools/dsc.php")
-        .then(res => res.text())
-        .then(data => {
-
-            toolContent.innerHTML = data
-
-            // wait for html to render
-            setTimeout(() => {
-                initDSC()
-            }, 100)
-
-        })
-
-}
-
-function initDSC() {
-
-    let product = document.getElementById("dscProduct")
-    let usb = document.getElementById("usbToken")
-
-    let indBtn = document.getElementById("individualBtn")
-    let orgBtn = document.getElementById("orgBtn")
-
-    let certPrice = document.getElementById("certPrice")
-    let usbPrice = document.getElementById("usbPrice")
-    let gstPrice = document.getElementById("gstPrice")
-    let totalPrice = document.getElementById("totalPrice")
-
-    let result = document.getElementById("resultValue")
-
-    let userType = "individual"
-
-
-    function calculateDSC() {
-
-        fetch(`financial-tools/get_dsc_data.php?product=${product.value}&user=${userType}`)
-            .then(res => res.json())
-            .then(data => {
-
-                if (!data || data.status !== "success") return
-
-                let certificate = parseFloat(data.certificate) || 0
-                let support = parseFloat(data.support) || 0
-                let usbCost = usb.checked ? parseFloat(data.usb) : 0
-
-                let base = certificate + support
-                let subtotal = base + usbCost
-                let gst = subtotal * 0.18
-                let total = subtotal + gst
-
-                certPrice.innerText = formatINR(base)
-                usbPrice.innerText = formatINR(usbCost)
-                gstPrice.innerText = formatINR(gst)
-                totalPrice.innerText = formatINR(total)
-
-                if (result) result.innerText = formatINR(total)
-
-            })
-
-    }
-
-    product.addEventListener("change", calculateDSC)
-    usb.addEventListener("change", calculateDSC)
-
-    indBtn.addEventListener("click", function() {
-
-        userType = "individual"
-        indBtn.classList.add("active")
-        orgBtn.classList.remove("active")
-
-        calculateDSC()
-
-    })
-
-    orgBtn.addEventListener("click", function() {
-
-        userType = "organization"
-        orgBtn.classList.add("active")
-        indBtn.classList.remove("active")
-
-        calculateDSC()
-
-    })
-
-    calculateDSC()
-
-}
-
-function initDSC() {
-
-    let product = document.getElementById("dscProduct")
-    let usb = document.getElementById("usbToken")
-
-    let indBtn = document.getElementById("individualBtn")
-    let orgBtn = document.getElementById("orgBtn")
-
-    let certPrice = document.getElementById("certPrice")
-    let usbPrice = document.getElementById("usbPrice")
-    let gstPrice = document.getElementById("gstPrice")
-    let totalPrice = document.getElementById("totalPrice")
-
-    let result = document.getElementById("resultValue")
-
-    let userType = "individual"
-
-
-    function calculateDSC() {
-
-        fetch(`financial-tools/get_dsc_data.php?product=${product.value}&user=${userType}`)
-            .then(res => res.json())
-            .then(data => {
-
-                if (!data || data.status !== "success") return
-
-                let certificate = parseFloat(data.certificate) || 0
-                let support = parseFloat(data.support) || 0
-                let usbCost = usb.checked ? parseFloat(data.usb) : 0
-
-                let base = certificate + support
-                let subtotal = base + usbCost
-                let gst = subtotal * 0.18
-                let total = subtotal + gst
-
-                certPrice.innerText = formatINR(base)
-                usbPrice.innerText = formatINR(usbCost)
-                gstPrice.innerText = formatINR(gst)
-                totalPrice.innerText = formatINR(total)
-
-                if (result) result.innerText = formatINR(total)
-
-            })
-
-    }
-
-    product.addEventListener("change", calculateDSC)
-    usb.addEventListener("change", calculateDSC)
-
-    indBtn.addEventListener("click", function() {
-
-        userType = "individual"
-        indBtn.classList.add("active")
-        orgBtn.classList.remove("active")
-
-        calculateDSC()
-
-    })
-
-    orgBtn.addEventListener("click", function() {
-
-        userType = "organization"
-        orgBtn.classList.add("active")
-        indBtn.classList.remove("active")
-
-        calculateDSC()
-
-    })
-
-    calculateDSC()
-
-}

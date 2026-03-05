@@ -1,103 +1,92 @@
-<h3 class="tool-title">DSC Charges Calculator</h3>
+<div class="dsc-container">
 
-<!-- PRODUCT -->
+    <!-- LEFT SIDE -->
+    <div class="dsc-left">
 
-<label>Select Product</label>
+        <h3 class="dsc-title">DSC Charges Calculator</h3>
 
-<select id="dscProduct" class="tool-input">
+        <label>Select Product</label>
 
-<option value="Class 3 General 1 Yr">Class 3 General 1 Yr</option>
-<option value="Class 3 General 2 Yr">Class 3 General 2 Yr</option>
-<option value="Class 3 General 3 Yr">Class 3 General 3 Yr</option>
+        <select id="dscProduct" class="dsc-input">
 
-<option value="Class 3 General Combo 1 Yr">Class 3 General Combo 1 Yr</option>
-<option value="Class 3 General Combo 2 Yr">Class 3 General Combo 2 Yr</option>
-<option value="Class 3 General Combo 3 Yr">Class 3 General Combo 3 Yr</option>
+            <option value="dgft_1">DGFT 1 Yr</option>
+            <option value="dgft_2">DGFT 2 Yr</option>
+            <option value="dgft_3">DGFT 3 Yr</option>
 
-<option value="Foreign - Class 3 General 1 Yr">Foreign - Class 3 General 1 Yr</option>
-<option value="Foreign - Class 3 General 2 Yr">Foreign - Class 3 General 2 Yr</option>
-<option value="Foreign - Class 3 General 3 Yr">Foreign - Class 3 General 3 Yr</option>
+            <option value="general_1">Class 3 General 1 Yr</option>
+            <option value="general_2">Class 3 General 2 Yr</option>
+            <option value="general_3">Class 3 General 3 Yr</option>
 
-<option value="DGFT 1 Yr">DGFT 1 Yr</option>
-<option value="DGFT 2 Yr">DGFT 2 Yr</option>
-<option value="DGFT 3 Yr">DGFT 3 Yr</option>
+            <option value="combo_1">Class 3 General Combo 1 Yr</option>
+            <option value="combo_2">Class 3 General Combo 2 Yr</option>
+            <option value="combo_3">Class 3 General Combo 3 Yr</option>
 
-</select>
-
-
-<!-- USER TYPE -->
-
-<label>User Type</label>
-
-<div class="user-type-toggle">
-
-<button id="individualBtn" class="toggle-btn active">
-Individual
-</button>
-
-<button id="orgBtn" class="toggle-btn">
-Organization
-</button>
-
-</div>
+        </select>
 
 
-<!-- USB TOKEN -->
+        <label>User Type</label>
 
-<label class="checkbox-row">
+        <div class="user-type">
 
-<input type="checkbox" id="usbToken" checked>
+            <button type="button" id="individualBtn" class="user-btn active">
+                Individual
+            </button>
 
-Include USB Token (₹500)
+            <button type="button" id="orgBtn" class="user-btn">
+                Organization
+            </button>
 
-</label>
+        </div>
 
 
-<!-- RESULT BREAKDOWN -->
+        <label class="usb-check">
 
-<div class="dsc-result-box">
+            <input type="checkbox" id="usbToken" checked>
 
-<div class="dsc-row">
+            <span>Include USB Token (₹500)</span>
 
-<span>Certificate + L1 Support</span>
+        </label>
 
-<span id="certPrice">₹0</span>
+    </div>
 
-</div>
 
-<div class="dsc-row">
+    <!-- RIGHT SIDE SUMMARY -->
+    <div class="dsc-summary">
 
-<span>USB Token</span>
+        <div class="summary-row">
 
-<span id="usbPrice">₹0</span>
+            <span>Certificate + L1 Support</span>
 
-</div>
+            <span id="certPrice">₹0</span>
 
-<div class="dsc-row">
+        </div>
 
-<span>GST (18%)</span>
+        <div class="summary-row">
 
-<span id="gstPrice">₹0</span>
+            <span>USB Token</span>
 
-</div>
+            <span id="usbPrice">₹0</span>
 
-<hr>
+        </div>
 
-<div class="dsc-row total">
+        <div class="summary-row">
 
-<span>Total Payable</span>
+            <span>GST (18%)</span>
 
-<span id="totalPrice">₹0</span>
+            <span id="gstPrice">₹0</span>
 
-</div>
+        </div>
+
+        <hr>
+
+        <div class="summary-row total">
+
+            <span>Total Payable</span>
+
+            <span id="totalPrice">₹0</span>
+
+        </div>
+
+    </div>
 
 </div>
-
-
-<!-- APPLY BUTTON -->
-
-<button class="apply-dsc-btn">
-
-Apply for DSC
-
-</button>
